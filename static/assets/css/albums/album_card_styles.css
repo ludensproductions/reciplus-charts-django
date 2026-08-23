@@ -1,0 +1,76 @@
+@page {
+    size: 297mm 210mm;
+    margin: 0;
+}
+
+html, body {
+    width: 297mm;
+    height: 210mm;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 14px;
+}
+
+.album-card {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.album-cover {
+    width: 40%;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-cover img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
+.album-content {
+    width: 60%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-header {
+    margin-bottom: 1.5rem;
+}
+
+.album-header h1 {
+    margin-bottom: 0.25rem;
+}
+
+.album-meta {
+    color: #6c757d;
+}
+
+.songs-table {
+    flex-grow: 1;
+}
+
+.songs-table table {
+    width: 100%;
+}
+
+.songs-table th {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.songs-table td {
+    padding: 0.5rem 0;
+}
+
+.song-duration {
+    text-align: right;
+    white-space: nowrap;
+}

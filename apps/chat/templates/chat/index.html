@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load utils %}
+{% load i18n %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block css %}
+    <link href="{% static 'assets/css/chat-styles.css' %}" rel="stylesheet" />
+{% endblock %}
+{% block content %}
+    <div class="container-fluid padding-padre">
+        <div hx-ext="ws" ws-connect="/ws/chat/" class="card chat-container">
+            <div class="card-header">Demo Chat (WebSocket + HTMX)</div>
+            <div id="chat-messages" class="card-body messages-container">
+                <!-- Messages appear here -->
+            </div>
+            <form ws-send class="card-footer d-flex gap-2">
+                <input type="text"
+                       name="message"
+                       class="form-control"
+                       placeholder="Type a message…"
+                       autocomplete="off"
+                       required>
+                <button class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+{% block js %}
+    <script src="{% static 'assets/js/chat/chat.js' %}"></script>
+{% endblock js %}

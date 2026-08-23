@@ -1,0 +1,9 @@
+{% load custom_tags %}{% load i18n %}
+
+<li class="nav-item">
+    <a href="{% url seccion_url %}" class="nav-link
+        {% if request|is_active_section:appname %} active {% endif %}">
+        <i class="{{icon}}"></i>
+        <span>{% trans title %}</span>
+    </a>
+</li>

@@ -1,0 +1,80 @@
+{% load custom_tags %}
+{% load i18n %}
+{% trans "Cerrar" as close_label %}
+{% trans "Aceptar" as accept_label %}
+{% trans "Creado" as created_label %}
+{% trans "Modificado" as modified_label %}
+{% trans "Eliminado" as deleted_label %}
+{% trans "Recuperar punto en el tiempo" as recover_title %}
+{% trans "Esta es una acción destructiva." as destructive_label %}
+{% trans "Cancelar" as cancel_label %}
+{% trans "Revertir" as revert_label %}
+<div class="modal-content">
+    <div class="modal-header">
+        <h2 class="modal-title title-forms fs-5">{{ model_name }}</h2>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="{{ close_label }}"></button>
+    </div>
+    <!-- DATA REVIEW DETAILS -->
+    <div class="modal-body">
+        <div class="row">
+            {% for field in log|get_all_fields %}
+                <div class="col-12 col-sm-12 col-md-4 col-xl-4">
+                    <div class="form-group mb-3 ow-break-word">
+                        <label class="form-label input-color">
+                            <strong>{{ field.key|capfirst }}</strong>
+                        </label>
+                        {% if field.key == 'Tipo de cambio' %}
+                            <p class="">
+                                {% if log.history_type == '+' %}
+                                    <i title="{{ created_label }}"
+                                       class="fas fa-plus-circle fs-5 text-success"></i>
+                                {% elif log.history_type == '~' %}
+                                    <i title="{{ modified_label }}"
+                                       class="fas fa-pen-square fs-5 text-primary"></i>
+                                {% elif log.history_type == '-' %}
+                                    <i title="{{ deleted_label }}"
+                                       class="fas fa-minus-circle fs-5 text-danger"></i>
+                                {% endif %}
+                            </p>
+                        {% else %}
+                            <p class="text-break">{{ field.value|empty_to_dash }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" type="button" data-bs-dismiss="modal">{{ accept_label }}</button>
+        {% comment %} <button class="btn btn-danger px-5 btn-recover" role="button" data-id="{{ log.history_id }}" data-url="{% url 'history:generic-recover' model|replace_model_name app 1 %}" id="Bnt_hover" data-bs-toggle="modal" data-bs-target="#recover-modal" href="#">
+      <i title="{% trans 'Revertir cambio' %}" class="fas fa-sync-alt btnNoBorders"></i>
+        </button> {% endcomment %}
+    </div>
+    <!-- JUSTIFICATIONS -->
+</div>
+<form id="recoverForm" method="post">
+    {% csrf_token %}
+    <div class="modal fade" role="dialog" tabindex="-1" id="recover-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title fs-5">{{ recover_title }}</h2>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="{{ close_label }}"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fs-6 text-dark">{{ destructive_label }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" type="button" data-bs-dismiss="modal">{{ cancel_label }}</button>
+                    <button class="btn btn-danger btn-recover-submit" type="button">{{ revert_label }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

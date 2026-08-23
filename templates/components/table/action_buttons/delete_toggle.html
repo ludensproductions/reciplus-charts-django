@@ -1,0 +1,12 @@
+{% load i18n %}
+<div class="form-check form-switch d-flex justify-content-center">
+    <input class="form-check-input toggle-switch"
+           type="checkbox"
+           role="switch"
+           data-url="{% url delete_url item.pk %}"
+           data-action="{% if item.deleted %}enable{% else %}disable{% endif %}"
+           data-bs-toggle="modal"
+           {% if item.deleted %} data-bs-target="#enable-modal" onclick="enable('{% url delete_url item.pk %}')" {% else %} data-bs-target="#delete-modal" onclick="destroy('{% url delete_url item.pk %}')" {% endif %}
+           title="{% if item.deleted %} {% trans 'Habilitar' %} {% else %} {% trans 'Deshabilitar' %} {% endif %}"
+           {% if not item.deleted %}checked{% endif %}>
+</div>

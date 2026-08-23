@@ -1,0 +1,40 @@
+{% load i18n %}
+<div class="nav-item dropdown d-flex align-items-center"
+     id="notification-manager-config"
+     data-user-id="{{ request.user.id }}"
+     data-csrf-token="{{ csrf_token }}"
+     data-channel-prefix="{{ NOTIFICATIONS_CHANNEL_PREFIX }}"
+     data-notifications-url="{{ GET_NOTIFICATIONS_URL }}">
+    <a href="#"
+       class="nav-link fs-4 notification-link-dropdown"
+       data-bs-toggle="dropdown"
+       data-bs-auto-close="outside">
+        <i class="fas fa-bell"></i>
+        <span id="notification-count" class="badge bg-danger badge-counter"></span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-end shadow notification-container notification-dropdown-menu">
+        <div class="px-3 py-2 bg-light border-bottom">
+            <h6 class="mb-0 fw-semibold">{% trans "Notificaciones" %}</h6>
+        </div>
+        <div class="notifications-list-height overflow-auto"
+             id="notification-list">
+            <!-- Notifications go here -->
+        </div>
+        <p class="dropdown-item text-center text-muted" id="empty-notification">{% trans "No hay notificaciones" %}</p>
+        <div class="p-3 border-top d-flex justify-content-between flex-row align-items-center gap-2"
+             id="notifications-container-footer">
+            <button type="button"
+                    id="load-notifications-button"
+                    class="btn btn-outline-primary w-100">
+                <i class="fas fa-sync-alt me-2"></i>
+                <span>{% trans "Cargar más notificaciones" %}</span>
+            </button>
+            <button type="button"
+                    id="read-all-notifications-button"
+                    class="btn btn-outline-primary w-100">
+                <i class="fas fa-check-double me-2"></i>
+                <span>{% trans "Marcar todas como leídas" %}</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{% load i18n %}
+<div class="card mb-4 border_top border_radius">
+    {% if "detail" not in request.resolver_match.url_name %}
+        <div class="card-header bg-white m-2">
+            <p class="my-1 fw-bold text-title">{% trans "Los campos marcados con (*) son de carácter obligatorio." %}</p>
+        </div>
+        <form method="post"
+              enctype="multipart/form-data"
+              {% if form_id %} id="{{ form_id }}" {% else %} id="form-fixed-id" {% endif %}>
+            {% csrf_token %}
+            <div class="card-body">
+                {% include "components/comun/form.html" with form=form return_url=return_url hide_submit_button=True %}
+                <div class="accordion mb-3" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#domicilioForm"
+                                    aria-expanded="true"
+                                    aria-controls="domicilioForm">
+                                <span id="accordionLabel">{% trans "Agregar domicilio" %}:</span>
+                            </button>
+                        </h2>
+                        <div id="domicilioForm"
+                             class="accordion-collapse collapse row p-2 pt-3 {% if domicilio_form.errors %}show{% endif %}"
+                             aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            {% include "components/comun/form.html" with form=domicilio_form return_url=return_url %}
+                        </div>
+                    </div>
+                </div>
+                {% include "components/buttons/btn_group.html" with return_url=return_url %}
+            </div>
+        </form>
+    {% else %}
+        <div class="card-body">{% include "components/detail/data_grid.html" with fields=fields object=object %}</div>
+    {% endif %}
+</div>

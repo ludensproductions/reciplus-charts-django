@@ -1,0 +1,64 @@
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load custom_tags %}
+{% comment %}
+<div class="card rounded-3 mb-4" id="TableSorterCard">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="{{ table_class }}" {% if table_id %}id="{{ table_id }}"{% endif %}>
+                    <thead class="thead-dark">
+                        <tr>
+                            {% for th in columns_title %}
+                                <th class="text-center {% if th == "Acciones" %}filter-false sorter-false col-2{% endif %}">{{ th }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody class="{{ tbody_class }}" {% if tbody_id %}id="{{ tbody_id }}"{% endif %}>
+                        {{ slot }}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endcomment %}
+<div class="card rounded-3 mb-4" id="TableSorterCard">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="{{ table_class }}"
+                       {% if table_id %}id="{{ table_id }}"{% endif %}>
+                    <thead class="thead-dark">
+                        <tr>
+                            {% for th in columns_title %}
+                                <th class="text-center {% if th == "Acciones" %}filter-false sorter-false col-2{% endif %}">{{ th }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody class="{{ tbody_class }}"
+                           {% if tbody_id %}id="list_{{ tbody_id }}"{% endif %}>
+                        {% for field in formset %}
+                            <tr id="{{ formset.prefix }}_formset_div-{{ forloop.counter0 }}">
+                                {% for field2 in field %}
+                                    {% comment %} Get field class from field2 {% endcomment %}
+                                    {% if field2.is_hidden %}
+                                        {{ field2 }}
+                                    {% elif field2.field|get_class == "BooleanField" %}
+                                        <td>{% include "components/inputs/switch.html" with field=field2 show_label=False %}</td>
+                                    {% else %}
+                                        <td>{{ field2|as_crispy_field }}</td>
+                                    {% endif %}
+                                {% endfor %}
+                                <td class="text-center">
+                                    {% include "components/buttons/btn_formset_deshabilitar.html" with formset_prefix=formset.prefix forloop_counter=forloop.counter0 title=custom_button_title %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

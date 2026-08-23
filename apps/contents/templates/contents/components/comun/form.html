@@ -1,0 +1,60 @@
+{% load crispy_forms_tags %}
+{% load utils %}
+{% comment %}
+<!--
+
+-->
+{% endcomment %}
+<div class="row ">
+    {% if form.fields|length == 1 %}
+        {% for field in form %}
+            <div class="col-12">
+                {{ field|as_crispy_field }}
+            </div>
+        {% endfor %}
+    {% else %}
+        {% for field in form %}
+            {% with field_class=field.field.widget.attrs.class %}
+                <div class="{% if field_classes and 'col' in field_classes %}
+                                {% for cls in field_class|split:' ' %}
+                                    {% if cls|slice:":4" == 'col-' %}{{ cls }}{% endif %}
+                                {% endfor %}
+                            {% else %}
+                                col-xs-12 col-md-6 col-lg-4
+                            {% endif %}">
+                    {{ field|as_crispy_field }}
+                </div>
+            {% endwith %}
+        {% endfor %}
+        {% endif %}
+</div>
+
+{% if has_formset %}
+    <hr>
+    {% for formset_config, formset in formsets %}
+        {{ formset.management_form }}
+
+        {% if formset.non_form_errors %}
+        <div class="text-danger small mb-2">
+            {% for error in formset.non_form_errors %}
+                <strong>
+                    <p class="mb-0">{{ error }}</p>
+                </strong>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% include "components/comun/form/formset_container.html" with formset_prefix=formset.prefix title=formset_config.title %}
+
+        {% include "components/table/table.html" with columns_title=formset_config.field_titles  table_class="table table-bordered" tbody_id=formset.prefix formset=formset forloop=forloop %}
+
+    {% endfor %}
+
+    {% for formset_config, formset in formsets %}
+        {% if custom_button_title %}
+            {% include "components/comun/form/template_empty_formset.html" with formset=formset formset_config=formset_config title=custom_button_title  %}
+        {% else %}
+            {% include "components/comun/form/template_empty_formset.html" with formset=formset formset_config=formset_config  %}
+        {% endif %}
+    {% endfor %}
+{% endif %}

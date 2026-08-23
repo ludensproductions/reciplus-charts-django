@@ -1,0 +1,6 @@
+{% include "components/buttons/btn_volver.html" with back_url=return_url %}
+<div class="container-fluid px-0 px-sm-0 px-md-4">
+    <!-- Title Component -->
+    {% include "components/comun/title.html" with title=title %}
+    {% include "components/comun/card.html" with fields=fields object=object m2m_separator=m2m_separator %}
+</div>

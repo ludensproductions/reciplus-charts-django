@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+    {% trans "Índice de películas" %}
+{% endblock title %}
+{% block css %}
+{% endblock css %}
+{% block content %}
+    <!-- Start: Ludens - 1 Index Table with Search & Sort Filters -->
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6">
+                    <h1 class="text-dark mb-4">{{ title }}</h1>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 text-end mb-4">
+                    <a class="btn btn-primary"
+                       role="button"
+                       href="{% url 'movies:create' %}">
+                        <i class="fa fa-plus"></i> &nbsp;{% trans "Agregar película" %}
+                    </a>
+                </div>
+            </div>
+            {% include 'filter.html' %}
+            <div class="card" id="TableSorterCard">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table tablesorter" id="ipi-table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th class="text-center">{% trans "Título" %}</th>
+                                        <th class="text-center">{% trans "Año" %}</th>
+                                        <th class="text-center">{% trans "Género" %}</th>
+                                        <th class="text-center">{% trans "Argumento" %}</th>
+                                        <th class="text-center">{% trans "Precio" %}</th>
+                                        <th class="text-center">{% trans "Número de ventas" %}</th>
+                                        <th class="text-center filter-false sorter-false">{% trans "Acciones" %}</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    {% for movie in movies %}
+                                        <tr>
+                                            <td>{{ movie.title }}</td>
+                                            <td>{{ movie.year }}</td>
+                                            <td>{{ movie.genre }}</td>
+                                            <td>{{ movie.plot }}</td>
+                                            <td>{{ movie.price }}</td>
+                                            <td>{{ movie.movie_sales_count }}</td>
+                                            <td class="text-center align-middle">
+                                                <a class="btn btnMaterial btn-flat success semicircle"
+                                                   role="button"
+                                                   title="{% trans 'Editar' %}"
+                                                   href="{% url 'movies:edit' movie.id %}">
+                                                    <i class="fas fa-pen"></i>
+                                                </a>
+                                                <a class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover"
+                                                   role="button"
+                                                   title="{% trans 'Eliminar' %}"
+                                                   data-bs-toggle="modal"
+                                                   onclick="destroy({{ movie.id }})"
+                                                   data-bs-target="#delete-modal">
+                                                    {% if movie.deleted %}
+                                                        <i class="fas fa-undo"></i>
+                                                    {% else %}
+                                                        <i class="fas fa-trash btnNoBorders"></i>
+                                                    {% endif %}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End: TableSorter -->
+        </div>
+    </div>
+    <!-- End: Ludens - 1 Index Table with Search & Sort Filters -->
+    <!-- Pagination -->
+    {% include 'pagination.html' %}
+    <!-- Delete modal -->
+    {% include 'delete.html' with subtitle=_("Películas") %}
+    <a class="border rounded d-inline scroll-to-top" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+{% endblock content %}
+{% block js %}
+    <!-- Delete Script -->
+    <script>
+    function formSubmit() {
+        $("#deleteForm").submit();
+    }
+
+    document.addEventListener('htmx:configRequest', function(event) {
+        event.target.disabled = true;
+    });
+
+    document.addEventListener('htmx:afterRequest', function(event) {
+        location.reload();
+    });
+    </script>
+{% endblock js %}

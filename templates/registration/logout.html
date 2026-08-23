@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sesión cerrada{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h3>{{ message|default:"Tu sesión ha sido cerrada." }}</h3>
+            <a href="{% url 'oauth2:authorize' %}" class="btn btn-primary mt-3">Iniciar sesión</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

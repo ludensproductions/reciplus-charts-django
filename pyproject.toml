@@ -1,0 +1,79 @@
+[tool.coverage.run]
+include = ["./*"]  # Incluye todos los archivos de la raíz y subdirectorios
+omit = [
+    "*/migrations/*",  # Omite archivos en cualquier carpeta 'migrations'
+    "*/tests/*",        # Omite archivos en cualquier carpeta 'tests'
+    "*/unittest/*"      # Omite archivos en cualquier carpeta 'unittest'
+]
+plugins = ["django_coverage_plugin"]
+
+skip = ["venv/"]
+skip_glob = ["**/**/migrations/*.py", "**/**/unittest/*.py"]  # Omite cualquier archivo en 'migrations' y 'unittest'
+
+
+# ==== mypy ====
+[tool.mypy]
+python_version = "3.11"
+check_untyped_defs = true
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+plugins = [
+    "mypy_django_plugin.main",
+    "mypy_drf_plugin.main",
+]
+
+[[tool.mypy.overrides]]
+# Django migrations should not produce any errors:
+module = "*.migrations.*"
+ignore_errors = true
+
+[tool.django-stubs]
+django_settings_module = "djangoproject.settings"
+
+
+# ==== PyLint ====
+[tool.pylint.MASTER]
+load-plugins = [
+    "pylint_django",
+]
+django-settings-module = "djangoproject.settings"
+
+[tool.pylint.FORMAT]
+max-line-length = 119
+
+[tool.pylint.TYPECHECK]
+generated-members = [
+    "REQUEST",
+    "acl_users",
+    "aq_parent",
+    "[a-zA-Z]+_set{1,2}",
+    "save",
+    "delete",
+]
+
+
+# ==== Ruff ====
+[tool.ruff]
+line-length = 119  # Ajusta según tu preferencia
+indent-width = 4
+
+[tool.ruff.lint]
+select = ["I", "D", "F"]  # Activa la organización de imports
+ignore = ["D100", "D104", "D105", "D106", "D107"]
+fixable = ["ALL"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D101", "D102", "D103"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"  # Usa el estilo Google para docstrings
+
+[tool.ruff.lint.isort]
+combine-as-imports = true  # Une imports en una sola línea cuando es posible
+force-single-line = false  # Permite múltiples imports en una sola línea
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"

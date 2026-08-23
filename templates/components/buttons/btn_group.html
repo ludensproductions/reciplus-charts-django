@@ -1,0 +1,10 @@
+{% load i18n %}
+
+<hr>
+<div class="form-group d-flex justify-content-center justify-content-sm-end">
+    <!-- boton cancelar -->
+    {% include "components/buttons/btn_generic_link.html" with class='btn-secondary btn_movil_view_size mb-1 d-sm-inline-block me-1' title='boton_cancelar' generic_url=return_url  icon='fa fa-arrow-left' title_button='Cancelar'%}
+
+    <!-- Boton guardar -->
+    {% include "components/buttons/btn_generic.html" with type='submit' id='submitButton' class='btn-primary btn_movil_view_size mb-1  d-sm-inline-block' title_button='Guardar' icon='fa fa-floppy-disk'%}
+</div>

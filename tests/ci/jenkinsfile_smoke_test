@@ -1,0 +1,202 @@
+pipeline {
+    agent none
+
+    triggers {
+        cron('0 3 * * 1-5')
+    }
+
+    options {
+        timestamps()
+        buildDiscarder(logRotator(numToKeepStr: '30'))
+    }
+
+    environment {
+        def reportName = 'ERPSmokeTests'
+        JENKINS_REPORT_URL = "${env.BUILD_URL}${reportName}/"
+    }
+
+    stages {
+
+        stage('Init') {
+            agent any
+            steps {
+                script {
+                    env.REPORT_DATE = new Date().format("yyyy-MM-dd_HH-mm-ss")
+                    env.REPORT_NAME = "erpnext-smoketests-${env.REPORT_DATE}"
+                    env.REPORT_DIR  = "report/${env.REPORT_NAME}-html"
+
+                    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                    echo "🚀 Starting Smoke Test Suite"
+                    echo "📅 Date: ${env.REPORT_DATE}"
+                    echo "📊 Report: ${env.REPORT_NAME}"
+                    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                }
+            }
+        }
+
+        stage('Checkout') {
+            agent any
+            steps {
+                git branch: 'dev',
+                    credentialsId: 'github-ssh-key',
+                    url: 'git@github.com:Issirmax/playwright-erp-typescript.git'
+            }
+        }
+
+        stage('Build & Run Tests') {
+            agent {
+                dockerfile {
+                    filename 'Dockerfile'
+                }
+            }
+
+            steps {
+                withCredentials([
+                    // Base configuration
+                    string(credentialsId: 'API_AUTH', variable: 'API_AUTH'),
+                    string(credentialsId: 'API_BASE_URL', variable: 'API_BASE_URL'),
+                    string(credentialsId: 'BASE_URL', variable: 'BASE_URL'),
+
+                    // User credentials (username + password)
+                    usernamePassword(credentialsId: 'qa-admin',             usernameVariable: 'ADMIN_USER',                      passwordVariable: 'ADMIN_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-admin-mesa-ayuda',  usernameVariable: 'ADMIN_MESA_DE_AYUDA_USER',        passwordVariable: 'ADMIN_MESA_DE_AYUDA_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-operator',          usernameVariable: 'OPERATOR_USER',                   passwordVariable: 'OPERATOR_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-fsw',               usernameVariable: 'USER_FSW',                        passwordVariable: 'PASSWORD_FSW'),
+                    usernamePassword(credentialsId: 'qa-solicitante',       usernameVariable: 'SOLICITANTE_USER',                passwordVariable: 'SOLICITANTE_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-aprobador',         usernameVariable: 'APROBADOR_USER',                  passwordVariable: 'APROBADOR_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-compras',           usernameVariable: 'COMPRAS_USER',                    passwordVariable: 'COMPRAS_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-auxiliar',          usernameVariable: 'AUXILIAR_USER',                   passwordVariable: 'AUXILIAR_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-rh',                usernameVariable: 'RH_USER',                         passwordVariable: 'RH_USER_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-director',          usernameVariable: 'DIRECTOR_USER',                   passwordVariable: 'DIRECTOR_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-agente',            usernameVariable: 'AGENTE_USER',                     passwordVariable: 'AGENTE_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-admin-reportes',    usernameVariable: 'ADMINISTRADOR_REPORTES_USER',     passwordVariable: 'ADMINISTRADOR_REPORTES_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-admin-mesa',        usernameVariable: 'ADMINISTRADOR_MESA_USER',         passwordVariable: 'ADMINISTRADOR_MESA_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-ingeniero',         usernameVariable: 'INGENIERO_USER',                  passwordVariable: 'INGENIERO_PASSWORD'),
+                    usernamePassword(credentialsId: 'qa-tier-1',            usernameVariable: 'TIER_1_USER',                     passwordVariable: 'USER_PASSWORDS'),
+                    usernamePassword(credentialsId: 'qa-tier-2',            usernameVariable: 'TIER_2_USER',                     passwordVariable: 'USER_PASSWORDS'),
+                    usernamePassword(credentialsId: 'qa-tier-3',            usernameVariable: 'TIER_3_USER',                     passwordVariable: 'USER_PASSWORDS'),
+                    usernamePassword(credentialsId: 'qa-responsable-proyecto', usernameVariable: 'RESPONSABLE_PROYECTO_USER',   passwordVariable: 'RESPONSABLE_PROYECTO_PASSWORD')
+                ]) {
+                    sh '''
+                        set -e
+
+                        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                        echo "📦 Installing dependencies..."
+                        npm ci --cache /.npm
+
+                        echo "✓ Installed $(ls -1 node_modules | wc -l) packages"
+                        echo ""
+
+                        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                        echo "📁 Creating report directories..."
+                        mkdir -p report/${REPORT_NAME}
+                        rm -rf allure-results
+                        mkdir -p allure-results
+                        echo "✓ Directories created and cleaned"
+                        echo ""
+
+                        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                        echo "🧪 Running Playwright ERP smoke tests..."
+                        echo "⏱️  Start time: $(date)"
+                        echo ""
+
+                        npx playwright test --grep "smoke_test" --retries=3
+
+                        echo ""
+                        echo "⏱️  End time: $(date)"
+                        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                    '''
+                }
+            }
+
+            post {
+                always {
+                    // Generate Allure report
+                    script {
+                        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                        echo "📊 Generating test report..."
+
+                        try {
+                            sh "allure generate allure-results -o ${env.REPORT_DIR} --clean"
+                            echo "✓ Allure report generated successfully"
+
+                            // Publish HTML report
+                            publishHTML([
+                                allowMissing: true,
+                                keepAll: true,
+                                alwaysLinkToLastBuild: false,
+                                reportDir: "${env.REPORT_DIR}",
+                                reportFiles: 'index.html',
+                                reportName: "${env.reportName}"
+                            ])
+                        } catch (Exception e) {
+                            echo "⚠️  Report generation failed: ${e.message}"
+                        }
+                    }
+
+                    // Sync con Plane
+                    script {
+                        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                        echo "🧩 Syncing test results with Plane..."
+
+                        withCredentials([
+                            string(credentialsId: 'plane-api-key', variable: 'PLANE_API_KEY'),
+                            string(credentialsId: 'plane-base-url', variable: 'PLANE_BASE_URL'),
+                            string(credentialsId: 'plane-workspace', variable: 'PLANE_WORKSPACE'),
+                            string(credentialsId: 'plane-project-id', variable: 'PLANE_PROJECT_ID')
+                        ]) {
+                            sh '''
+                                set +e
+                                python -m ci.scripts.sync_tests_to_plane
+                                SYNC_EXIT_CODE=$?
+                                echo "Plane sync finished with code $SYNC_EXIT_CODE"
+                            '''
+                        }
+                    }
+
+                    // Send Discord notification
+                    script {
+                        def duration = currentBuild.durationString.replace(' and counting', '')
+                        def emoji = currentBuild.currentResult == 'SUCCESS' ? '✅' : '❌'
+
+                        withCredentials([
+                            string(credentialsId: 'discord-webhook', variable: 'DISCORD_WEBHOOK')
+                        ]) {
+                            discordSend(
+                                webhookURL: env.DISCORD_WEBHOOK,
+                                title: "${emoji} ${JOB_NAME}",
+                                description: """
+**Resultado:** ${currentBuild.currentResult}
+**Duración:** ${duration}
+**Reporte:** [Ver Reporte](${env.JENKINS_REPORT_URL})
+**Build:** [#${BUILD_NUMBER}](${env.BUILD_URL})
+                                """.trim(),
+                                result: currentBuild.currentResult,
+                                link: env.BUILD_URL,
+                                footer: "ERP Smoke Tests - ${env.REPORT_DATE}"
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        success {
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "✅ Smoke tests passed successfully!"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        }
+        failure {
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "❌ Smoke tests failed!"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        }
+        unstable {
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+            echo "⚠️  Smoke tests unstable!"
+            echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        }
+    }
+}

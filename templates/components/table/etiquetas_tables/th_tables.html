@@ -1,0 +1,15 @@
+{% load i18n %}
+{% load utils %}
+{% for field in fields %}
+<th class="text-center" name="{% translate field.verbose_name.lower %}">
+    {% translate field.verbose_name.capitalize %}
+</th>
+{% endfor %}
+{% if can_disable%}
+<th class="text-center">
+    {% translate 'Habilitado' %}
+</th>
+{% endif %}
+<th class="text-center">
+    {% translate 'Acciones' %}
+</th>

@@ -1,0 +1,30 @@
+{% load i18n %}
+<form id="enableForm" method="post">
+    {% csrf_token %}
+    <div class="modal fade" role="dialog" tabindex="-1" id="enable-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title fs-5 text-title fw-bold">{% trans "Habilitar" %} {{ subtitle }}</h4>
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="fs-6 text-dark">
+                        {% trans "Al habilitar este elemento, podría estar vinculado a otro, lo que podría influir en su comportamiento." %}
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light btn_rounded"
+                            type="button"
+                            data-bs-dismiss="modal">{% trans "Cancelar" %}</button>
+                    <button class="btn btn-danger btn-primary btn-enable"
+                            type="button"
+                            onclick="enableFormSubmit()">{% trans "Habilitar" %}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

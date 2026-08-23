@@ -1,0 +1,48 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fix-row {
+    display: -webkit-box;
+}
+
+.wk-fs-1 {
+    font-size: 1em;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+
+.top-text-bold {
+    font-weight: bold;
+    font-size: .75em;
+}
+
+.top-text {
+    font-size: .75em;
+}
+
+.keep-together {
+    page-break-inside: avoid;
+}
+
+.break-before {
+    page-break-before: always;
+}
+
+.break-after {
+    page-break-after: always;
+}
+
+.centrar-div {
+    display: flex,
+    flex-direction: column,
+    align-items: center,
+    justify-content: center
+}
+
+.page{box-sizing: border-box; height: 100%; width: 100%; border: 1px solid transparent; page-break-after: always;}
+.page-middle{height: 100%; width: 100%; display: table;}
+.page-middle-inner{height: 100%; width: 100%; display: table; vertical-align: middle;}

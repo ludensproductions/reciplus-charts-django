@@ -1,0 +1,10 @@
+{% load utils %}
+{% load i18n %}
+<a class="btn btnMaterial btn-flat {{ color_action }} semicircle"
+   role="button"
+   data-bs-toggle="tooltip"
+   data-bs-placement="bottom"
+   title="{% translate action.tooltip %}"
+   href="{% dynamic_url_params action_url params item %}">
+    <i class="{{ icon }}"></i>
+</a>

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+    {% trans "Alta de Producto en Inventario" %}
+{% endblock title %}
+{% block css %}
+{% endblock css %}
+{% block content %}
+    {% load crispy_forms_tags %}
+
+    <section class="clean-block clean-form dark">
+    <div class="container">
+        <div class="row mx-0">
+        <div class="col-md-12" id="back-button">
+            <a class="anone" href="{% url 'movies:index' %}">
+            <i class="fas fa-long-arrow-alt-left"></i>
+            <span>&nbsp;{% trans "Volver" %}</span>
+            </a>
+        </div>
+        </div>
+        <div class="block-heading pt-0">
+        <h1 class="text-primary">
+            {% trans "Añadir producto" %}
+            <br />
+        </h1>
+        <p>{% trans "Los que tengan el * son datos que se tienen que rellenar obligatoriamente" %}</p>
+        </div>
+        <form class="mw-700"
+            role="form"
+            method="post"
+            enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+            <strong>{{ form.non_field_errors }}</strong>
+            </div>
+        {% endif %}
+        {% for field in form %}
+            <div class="form-group mb-3">
+            <strong>{{ field|as_crispy_field }}</strong>
+            </div>
+        {% endfor %}
+        <hr class="mt-4 mt-2" />
+        <div class="form-group mb-3">
+            <button class="btn btn-primary d-block w-100" id="submitButton" type="submit">
+            <i class="fas fa-save"></i>
+            &nbsp;{% trans "Guardar" %}
+            </button>
+            <a class="btn btn-danger d-block w-100 mt-2" role="button" href="{% url 'movies:index' %}">
+            <i class="fas fa-arrow-left"></i> &nbsp;{% trans "Cancelar" %}
+            </a>
+        </div>
+        </form>
+    </div>
+    </section>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

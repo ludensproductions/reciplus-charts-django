@@ -1,0 +1,13 @@
+{
+    "omit_links": [
+      "Configuración de PT",
+      "Gestor de riesgos",
+      "Reportes",
+      "Inspección fija",
+      "Inventarios",
+      "admin",
+      "Perfil",
+      "Historial de cambios",
+      "Usuarios"
+    ]
+  }

@@ -1,0 +1,17 @@
+server:
+  http_listen_port: 9100
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: ${LOKI_URL}/loki/api/v1/push
+
+scrape_configs:
+  - job_name: job
+    static_configs:
+      - labels:
+          job: ${PROJECT_CODENAME:-undefined_django_project_codename}
+          server: ${LOKI_SERVER_TAG:-undefined_server}
+          __path__: /app/logs/*

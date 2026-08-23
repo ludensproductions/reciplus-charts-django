@@ -1,0 +1,32 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes
+    title: Name to be used on the section.
+-->
+{% endcomment %}
+{% trans "Indice del modal" as modal_index_label %}
+{% trans "Deshabilitar" as disable_label %}
+{% trans "Agregar" as add_label %}
+<div class="row">
+    <div class="col-12 col-sm-6 col-md-6">
+        <h1 class="fs-3 mb-4 fw-bold text-title">{{ title }}</h1>
+    </div>
+    <div class="col-12 col-sm-6 col-md-6 text-end mb-4">
+        <a class="btn btn-primary btn_movil_view_size margin_bottom_btn"
+           hx-get="{% url 'song_reviews:modal_index' %}"
+           hx-target="#dialogModal"
+           hx-swap="innerHTML">{{ modal_index_label }}</a>
+        {% if general_extra_actions %}
+            {% for action_attrs in general_extra_actions %}
+                {% include "components/buttons/btn_generic_link.html" with class=action_attrs.class id=action_attrs.id name=action_attrs.name title=action_attrs.title generic_url=action_attrs.url icon=action_attrs.icon title_button=action_attrs.title_button %}
+            {% endfor %}
+        {% endif %}
+        {% if disable_url is not None %}
+            {% include "components/buttons/btn_generic_link.html" with class='btn-disabled btn_movil_view_size margin_bottom_btn' title='boton_disabled' generic_url=disable_url icon='fa fa-trash' translate=disable_label %}
+        {% endif %}
+        {% if create_url is not None and permissions.add %}
+            {% include "components/buttons/btn_generic_link.html" with class='btn-primary btn_movil_view_size margin_bottom_btn' title='boton_crear' generic_url=create_url icon='fa fa-plus' translate=add_label %}
+        {% endif %}
+    </div>
+</div>

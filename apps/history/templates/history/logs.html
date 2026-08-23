@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Índice de
+    Inventario
+{% endblock title %}
+{% block css %}
+{% endblock css %}
+{% block content %}
+    <!-- Start: IndexParent -->
+    <h1 class="fs-2">Activity Log Viewer</h1>
+    <div class="row row-cols-2 g-2 g-lg-3">
+        <div class="col">
+            <div class="card border-primary">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h2 class="fs-3 p-2 fw-bold">
+                            <i class="fa fa-user"></i>
+                            &nbsp;Users
+                        </h2>
+                    </div>
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam laborum dolor saepe numquam fugit quisquam provident distinctio aspernatur neque, sint minus nemo, maiores rem libero, vel itaque voluptatem perferendis obcaecati.
+                    </p>
+                    <a class="btn btn-primary" href="{% url 'history:users' %}">Users History »</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

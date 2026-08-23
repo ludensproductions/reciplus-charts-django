@@ -1,0 +1,33 @@
+{% load i18n %}
+{% comment %}
+<!--
+    Attributes
+    id: A unique identifier for the button.
+    name: The name of the button.
+    title: Tooltip text for the button.
+    class: CSS class for the button, including basic classes (e.g., btn) and dynamic ones.
+    icon: Icon displayed next to the title on the button.
+    title button: Text that will appear on the button.
+
+Note:
+    If you want to make the buttons responsive without altering their actual
+    characteristics, please add the corresponding classes in the CSS file using
+    the width property.
+-->
+
+{% endcomment %}
+
+<a
+    {% if id %} id="{{ id }}" {% endif %}
+    class="btn {{ class }}"
+    role="button"
+    {% if title %} title="{{ title }}" {% endif %}
+    {% if name %} name="{{ name }}" {% endif %}
+    href="{% url generic_url %}">
+
+    {% if translate %}
+        <i class="{{ icon }}"></i>&nbsp;{% translate translate %} {{ verbose_name.lower }}
+    {% else %}
+        <i class="{{ icon }}"></i>&nbsp; {% trans title_button %}
+    {% endif %}
+</a>

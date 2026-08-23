@@ -1,0 +1,64 @@
+exclude = '^docs/|/migrations/|\.svg$|/test_.*\.py$'
+default_stages = ["pre-commit"]
+
+[[repos]]
+repo = "https://github.com/pre-commit/pre-commit-hooks"
+rev = "v4.5.0"
+hooks = [
+	{ id = "trailing-whitespace" },
+	{ id = "end-of-file-fixer" },
+	{ id = "mixed-line-ending", args = ["--fix=lf"] },
+	{ id = "check-json", exclude = '^.devcontainer/' },
+	{ id = "check-toml" },
+	{ id = "check-xml" },
+	{ id = "check-yaml" },
+	{ id = "debug-statements" },
+	{ id = "check-builtin-literals" },
+	{ id = "check-case-conflict" },
+	{ id = "check-docstring-first" },
+	{ id = "detect-private-key" },
+]
+
+[[repos]]
+repo = "local"
+hooks = [
+	{
+		id = "check-env",
+		name = "Verificar .env.example",
+		entry = "python check_env.py",
+		language = "system",
+		stages = ["pre-commit"],
+		always_run = true,
+	},
+	{
+		id = "check-hu-meta",
+		name = "Avisar si falta Meta.HUs en views",
+		entry = "python tools/check_hu_meta.py",
+		language = "system",
+		stages = ["pre-commit"],
+		files = 'views\.py$',
+		verbose = true,
+	},
+]
+
+[[repos]]
+repo = "https://github.com/astral-sh/ruff-pre-commit"
+rev = "v0.1.4"
+hooks = [
+	{ id = "ruff", args = ["--fix"] },
+	{ id = "ruff-format" },
+]
+
+[[repos]]
+repo = "https://github.com/djlint/djLint"
+rev = "v1.36.4"
+hooks = [
+	{
+		id = "djlint-django",
+		args = [
+			"--reformat",
+			"--include=H017",
+			"--ignore=D004,H005,H006,H007,H008,H013,H015,H019,H022,H023,H024,H029,H030,H031,H033,J004,J018",
+		],
+	},
+]

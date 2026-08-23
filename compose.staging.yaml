@@ -1,0 +1,98 @@
+# Compose para despliegue todo en uno (usado en servidores)
+## Pendientes:
+## - Renombrar base de datos maestra, redis maestro y network exportadora maestra reemplazando "template" por un nombre acorde al proyecto actual
+
+volumes:
+  postgres-data:
+  logs:
+    driver: local
+    driver_opts:
+      type: tmpfs
+      device: tmpfs
+  redis-data:
+
+x-django-base: &django-base
+  build: .
+  restart: unless-stopped
+  env_file:
+    - .env
+  extra_hosts:
+    - "host-gateway:host-gateway"
+  volumes:
+    - .:/app
+    - logs:/app/logs
+
+x-promtail-base: &promtail-base
+  image: grafana/promtail:3.2.0
+  restart: unless-stopped
+  command: -config.file=/etc/promtail/config.yml -config.expand-env=true
+  extra_hosts:
+    - "host-gateway:host-gateway"
+  env_file:
+    - .env
+  volumes:
+    - ./docker/promtail/config.yml:/etc/promtail/config.yml
+    - logs:/app/logs
+
+services:
+  template-db:
+    restart: unless-stopped
+    image: postgres:15
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${SQL_USER}
+      POSTGRES_PASSWORD: ${SQL_PASSWORD}
+      POSTGRES_DB: ${SQL_DBNAME}
+      POSTGRES_HOST: ${SQL_HOST}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready --username=${SQL_USER} --dbname=${SQL_DBNAME}"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    networks:
+      - default
+
+  template-redis:
+    image: "redis:5.0.3-alpine"
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:${REDIS_PORT}:6379
+    volumes:
+      - redis-data:/data/
+    networks:
+      - default
+
+  template-db-exporter:
+    image: prometheuscommunity/postgres-exporter
+    restart: unless-stopped
+    environment:
+      DATA_SOURCE_NAME: "postgresql://${SQL_USER}:${SQL_PASSWORD}@template-db:5432/${SQL_DBNAME}?sslmode=disable"
+    depends_on:
+      template-db:
+        condition: service_healthy
+    networks:
+      - default
+
+  promtail:
+    <<: *promtail-base
+
+  django:
+    <<: *django-base
+    command: sh docker/django/start.sh
+    ports:
+      - ${DOCKER_PORT_OUT}:8000
+    depends_on:
+      template-db:
+        condition: service_healthy
+
+  # cluster:
+  #   <<: *django-base
+  #   command: sh docker/django/start-cluster.sh
+  #   depends_on:
+  #     template-db:
+  #       condition: service_healthy
+  #     template-redis:
+  #       condition: service_healthy

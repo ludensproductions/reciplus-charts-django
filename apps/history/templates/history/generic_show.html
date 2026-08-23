@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load custom_tags %}
+{% load i18n %}
+{% load paginator %}
+
+{% block title %}
+  Catálogos
+{% endblock title %}
+
+{% block css %}
+{% endblock css %}
+
+{% block content %}
+  <div id="wrapper" class="mb-4">
+    <div class="d-flex flex-column w-100">
+      <section class="clean-block clean-form">
+        <div class="container mobile_card">
+          <div class="row mx-0">
+            <div class="col-md-12" id="back-button">
+              <a class="anone" href="{% url 'history:generic-log-model' model app %}">
+                <i class="fas fa-long-arrow-alt-left"></i><span>&nbsp; Volver</span></a>
+            </div>
+          </div>
+
+          <div class="block-heading pt-0">
+            <h1 class="fs-3 text-title">
+              Detalles
+              <br />
+            </h1>
+          </div>
+
+          <form class="border_top border_radius mw-1200"
+                role="form"
+                method="post"
+                enctype="multipart/form-data">
+            <!-- Datos solicitante -->
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-12 text-break">
+                <div class="form-group mb-3">
+                  <h2 class="fs-3">
+                    <strong>{{ model_name }}</strong>
+                  </h2>
+                </div>
+              </div>
+              <hr />
+              <!-- DETALLES REVISION DE DATOS -->
+              {% for field in log|get_all_fields %}
+                <div class="col-12 col-sm-12 col-md-4 col-xl-4">
+                  <div class="form-group mb-3 ow-break-word">
+                    <label class="form-label">
+                      <strong>{{ field.key }}</strong>
+                    </label>
+                    {% if field.key == 'history_type' %}
+                      <p>
+                        {% if log.history_type == '+' %}
+                          <i title="{% translate 'Creado' %}" class="fas fa-plus-circle fs-5 text-success"></i>
+                        {% elif log.history_type == '~' %}
+                          <i title="{% translate 'Modificado' %}" class="fas fa-pen-square fs-5 text-primary"></i>
+                        {% elif log.history_type == '-' %}
+                          <i title="{% translate 'Eliminado' %}" class="fas fa-minus-circle fs-5 text-danger"></i>
+                        {% endif %}
+                      </p>
+                    {% else %}
+                      <p class="break-word">{{ field.value|default:"---" }}</p>
+                    {% endif %}
+                  </div>
+                </div>
+              {% endfor %}
+              <!-- JUSTIFICACIONES -->
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block js %}
+{% endblock js %}

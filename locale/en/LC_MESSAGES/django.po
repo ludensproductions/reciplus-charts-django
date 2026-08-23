@@ -1,0 +1,3294 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-20 14:45-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\abarrotes\consts.py:13 .\apps\abarrotes\models.py:15
+#: .\apps\bodega\consts.py:15 .\apps\bodega\filters.py:9
+#: .\apps\bodega\forms.py:17 .\apps\bodega\models.py:18
+#: .\apps\facturas\consts.py:62 .\apps\productos\consts.py:13
+#: .\apps\productos\consts.py:18 .\apps\productos\consts.py:22
+#: .\apps\productos\consts.py:27 .\apps\productos\consts.py:36
+msgid "Producto"
+msgstr "Product"
+
+#: .\apps\abarrotes\consts.py:14 .\apps\abarrotes\models.py:17
+#: .\apps\facturas\consts.py:63 .\apps\movie_inventory\consts.py:19
+#: .\apps\movie_inventory\consts.py:71 .\apps\movie_inventory\consts.py:99
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:41
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:56
+#: .\apps\movies\consts.py:66 .\apps\sales\consts.py:22
+#: .\apps\sales\consts.py:57 .\apps\sales\consts.py:59
+#: .\apps\sales\templates\sales\detail.html:27
+msgid "Cantidad"
+msgstr "Quantity"
+
+#: .\apps\abarrotes\consts.py:15 .\apps\abarrotes\models.py:18
+#: .\apps\facturas\consts.py:58
+#: .\apps\history\templates\history\generic_logs.html:38
+#: .\apps\history\templates\history\inventories.html:44
+#: .\apps\history\templates\history\purchases.html:44
+#: .\apps\history\templates\history\users.html:44 .\apps\sales\consts.py:16
+#: .\apps\sales\consts.py:65 .\apps\sales\models.py:12
+#: .\apps\sales\templates\sales\index.html:38
+msgid "Fecha"
+msgstr "Date"
+
+#: .\apps\abarrotes\consts.py:16 .\apps\abarrotes\models.py:9
+#: .\apps\abarrotes\models.py:23 .\apps\bodega\consts.py:16
+#: .\apps\bodega\filters.py:10 .\apps\bodega\forms.py:18
+#: .\apps\bodega\models.py:27 .\apps\catalogos\consts.py:22
+msgid "Abarrotes"
+msgstr "Groceries"
+
+#: .\apps\abarrotes\consts.py:17 .\apps\bodega\forms.py:24
+#: .\apps\bodega\forms.py:25 .\apps\productos\consts.py:33
+msgid "--------"
+msgstr "--------"
+
+#: .\apps\abarrotes\consts.py:33
+msgid "Crear inventario de abarrotes"
+msgstr "Create groceries inventory"
+
+#: .\apps\abarrotes\consts.py:34
+msgid "Editar inventario de abarrotes"
+msgstr "Edit groceries inventory"
+
+#: .\apps\abarrotes\consts.py:35
+msgid "Detalles del inventario de abarrotes"
+msgstr "Groceries inventory details"
+
+#: .\apps\abarrotes\models.py:22
+msgid "Abarrote"
+msgstr "Grocery"
+
+#: .\apps\activities\consts.py:6 .\apps\activities\models.py:33
+#: .\apps\catalogos\consts.py:20 .\apps\event_planner\consts.py:20
+#: .\apps\event_planner\consts.py:163
+msgid "Actividad"
+msgstr "Activity"
+
+#: .\apps\activities\consts.py:7 .\apps\activities\models.py:34
+#: .\apps\catalogos\consts.py:23 .\apps\event_planner\consts.py:69
+#: .\apps\event_planner\consts.py:78 .\apps\event_planner\consts.py:97
+#: .\apps\event_planner\consts.py:101 .\apps\event_planner\consts.py:137
+#: .\apps\event_planner\consts.py:185 .\apps\event_planner\consts.py:213
+msgid "Actividades"
+msgstr "Activities"
+
+#: .\apps\activities\consts.py:20 .\apps\activities\forms.py:36
+#: .\apps\categories\consts.py:21 .\apps\categories\consts.py:26
+#: .\apps\event_planner\consts.py:84 .\apps\event_planner\consts.py:89
+#: .\apps\event_planner\consts.py:200 .\apps\event_planner\consts.py:205
+#: .\apps\history\templates\history\inventories.html:46
+#: .\apps\sales\consts.py:15 .\apps\sales\models.py:11
+#: .\apps\students\consts.py:55 .\apps\tipo_productos\consts.py:36
+#: .\apps\tipo_productos\models.py:7 .\apps\users\consts.py:37
+#: .\apps\users\consts.py:44 .\apps\users\consts.py:84
+#: .\apps\users\consts.py:127 .\apps\vehicle_types\models.py:13
+#: .\apps\vehicles\models.py:24
+msgid "Nombre"
+msgstr "Name"
+
+#: .\apps\activities\consts.py:21 .\apps\activities\forms.py:37
+#: .\apps\activities\forms.py:42 .\apps\event_planner\consts.py:17
+#: .\apps\event_planner\consts.py:68 .\apps\event_planner\consts.py:77
+#: .\apps\event_planner\consts.py:184 .\apps\jobs\consts.py:27
+msgid "Ubicación"
+msgstr "Location"
+
+#: .\apps\activities\consts.py:22 .\apps\activities\forms.py:38
+msgid "Tipo de actividad"
+msgstr "Activity type"
+
+#: .\apps\activities\consts.py:23
+msgid "Seleccione tipos de actividad"
+msgstr "Select activity types"
+
+#: .\apps\activities\consts.py:24
+msgid "Taller"
+msgstr "Workshop"
+
+#: .\apps\activities\consts.py:25
+msgid "Conferencia"
+msgstr "Conference"
+
+#: .\apps\activities\consts.py:26
+msgid "Seminario web"
+msgstr "Webinar"
+
+#: .\apps\activities\forms.py:41
+msgid "Nombre de la actividad"
+msgstr "Activity name"
+
+#: .\apps\activities\models.py:16 .\apps\vehicle_brands\models.py:11
+msgid "Name"
+msgstr "Name"
+
+#: .\apps\activities\models.py:17
+msgid "Location"
+msgstr "Location"
+
+#: .\apps\activities\models.py:19
+msgid "Type"
+msgstr "Type"
+
+#: .\apps\activities\models.py:22
+msgid "Conference"
+msgstr "Conference"
+
+#: .\apps\activities\models.py:23
+msgid "Webinar"
+msgstr "Webinar"
+
+#: .\apps\activities\models.py:24
+msgid "Workshop"
+msgstr "Workshop"
+
+#: .\apps\albums\consts.py:14 .\apps\albums\consts.py:21
+#: .\apps\albums\consts.py:27 .\apps\albums\consts.py:63
+#: .\apps\albums\consts.py:69 .\apps\albums\templates\albums\detail.html:26
+#: .\apps\articles\consts.py:21 .\apps\contents\consts.py:22
+#: .\apps\event_planner\consts.py:15 .\apps\event_planner\consts.py:66
+#: .\apps\event_planner\consts.py:75 .\apps\event_planner\consts.py:182
+#: .\apps\jobs\consts.py:25 .\apps\movie_inventory\consts.py:17
+#: .\apps\movies\consts.py:15 .\apps\movies\consts.py:59
+#: .\apps\movies\consts.py:69 .\apps\movies\consts.py:81
+#: .\apps\movies\templates\movies\index.html:42
+#: .\apps\notification\models.py:10 .\apps\positions\consts.py:14
+#: .\apps\sales\consts.py:22 .\apps\videos\consts.py:30
+#: .\apps\videos\consts.py:34 .\apps\videos\consts.py:38
+msgid "Título"
+msgstr "Title"
+
+#: .\apps\albums\consts.py:15 .\apps\albums\consts.py:22
+#: .\apps\albums\consts.py:28 .\apps\albums\consts.py:64
+#: .\apps\movies\consts.py:16 .\apps\movies\consts.py:60
+#: .\apps\movies\consts.py:70 .\apps\movies\consts.py:75
+#: .\apps\movies\consts.py:82 .\apps\movies\templates\movies\index.html:43
+#: .\apps\vehicles\const.py:37 .\apps\vehicles\const.py:61
+#: .\apps\vehicles\models.py:16
+msgid "Año"
+msgstr "Year"
+
+#: .\apps\albums\consts.py:16 .\apps\albums\consts.py:23
+#: .\apps\albums\consts.py:29 .\apps\albums\consts.py:65
+msgid "Artista"
+msgstr "Artist"
+
+#: .\apps\albums\consts.py:17 .\apps\albums\consts.py:83
+msgid "Título de la canción"
+msgstr "Song title"
+
+#: .\apps\albums\consts.py:30 .\apps\albums\consts.py:66
+msgid "Portada"
+msgstr "Cover"
+
+#: .\apps\albums\consts.py:34 .\apps\albums\consts.py:71
+#: .\apps\albums\consts.py:75 .\apps\song_reviews\consts.py:9
+msgid "Álbum"
+msgstr "Album"
+
+#: .\apps\albums\consts.py:35 .\apps\albums\consts.py:111
+#: .\apps\catalogos\consts.py:24
+msgid "Álbumes"
+msgstr "Albums"
+
+#: .\apps\albums\consts.py:36 .\apps\song_reviews\consts.py:10
+msgid "Canción"
+msgstr "Song"
+
+#: .\apps\albums\consts.py:37 .\apps\albums\consts.py:105
+#: .\apps\albums\templates\albums\detail.html:19
+#: .\apps\sales\templates\sales\detail.html:19
+msgid "Canciones"
+msgstr "Songs"
+
+#: .\apps\albums\consts.py:38
+msgid "Mercancía del álbum"
+msgstr "Album merchandise"
+
+#: .\apps\albums\consts.py:39
+msgid "Mercancías del álbum"
+msgstr "Album merchandise"
+
+#: .\apps\albums\consts.py:40
+msgid "Relación de género del álbum"
+msgstr "Album genre relation"
+
+#: .\apps\albums\consts.py:41
+msgid "Relaciones de género del álbum"
+msgstr "Album genre relations"
+
+#: .\apps\albums\consts.py:42
+msgid "Relación de tipo de producto"
+msgstr "Product type relation"
+
+#: .\apps\albums\consts.py:43
+msgid "Relaciones de tipo de producto"
+msgstr "Product type relations"
+
+#: .\apps\albums\consts.py:67
+msgid "Etiqueta principal"
+msgstr "Main tag"
+
+#: .\apps\albums\consts.py:68 .\apps\albums\consts.py:105
+#: .\apps\catalogos\consts.py:39 .\apps\genres\consts.py:8
+msgid "Géneros"
+msgstr "Genres"
+
+#: .\apps\albums\consts.py:70 .\apps\albums\consts.py:96
+#: .\apps\albums\templates\albums\detail.html:27
+msgid "Duración"
+msgstr "Duration"
+
+#: .\apps\albums\consts.py:72 .\apps\albums\consts.py:96
+#: .\apps\music_themes\consts.py:18 .\apps\music_themes\consts.py:23
+#: .\apps\music_themes\consts.py:45 .\apps\music_themes\consts.py:48
+#: .\apps\music_themes\consts.py:49 .\apps\music_themes\consts.py:53
+msgid "Tema"
+msgstr "Theme"
+
+#: .\apps\albums\consts.py:73 .\apps\albums\templates\albums\detail.html:56
+msgid "Nombre de la mercancía"
+msgstr "Merchandise name"
+
+#: .\apps\albums\consts.py:74 .\apps\albums\consts.py:99
+#: .\apps\albums\templates\albums\detail.html:57 .\apps\movies\consts.py:23
+#: .\apps\movies\consts.py:62 .\apps\movies\consts.py:72
+#: .\apps\movies\consts.py:76 .\apps\movies\templates\movies\index.html:46
+msgid "Precio"
+msgstr "Price"
+
+#: .\apps\albums\consts.py:76 .\apps\albums\consts.py:100
+#: .\apps\tipo_productos\models.py:9
+msgid "Tipos de producto"
+msgstr "Product types"
+
+#: .\apps\albums\consts.py:77 .\apps\albums\consts.py:102
+#: .\apps\genres\consts.py:7 .\apps\movies\consts.py:17
+#: .\apps\movies\consts.py:61 .\apps\movies\consts.py:71
+#: .\apps\movies\consts.py:83 .\apps\movies\templates\movies\index.html:44
+#: .\apps\music_genres\consts.py:18 .\apps\music_genres\consts.py:23
+#: .\apps\music_genres\consts.py:45 .\apps\music_genres\consts.py:48
+#: .\apps\music_genres\consts.py:49 .\apps\music_genres\consts.py:53
+msgid "Género"
+msgstr "Genre"
+
+#: .\apps\albums\consts.py:80
+msgid "Título del álbum"
+msgstr "Album title"
+
+#: .\apps\albums\consts.py:89
+#, python-brace-format
+msgid "{album}"
+msgstr "{album}"
+
+#: .\apps\albums\consts.py:90
+#, python-brace-format
+msgid "{album} - {title}"
+msgstr "{album} - {title}"
+
+#: .\apps\albums\consts.py:91
+#, python-brace-format
+msgid "{album} - {merch}"
+msgstr "{album} - {merch}"
+
+#: .\apps\albums\consts.py:92
+#, python-brace-format
+msgid "{album} ↔ {genre}"
+msgstr "{album} ↔ {genre}"
+
+#: .\apps\albums\consts.py:93
+#, python-brace-format
+msgid "{merch} ↔ {product_type}"
+msgstr "{merch} ↔ {product_type}"
+
+#: .\apps\albums\consts.py:96
+msgid "Nombre de la canción"
+msgstr "Song title"
+
+#: .\apps\albums\consts.py:98
+msgid "Nombre del artículo"
+msgstr "Merchandise name"
+
+#: .\apps\albums\consts.py:105
+msgid "Mercancías"
+msgstr "Merchandise"
+
+#: .\apps\albums\consts.py:112
+msgid "Crear álbum"
+msgstr "Create album"
+
+#: .\apps\albums\consts.py:113
+msgid "Editar álbum"
+msgstr "Edit album"
+
+#: .\apps\albums\consts.py:114
+msgid "Detalles del álbum"
+msgstr "Album details"
+
+#: .\apps\albums\templates\albums\detail.html:49
+msgid "Mercancía"
+msgstr "Merchandise"
+
+#: .\apps\articles\consts.py:6 .\apps\articles\consts.py:8
+#: .\apps\catalogos\consts.py:25
+msgid "Artículos"
+msgstr "Articles"
+
+#: .\apps\articles\consts.py:7 .\apps\contents\consts.py:40
+msgid "Artículo"
+msgstr "Article"
+
+#: .\apps\articles\consts.py:22 .\apps\contents\consts.py:25
+msgid "Cuerpo"
+msgstr "Body"
+
+#: .\apps\articles\consts.py:23 .\apps\categories\consts.py:6
+#: .\apps\contents\consts.py:26
+msgid "Categoría"
+msgstr "Category"
+
+#: .\apps\articles\consts.py:24 .\apps\contents\consts.py:8
+#: .\apps\notification\models.py:11 .\apps\videos\models.py:23
+msgid "Contenido"
+msgstr "Content"
+
+#: .\apps\articles\consts.py:44
+msgid "Crear artículo"
+msgstr "Create article"
+
+#: .\apps\articles\consts.py:45
+msgid "Editar artículo"
+msgstr "Edit article"
+
+#: .\apps\articles\consts.py:46
+msgid "Detalles del artículo"
+msgstr "Article details"
+
+#: .\apps\bodega\consts.py:14 .\apps\bodega\filters.py:8
+#: .\apps\bodega\forms.py:16 .\apps\bodega\forms.py:23
+#: .\apps\bodega\models.py:10 .\apps\catalogos\consts.py:26
+msgid "Bodega"
+msgstr "Warehouse"
+
+#: .\apps\bodega\consts.py:17 .\apps\bodega\filters.py:11
+#: .\apps\bodega\forms.py:19 .\apps\bodega\forms.py:26
+#: .\apps\bodega\models.py:29
+msgid "Lote"
+msgstr "Lot"
+
+#: .\apps\bodega\models.py:33
+msgid "Bodega producto"
+msgstr "Warehouse product"
+
+#: .\apps\bodega\models.py:34
+msgid "Bodega productos"
+msgstr "Warehouse products"
+
+#: .\apps\catalogos\consts.py:6 .\apps\catalogos\consts.py:10
+#: .\templates\components\navbar\navbar_left.html:4
+msgid "Catálogos"
+msgstr "Catalogs"
+
+#: .\apps\catalogos\consts.py:9
+msgid "Catálogo"
+msgstr "Catalog"
+
+#: .\apps\catalogos\consts.py:13
+msgid "Puede ver catálogos"
+msgstr "Can view catalogs"
+
+#: .\apps\catalogos\consts.py:27 .\apps\categories\consts.py:7
+msgid "Categorías"
+msgstr "Categories"
+
+#: .\apps\catalogos\consts.py:31
+msgid "Chat"
+msgstr "Chat"
+
+#: .\apps\catalogos\consts.py:33 .\apps\contents\consts.py:7
+#: .\apps\contents\consts.py:9
+msgid "Contenidos"
+msgstr "Contents"
+
+#: .\apps\catalogos\consts.py:34 .\apps\students\consts.py:7
+msgid "Estudiantes"
+msgstr "Students"
+
+#: .\apps\catalogos\consts.py:35 .\apps\music_tags\consts.py:42
+msgid "Etiquetas musicales"
+msgstr "Music tags"
+
+#: .\apps\catalogos\consts.py:36 .\apps\event_planner\consts.py:8
+#: .\apps\event_planner\consts.py:108
+msgid "Eventos"
+msgstr "Events"
+
+#: .\apps\catalogos\consts.py:37 .\apps\evidence\consts.py:7
+msgid "Evidencia"
+msgstr "Evidence"
+
+#: .\apps\catalogos\consts.py:38 .\apps\facturas\consts.py:8
+msgid "Facturas"
+msgstr "Invoices"
+
+#: .\apps\catalogos\consts.py:40 .\apps\music_genres\consts.py:42
+msgid "Géneros musicales"
+msgstr "Music genres"
+
+#: .\apps\catalogos\consts.py:44 .\apps\movie_inventory\consts.py:41
+msgid "Inventario de películas"
+msgstr "Movie inventory"
+
+#: .\apps\catalogos\consts.py:46 .\apps\vehicle_brands\const.py:6
+#: .\apps\vehicle_brands\models.py:16
+msgid "Marcas de vehículos"
+msgstr "Vehicle Brands"
+
+#: .\apps\catalogos\consts.py:47 .\apps\movies\consts.py:35
+#: .\apps\movies\consts.py:54 .\apps\movies\templates\movies\index.html:95
+#: .\apps\sales\consts.py:25 .\apps\sales\consts.py:29
+msgid "Películas"
+msgstr "Movies"
+
+#: .\apps\catalogos\consts.py:48 .\apps\productos\consts.py:19
+#: .\apps\productos\consts.py:46
+msgid "Productos"
+msgstr "Products"
+
+#: .\apps\catalogos\consts.py:52 .\apps\simple_report\consts.py:45
+msgid "Reportes simples"
+msgstr "Simple reports"
+
+#: .\apps\catalogos\consts.py:57 .\apps\song_reviews\consts.py:8
+msgid "Reseñas de canciones"
+msgstr "Song Reviews"
+
+#: .\apps\catalogos\consts.py:59 .\apps\reservations\consts.py:6
+msgid "Reservaciones"
+msgstr "Reservations"
+
+#: .\apps\catalogos\consts.py:60 .\apps\music_themes\consts.py:42
+msgid "Temas musicales"
+msgstr "Music themes"
+
+#: .\apps\catalogos\consts.py:64 .\apps\tipo_productos\consts.py:5
+msgid "Tipo productos"
+msgstr "Product types"
+
+#: .\apps\catalogos\consts.py:69 .\apps\vehicle_types\consts.py:6
+#: .\apps\vehicle_types\models.py:18
+msgid "Tipos de vehículos"
+msgstr "Vehicle Types"
+
+#: .\apps\catalogos\consts.py:71 .\apps\jobs\consts.py:14
+#: .\apps\jobs\consts.py:22 .\apps\jobs\consts.py:74
+msgid "Trabajos"
+msgstr "Jobs"
+
+#: .\apps\catalogos\consts.py:72 .\apps\sales\consts.py:35
+#: .\apps\sales\models.py:24
+msgid "Ventas"
+msgstr "Sales"
+
+#: .\apps\catalogos\consts.py:73 .\apps\vehicles\const.py:6
+#: .\apps\vehicles\models.py:45
+msgid "Vehículos"
+msgstr "Vehicles"
+
+#: .\apps\catalogos\consts.py:74 .\apps\videos\consts.py:5
+#: .\apps\videos\models.py:34
+msgid "Videos"
+msgstr "Videos"
+
+#: .\apps\categories\consts.py:31 .\apps\evidence\consts.py:87
+#: .\apps\genres\consts.py:43 .\apps\students\consts.py:33
+#, python-brace-format
+msgid "Crear {module_verbose}"
+msgstr "Create {module_verbose}"
+
+#: .\apps\categories\consts.py:32 .\apps\evidence\consts.py:88
+#: .\apps\genres\consts.py:44 .\apps\students\consts.py:34
+#, python-brace-format
+msgid "Editar {module_verbose}"
+msgstr "Edit {module_verbose}"
+
+#: .\apps\categories\consts.py:33 .\apps\evidence\consts.py:89
+#, python-brace-format
+msgid "Detalles de la {module_verbose}"
+msgstr "Details of the {module_verbose}"
+
+#: .\apps\categories\consts.py:34
+#, python-brace-format
+msgid "{module_verbose} deshabilitadas"
+msgstr "{module_verbose} disabled"
+
+#: .\apps\comun\consts.py:41 .\apps\departments\consts.py:63
+msgid "---------"
+msgstr "---------"
+
+#: .\apps\comun\consts.py:42
+msgid "----------"
+msgstr "----------"
+
+#: .\apps\comun\consts.py:44 .\apps\comun\consts.py:252
+msgid "No se proporcionaron credenciales de autenticación."
+msgstr "No authentication credentials were provided."
+
+#: .\apps\comun\consts.py:45 .\apps\comun\consts.py:253
+msgid "Permiso denegado."
+msgstr "Permission denied."
+
+#: .\apps\comun\consts.py:46 .\apps\comun\consts.py:255
+msgid "El objeto no existe."
+msgstr "The object does not exist."
+
+#: .\apps\comun\consts.py:47 .\apps\comun\consts.py:256
+msgid "La validación falló."
+msgstr "Validation failed"
+
+#: .\apps\comun\consts.py:48 .\apps\comun\consts.py:257
+msgid "Solicitud incorrecta."
+msgstr "Bad request"
+
+#: .\apps\comun\consts.py:49 .\apps\comun\consts.py:258
+msgid "Error interno del servidor."
+msgstr "Internal server error."
+
+#: .\apps\comun\consts.py:50 .\apps\comun\consts.py:259
+msgid "Ocurrió un error inesperado al procesar su solicitud."
+msgstr "An unexpected error occurred while processing your request."
+
+#: .\apps\comun\consts.py:51 .\apps\comun\consts.py:241
+#, python-brace-format
+msgid "No se puede deshabilitar {object}, ya que está deshabilitado."
+msgstr "{object} cannot be disabled because it is already disabled."
+
+#: .\apps\comun\consts.py:52
+msgid ""
+"El contenido al que está ligado, no corresponde con el tipo de contenido "
+"actual."
+msgstr "The content it is linked to does not match the current content type."
+
+#: .\apps\comun\consts.py:209
+msgid "Puede"
+msgstr "Can"
+
+#: .\apps\comun\consts.py:211
+msgid "agregar"
+msgstr "add"
+
+#: .\apps\comun\consts.py:212
+msgid "modificar"
+msgstr "modify"
+
+#: .\apps\comun\consts.py:213 .\apps\comun\consts.py:279
+#: .\apps\groups\consts.py:48
+msgid "eliminar"
+msgstr "delete"
+
+#: .\apps\comun\consts.py:214
+msgid "habilitar"
+msgstr "enable"
+
+#: .\apps\comun\consts.py:215
+#: .\templates\components\table\etiquetas_tables\tr_tables.html:3
+msgid "ver"
+msgstr "view"
+
+#: .\apps\comun\consts.py:216
+msgid "deshabilitar"
+msgstr "disable"
+
+#: .\apps\comun\consts.py:235 .\apps\comun\forms.py:159
+#: .\apps\comun\forms.py:179 .\apps\event_planner\consts.py:151
+#: .\apps\movie_inventory\consts.py:91 .\apps\movie_inventory\consts.py:93
+msgid "Este campo es requerido."
+msgstr "This field is required."
+
+#: .\apps\comun\consts.py:236
+msgid "El número no puede ser negativo."
+msgstr "The number cannot be negative."
+
+#: .\apps\comun\consts.py:237
+#, python-brace-format
+msgid "Asegúrese de que este valor tenga como mínimo {min_length} caracteres"
+msgstr "Ensure this value has at least {min_length} characters"
+
+#: .\apps\comun\consts.py:238
+#, python-brace-format
+msgid "El valor no puede ser menor que {min_value}"
+msgstr "The value cannot be less than {min_value}"
+
+#: .\apps\comun\consts.py:239
+#, python-brace-format
+msgid "El valor no puede ser mayor que {max_value}"
+msgstr "The value cannot be greater than {max_value}."
+
+#: .\apps\comun\consts.py:240
+#, python-brace-format
+msgid "Este campo no puede tener más de {max_length} caracteres."
+msgstr "This field cannot have more than {max_length} characters."
+
+#: .\apps\comun\consts.py:243
+#, python-brace-format
+msgid ""
+"No se puede {action} el elemento <strong>{object}</strong> porque tiene "
+"elementos relacionados: {related}. Por favor, revise los registros antes de "
+"{action} este elemento."
+msgstr ""
+"It is not possible to {action} the item <strong>{object}</strong> because it "
+"has related items: {related}. Please check the records before {action} this "
+"item."
+
+#: .\apps\comun\consts.py:246
+#, python-brace-format
+msgid "No se puede restaurar el elemento <strong>{object}</strong>. {reason}"
+msgstr ""
+"It is not possible to restore the item <strong>{object}</strong>. {reason}"
+
+#: .\apps\comun\consts.py:247
+#, python-format
+msgid ""
+"El archivo es demasiado grande. El tamaño no debe exceder %(max_mb)s MiB."
+msgstr "The file is too large. The size must not exceed %(max_mb)s MiB."
+
+#: .\apps\comun\consts.py:248
+msgid "Este campo solo puede contener letras."
+msgstr "This field can only contain letters."
+
+#: .\apps\comun\consts.py:249
+msgid "El RFC no es válido."
+msgstr "The RFC is not valid."
+
+#: .\apps\comun\consts.py:250
+msgid "La CURP no es válida."
+msgstr "The CURP is not valid."
+
+#: .\apps\comun\consts.py:251
+msgid ""
+"El contenido al que está ligado no corresponde con el tipo de contenido "
+"actual."
+msgstr "The content it is linked to does not match the current content type."
+
+#: .\apps\comun\consts.py:254
+msgid "No tienes permiso para acceder a este elemento."
+msgstr "You do not have permission to access this item."
+
+#: .\apps\comun\consts.py:260
+msgid "El reporte no contiene datos válidos."
+msgstr "The report does not contain valid data."
+
+#: .\apps\comun\consts.py:261
+msgid "Error al crear."
+msgstr "Error creating."
+
+#: .\apps\comun\consts.py:262
+msgid "Error al editar."
+msgstr "Error editing."
+
+#: .\apps\comun\consts.py:263
+msgid "Error al eliminar."
+msgstr "Error deleting."
+
+#: .\apps\comun\consts.py:264
+msgid "Elemento eliminado."
+msgstr "Item deleted."
+
+#: .\apps\comun\consts.py:265
+msgid "Reporte enviado con éxito."
+msgstr "Report sent successfully."
+
+#: .\apps\comun\consts.py:266
+msgid "Grupos asignados exitosamente."
+msgstr "Groups assigned successfully."
+
+#: .\apps\comun\consts.py:267
+msgid "Creado exitosamente."
+msgstr "Created successfully."
+
+#: .\apps\comun\consts.py:268
+msgid "Actualizado exitosamente."
+msgstr "Updated successfully."
+
+#: .\apps\comun\consts.py:269
+msgid "Eliminado exitosamente."
+msgstr "Deleted successfully."
+
+#: .\apps\comun\consts.py:272
+#: .\apps\comun\management\commands\seed_permissions.py:34
+msgid "creado"
+msgstr "created"
+
+#: .\apps\comun\consts.py:273
+msgid "actualizado"
+msgstr "updated"
+
+#: .\apps\comun\consts.py:274 .\apps\groups\consts.py:50
+msgid "eliminado"
+msgstr "deleted"
+
+#: .\apps\comun\consts.py:275 .\apps\groups\consts.py:51
+msgid "restaurado"
+msgstr "restored"
+
+#: .\apps\comun\consts.py:276 .\apps\contents\consts.py:81
+#, python-brace-format
+msgid "¡Elemento {action} exitosamente!"
+msgstr "Item {action} successfully!"
+
+#: .\apps\comun\consts.py:277
+#: .\apps\genres\templates\genres\components\table\action_buttons\delete_toggle.html:3
+#: .\apps\genres\templates\genres\components\table\etiquetas_tables\tr_tables.html:7
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:117
+#: .\apps\song_reviews\templates\song_reviews\components\index\page_header.html:9
+#: .\templates\components\table\action_buttons\delete_toggle.html:10
+#: .\templates\delete.html:8 .\templates\delete.html:25
+msgid "Deshabilitar"
+msgstr "Disable"
+
+#: .\apps\comun\consts.py:278 .\apps\groups\consts.py:52
+msgid "y"
+msgstr "and"
+
+#: .\apps\comun\consts.py:280 .\apps\groups\consts.py:49
+msgid "restaurar"
+msgstr "restore"
+
+#: .\apps\comun\consts.py:283
+msgid "El usuario está eliminado"
+msgstr "The user is deleted"
+
+#: .\apps\comun\consts.py:284
+msgid "El usuario está inactivo"
+msgstr "The user is inactive"
+
+#: .\apps\comun\consts.py:285
+msgid "Hubo un error al generar el reporte. Intente más tarde."
+msgstr "There was an error generating the report. Please try again later."
+
+#: .\apps\comun\consts.py:286
+msgid "<br><br>DEBUG: Servidor no respondió."
+msgstr "<br><br>DEBUG: Server did not respond."
+
+#: .\apps\comun\consts.py:287
+msgid "Reporte reporte.pdf"
+msgstr "Report reporte.pdf"
+
+#: .\apps\comun\consts.py:288
+msgid "reporte.pdf"
+msgstr "report.pdf"
+
+#: .\apps\comun\forms.py:186
+msgid "Password"
+msgstr "Password"
+
+#: .\apps\comun\management\commands\seed_paises.py:23
+msgid "Ciudades cargadas correctamente"
+msgstr "Cities loaded successfully"
+
+#: .\apps\comun\management\commands\seed_paises.py:52
+msgid "No hay registros de paises, estados y municipios"
+msgstr "No records of countries, states, and municipalities"
+
+#: .\apps\comun\management\commands\seed_paises.py:53
+msgid "Insertando paises y estados..."
+msgstr "Inserting countries and states..."
+
+#: .\apps\comun\management\commands\seed_paises.py:146
+msgid "Insertando paises"
+msgstr "Inserting countries"
+
+#: .\apps\comun\management\commands\seed_paises.py:148
+msgid "Paises insertados correctamente"
+msgstr "Countries inserted successfully"
+
+#: .\apps\comun\management\commands\seed_paises.py:150
+msgid "Insertando estados"
+msgstr "Inserting states"
+
+#: .\apps\comun\management\commands\seed_paises.py:152
+msgid "Estados insertados correctamente"
+msgstr "States inserted successfully"
+
+#: .\apps\comun\management\commands\seed_paises.py:154
+msgid "Insertando municipios"
+msgstr "Inserting municipalities"
+
+#: .\apps\comun\management\commands\seed_paises.py:156
+msgid "Municipios insertados correctamente"
+msgstr "Municipalities inserted successfully"
+
+#: .\apps\comun\management\commands\seed_paises.py:162
+msgid "Paises, estados y municipios insertados correctamente"
+msgstr "Countries, states, and municipalities inserted successfully"
+
+#: .\apps\comun\management\commands\seed_paises.py:163
+#, python-brace-format
+msgid "Tiempo de ejecucion: {seconds} segundos"
+msgstr "Execution time: {seconds} seconds"
+
+#: .\apps\comun\management\commands\seed_permissions.py:23
+msgid "Finalizo la carga de datos."
+msgstr "Data loading completed."
+
+#: .\apps\comun\management\commands\seed_permissions.py:34
+msgid "ya existe"
+msgstr "already exists"
+
+#: .\apps\comun\management\commands\seed_permissions.py:35
+#, python-brace-format
+msgid "Grupo {name} {status}"
+msgstr "Group {name} {status}"
+
+#: .\apps\comun\templatetags\custom_tags.py:118 .\apps\history\filters.py:8
+msgid "Creado por"
+msgstr "Created by"
+
+#: .\apps\comun\templatetags\custom_tags.py:119 .\apps\history\filters.py:9
+#: .\apps\productos\consts.py:24 .\apps\productos\consts.py:29
+#: .\apps\productos\consts.py:37
+msgid "Fecha de creación"
+msgstr "Creation date"
+
+#: .\apps\comun\templatetags\custom_tags.py:120 .\apps\history\filters.py:10
+msgid "Actualizado por"
+msgstr "Updated by"
+
+#: .\apps\comun\templatetags\custom_tags.py:121 .\apps\history\filters.py:11
+msgid "Fecha de actualización"
+msgstr "Update date"
+
+#: .\apps\comun\templatetags\custom_tags.py:122 .\apps\history\filters.py:12
+msgid "Fecha de eliminación"
+msgstr "Deletion date"
+
+#: .\apps\comun\templatetags\custom_tags.py:123 .\apps\history\filters.py:13
+msgid "Fecha cambio"
+msgstr "Change date"
+
+#: .\apps\comun\templatetags\custom_tags.py:124 .\apps\history\filters.py:14
+msgid "Tipo de cambio"
+msgstr "Change type"
+
+#: .\apps\comun\templatetags\custom_tags.py:125 .\apps\history\filters.py:15
+#: .\apps\history\templates\history\inventories.html:45
+#: .\apps\history\templates\history\purchases.html:45
+#: .\apps\history\templates\history\users.html:45
+#: .\apps\history\templates\history\users.html:46 .\apps\users\consts.py:66
+#: .\apps\users\consts.py:99
+msgid "Usuario"
+msgstr "User"
+
+#: .\apps\comun\templatetags\custom_tags.py:126 .\apps\genres\consts.py:12
+#: .\apps\history\filters.py:16
+#: .\apps\history\templates\history\generic_logs.html:37
+msgid "Nombre de visualización"
+msgstr "Display name"
+
+#: .\apps\contents\consts.py:23
+msgid "Tipo de contenido"
+msgstr "Content type"
+
+#: .\apps\contents\consts.py:24 .\apps\videos\consts.py:42
+#: .\apps\videos\consts.py:43 .\apps\videos\models.py:25
+msgid "URL del video"
+msgstr "Video URL"
+
+#: .\apps\contents\consts.py:41 .\apps\videos\consts.py:24
+#: .\apps\videos\models.py:33
+msgid "Video"
+msgstr "Video"
+
+#: .\apps\contents\consts.py:65
+msgid "Crear contenido"
+msgstr "Create content"
+
+#: .\apps\contents\consts.py:66
+msgid "Editar contenido"
+msgstr "Edit content"
+
+#: .\apps\contents\consts.py:67
+msgid "Detalles del contenido"
+msgstr "Content details"
+
+#: .\apps\contents\consts.py:79
+msgid "¡Elemento creado exitosamente!"
+msgstr "Item created successfully!"
+
+#: .\apps\contents\consts.py:80
+msgid "¡Elemento actualizado exitosamente!"
+msgstr "Item updated successfully!"
+
+#: .\apps\contents\templates\contents\components\comun\card.html:6
+#: .\apps\departments\templates\departments\formset.html:36
+#: .\apps\groups\templates\groups\create.html:19
+#: .\apps\movies\templates\movies\form.html:23
+#: .\apps\simple_report\templates\simple_report\form.html:17
+#: .\apps\users\templates\users\components\card.html:6
+#: .\templates\components\comun\card.html:6
+#: .\templates\generic\multiparent_formset.html:36
+msgid "Los campos marcados con (*) son de carácter obligatorio."
+msgstr "Fields marked with (*) are required."
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:7
+#: .\apps\dashboard\templates\dashboard\dashboard.html:18
+#: .\templates\components\navbar\navbar_left.html:3
+msgid "Tablero"
+msgstr "Dashboard"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:23
+msgid "Generar reporte"
+msgstr "Generate report"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:33
+msgid "Ganancias (mensuales)"
+msgstr "Earnings (monthly)"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:52
+msgid "Ganancias (anuales)"
+msgstr "Earnings (annual)"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:71
+msgid "Tareas"
+msgstr "Tasks"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:104
+msgid "Solicitudes pendientes"
+msgstr "Pending requests"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:123
+msgid "Proyectos"
+msgstr "Projects"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:127
+msgid "Migración de servidor"
+msgstr "Server migration"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:139
+msgid "Seguimiento de ventas"
+msgstr "Sales tracking"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:151
+msgid "Base de datos de clientes"
+msgstr "Customer database"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:163
+msgid "Detalles de pago"
+msgstr "Payment details"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:175
+msgid "Configuración de la cuenta"
+msgstr "Account settings"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:176
+msgid "¡Completado!"
+msgstr "Completed!"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:190
+msgid "Lista de tareas"
+msgstr "Task list"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:197
+#: .\apps\dashboard\templates\dashboard\dashboard.html:214
+#: .\apps\dashboard\templates\dashboard\dashboard.html:231
+msgid "Reunión de almuerzo"
+msgstr "Lunch meeting"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:252
+msgid "Primario"
+msgstr "Primary"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:260
+#: .\apps\notification\consts.py:24
+msgid "Éxito"
+msgstr "Success"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:268
+#: .\apps\notification\consts.py:25 .\templates\sweetalert.html:19
+msgid "Información"
+msgstr "Information"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:276
+msgid "Advertencia"
+msgstr "Warning"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:284
+msgid "Peligro"
+msgstr "Danger"
+
+#: .\apps\dashboard\templates\dashboard\dashboard.html:292
+msgid "Secundario"
+msgstr "Secondary"
+
+#: .\apps\departments\consts.py:17 .\apps\departments\consts.py:22
+#: .\apps\positions\consts.py:13 .\apps\positions\consts.py:35
+#: .\apps\users\consts.py:38 .\apps\users\consts.py:45
+#: .\apps\users\consts.py:88 .\apps\users\consts.py:137
+msgid "Departamento"
+msgstr "Department"
+
+#: .\apps\departments\consts.py:18 .\apps\departments\consts.py:23
+#: .\apps\departments\consts.py:28 .\apps\departments\consts.py:56
+msgid "Departamento superior"
+msgstr "Parent department"
+
+#: .\apps\departments\consts.py:27 .\apps\departments\consts.py:55
+#: .\apps\positions\filters.py:8
+msgid "Nombre del departamento"
+msgstr "Department name"
+
+#: .\apps\departments\consts.py:32 .\apps\departments\consts.py:57
+#: .\apps\positions\models.py:21 .\apps\users\consts.py:39
+#: .\apps\users\consts.py:46 .\apps\users\consts.py:89
+#: .\apps\users\consts.py:138
+msgid "Puesto"
+msgstr "Position"
+
+#: .\apps\departments\consts.py:32 .\apps\departments\consts.py:58
+msgid "¿Es jefe de departamento?"
+msgstr "Is head of department?"
+
+#: .\apps\departments\consts.py:36 .\apps\departments\consts.py:40
+#: .\apps\positions\consts.py:19 .\apps\positions\models.py:22
+#: .\apps\users_module\consts.py:20
+msgid "Puestos"
+msgstr "Positions"
+
+#: .\apps\departments\consts.py:47 .\apps\users_module\consts.py:18
+msgid "Departamentos"
+msgstr "Departments"
+
+#: .\apps\departments\consts.py:48
+msgid "Agregar departamento"
+msgstr "Add department"
+
+#: .\apps\departments\consts.py:49
+msgid "Editar departamento"
+msgstr "Edit department"
+
+#: .\apps\departments\consts.py:50
+msgid "Detalles del departamento"
+msgstr "Department details"
+
+#: .\apps\departments\consts.py:51
+msgid "Inventario de departamentos deshabilitados"
+msgstr "Disabled department inventories"
+
+#: .\apps\departments\consts.py:52
+msgid "Grupos del departamento"
+msgstr "Department groups"
+
+#: .\apps\departments\consts.py:59 .\apps\groups\consts.py:18
+#: .\apps\groups\models.py:25 .\apps\positions\consts.py:38
+#: .\apps\users\consts.py:152
+msgid "Grupos"
+msgstr "Groups"
+
+#: .\apps\departments\consts.py:72 .\apps\event_planner\consts.py:120
+#: .\apps\reservations\consts.py:114 .\apps\sales\consts.py:40
+msgid "Eliminar fila"
+msgstr "Delete row"
+
+#: .\apps\departments\consts.py:83
+msgid "Debe haber al menos un jefe seleccionado."
+msgstr "You must select at least one head."
+
+#: .\apps\departments\consts.py:84
+msgid "Solo puede haber un jefe por departamento."
+msgstr "There can only be one head per department."
+
+#: .\apps\departments\consts.py:85
+msgid "Debe haber un jefe seleccionado."
+msgstr "You must select a head."
+
+#: .\apps\departments\models.py:49
+msgid "Puede habilitar departamento"
+msgstr "Can enable department"
+
+#: .\apps\departments\models.py:79
+msgid "Grupo de departamento"
+msgstr "Department group"
+
+#: .\apps\departments\models.py:80
+msgid "Grupos de departamento"
+msgstr "Department groups"
+
+#: .\apps\departments\templates\departments\index.html:41
+#: .\apps\event_planner\consts.py:51
+#: .\apps\genres\templates\genres\components\table\etiquetas_tables\tr_tables.html:3
+#: .\apps\positions\templates\positions\index.html:5
+#: .\apps\users\templates\users\index.html:6
+msgid "N/D"
+msgstr "N/A"
+
+#: .\apps\departments\templates\departments\index.html:58
+#: .\apps\positions\templates\positions\index.html:70
+#: .\apps\users\templates\users\index.html:58
+msgid "Agregar grupos"
+msgstr "Add groups"
+
+#: .\apps\departments\templates\departments\index.html:64
+#: .\apps\genres\templates\genres\components\table\etiquetas_tables\tr_tables.html:4
+#: .\apps\positions\templates\positions\index.html:6
+#: .\apps\users\templates\users\index.html:64
+msgid "Ver"
+msgstr "View"
+
+#: .\apps\departments\templates\departments\index.html:70
+#: .\apps\genres\templates\genres\components\table\etiquetas_tables\tr_tables.html:5
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:70
+#: .\apps\movies\templates\movies\index.html:63
+#: .\apps\positions\templates\positions\index.html:7
+#: .\apps\users\templates\users\index.html:70
+#: .\templates\components\table\etiquetas_tables\tr_tables.html:4
+msgid "Editar"
+msgstr "Edit"
+
+#: .\apps\departments\templates\departments\index.html:76
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:76
+#: .\apps\movies\templates\movies\index.html:69
+#: .\apps\positions\templates\positions\index.html:76
+#: .\apps\users\templates\users\form.html:48
+#: .\apps\users\templates\users\index.html:76
+#: .\templates\components\buttons\btn_delete.html:8
+msgid "Eliminar"
+msgstr "Delete"
+
+#: .\apps\event_planner\consts.py:7
+msgid "Evento"
+msgstr "Event"
+
+#: .\apps\event_planner\consts.py:9
+msgid "Actividad del Evento"
+msgstr "Event activity"
+
+#: .\apps\event_planner\consts.py:10
+msgid "Actividades del Evento"
+msgstr "Event activities"
+
+#: .\apps\event_planner\consts.py:11
+msgid "Asistente al Evento"
+msgstr "Event attendee"
+
+#: .\apps\event_planner\consts.py:12
+msgid "Asistentes al Evento"
+msgstr "Event attendees"
+
+#: .\apps\event_planner\consts.py:16
+msgid "Fecha de inicio"
+msgstr "Start Date"
+
+#: .\apps\event_planner\consts.py:18 .\apps\event_planner\consts.py:70
+#: .\apps\event_planner\consts.py:79 .\apps\event_planner\consts.py:186
+msgid "Responsable"
+msgstr "Responsible"
+
+#: .\apps\event_planner\consts.py:19 .\apps\event_planner\consts.py:65
+#: .\apps\event_planner\consts.py:74 .\apps\event_planner\consts.py:181
+#: .\apps\sales\consts.py:19 .\apps\sales\consts.py:63
+#: .\apps\sales\models.py:15 .\apps\sales\templates\sales\index.html:36
+msgid "Folio"
+msgstr "Folio"
+
+#: .\apps\event_planner\consts.py:21 .\apps\event_planner\consts.py:85
+#: .\apps\event_planner\consts.py:201
+msgid "Aforo"
+msgstr "Capacity"
+
+#: .\apps\event_planner\consts.py:22 .\apps\event_planner\consts.py:86
+#: .\apps\event_planner\consts.py:202
+msgid "Código"
+msgstr "Code"
+
+#: .\apps\event_planner\consts.py:23
+msgid "Nombre completo"
+msgstr "Full name"
+
+#: .\apps\event_planner\consts.py:24 .\apps\event_planner\consts.py:90
+#: .\apps\movie_inventory\consts.py:72 .\apps\students\consts.py:57
+#: .\apps\users\consts.py:98 .\apps\users\consts.py:120
+#: .\apps\users\consts.py:122 .\apps\users\consts.py:134
+msgid "Correo electrónico"
+msgstr "Email"
+
+#: .\apps\event_planner\consts.py:25 .\apps\event_planner\consts.py:91
+#: .\apps\event_planner\consts.py:207 .\apps\movie_inventory\consts.py:76
+#: .\apps\movie_inventory\consts.py:104 .\apps\students\consts.py:58
+msgid "Teléfono"
+msgstr "Phone"
+
+#: .\apps\event_planner\consts.py:26 .\apps\event_planner\consts.py:92
+#: .\apps\event_planner\consts.py:208 .\apps\simple_report\consts.py:49
+#: .\apps\simple_report\consts.py:55
+msgid "Notas"
+msgstr "Notes"
+
+#: .\apps\event_planner\consts.py:29
+msgid "Título del evento"
+msgstr "Event title"
+
+#: .\apps\event_planner\consts.py:39
+#, python-brace-format
+msgid "{name} - {location}"
+msgstr "{name} - {location}"
+
+#: .\apps\event_planner\consts.py:40
+msgid "Copia de "
+msgstr "Copy of "
+
+#: .\apps\event_planner\consts.py:41
+#, python-brace-format
+msgid "{name} | {location}"
+msgstr "{name} | {location}"
+
+#: .\apps\event_planner\consts.py:42
+#, python-brace-format
+msgid "{first_name} - {last_name}"
+msgstr "{first_name} - {last_name}"
+
+#: .\apps\event_planner\consts.py:45
+#, python-brace-format
+msgid "{first_name} | {last_name}"
+msgstr "{first_name} | {last_name}"
+
+#: .\apps\event_planner\consts.py:46
+#, python-brace-format
+msgid "{first_name}, {last_name}"
+msgstr "{first_name}, {last_name}"
+
+#: .\apps\event_planner\consts.py:47
+#, python-brace-format
+msgid "{title} - {date}"
+msgstr "{title} - {date}"
+
+#: .\apps\event_planner\consts.py:48
+#, python-brace-format
+msgid "{event} - {activity} (aforo: {capacity})"
+msgstr "{event} - {activity} (capacity: {capacity})"
+
+#: .\apps\event_planner\consts.py:49
+msgid " | "
+msgstr " | "
+
+#: .\apps\event_planner\consts.py:50
+#, python-brace-format
+msgid "{activity}, {location}"
+msgstr "{activity}, {location}"
+
+#: .\apps\event_planner\consts.py:67 .\apps\event_planner\consts.py:76
+#: .\apps\event_planner\consts.py:159 .\apps\event_planner\consts.py:183
+msgid "Fecha inicio"
+msgstr "Start date"
+
+#: .\apps\event_planner\consts.py:109
+msgid "Crear evento"
+msgstr "Create event"
+
+#: .\apps\event_planner\consts.py:110
+msgid "Editar evento"
+msgstr "Edit event"
+
+#: .\apps\event_planner\consts.py:111
+msgid "Eliminar evento"
+msgstr "Delete event"
+
+#: .\apps\event_planner\consts.py:112
+msgid "Detalle del evento"
+msgstr "Event detail"
+
+#: .\apps\event_planner\consts.py:113
+msgid "Añadir asistentes al evento"
+msgstr "Add attendees to the event"
+
+#: .\apps\event_planner\consts.py:114 .\apps\event_planner\consts.py:126
+msgid "Clonar evento"
+msgstr "Clone event"
+
+#: .\apps\event_planner\consts.py:124
+msgid "Registrar asistentes al evento"
+msgstr "Register attendees to the event"
+
+#: .\apps\event_planner\consts.py:125
+msgid "Descargar mapa del evento"
+msgstr "Download event map"
+
+#: .\apps\event_planner\consts.py:136
+msgid "Asistentes"
+msgstr "Attendees"
+
+#: .\apps\event_planner\consts.py:149
+msgid "La ubicación es obligatoria."
+msgstr "The location is required."
+
+#: .\apps\event_planner\consts.py:150
+msgid "Debe agregar al menos una actividad."
+msgstr "You must add at least one activity."
+
+#: .\apps\event_planner\consts.py:152
+msgid "El código debe ser alfanumérico."
+msgstr "The code must be alphanumeric."
+
+#: .\apps\event_planner\consts.py:153
+msgid "Esta actividad ya tiene este código en el formulario."
+msgstr "This activity already has this code in the form."
+
+#: .\apps\event_planner\consts.py:154
+msgid "El código ya está repetido en el formulario."
+msgstr "The code is already repeated in the form."
+
+#: .\apps\event_planner\consts.py:155
+msgid "El código ya existe en otro registro."
+msgstr "The code already exists in another record."
+
+#: .\apps\event_planner\consts.py:162
+msgid "Nombre de actividad"
+msgstr "Activity name"
+
+#: .\apps\event_planner\consts.py:164
+msgid "Tipo actividad"
+msgstr "Activity type"
+
+#: .\apps\event_planner\consts.py:206
+msgid "Email"
+msgstr "Email"
+
+#: .\apps\evidence\consts.py:8
+msgid "Evidencias"
+msgstr "Evidences"
+
+#: .\apps\evidence\consts.py:25
+msgid "Nombre del caso"
+msgstr "Case name"
+
+#: .\apps\evidence\consts.py:26
+msgid "Archivo TXT"
+msgstr "TXT file"
+
+#: .\apps\evidence\consts.py:27
+msgid "Archivo CSV"
+msgstr "CSV file"
+
+#: .\apps\evidence\consts.py:28
+msgid "Archivo LOG"
+msgstr "LOG file"
+
+#: .\apps\evidence\consts.py:29
+msgid "Archivo PDF"
+msgstr "PDF file"
+
+#: .\apps\evidence\consts.py:30
+msgid "Archivo DOC"
+msgstr "DOC file"
+
+#: .\apps\evidence\consts.py:31
+msgid "Archivo DOCX"
+msgstr "DOCX file"
+
+#: .\apps\evidence\consts.py:32
+msgid "Archivo ODT"
+msgstr "ODT file"
+
+#: .\apps\evidence\consts.py:33
+msgid "Archivo XLS"
+msgstr "XLS file"
+
+#: .\apps\evidence\consts.py:34
+msgid "Archivo XLSX"
+msgstr "XLSX file"
+
+#: .\apps\evidence\consts.py:35
+msgid "Archivo ODS"
+msgstr "ODS file"
+
+#: .\apps\evidence\consts.py:36
+msgid "Archivo PPT"
+msgstr "PPT file"
+
+#: .\apps\evidence\consts.py:37
+msgid "Archivo PPTX"
+msgstr "PPTX file"
+
+#: .\apps\evidence\consts.py:38
+msgid "Archivo ODP"
+msgstr "ODP file"
+
+#: .\apps\evidence\consts.py:39
+msgid "Archivo JPG"
+msgstr "JPG file"
+
+#: .\apps\evidence\consts.py:40
+msgid "Archivo JPEG"
+msgstr "JPEG file"
+
+#: .\apps\evidence\consts.py:41
+msgid "Archivo PNG"
+msgstr "PNG file"
+
+#: .\apps\evidence\consts.py:42
+msgid "Archivo GIF"
+msgstr "GIF file"
+
+#: .\apps\evidence\consts.py:43
+msgid "Archivo BMP"
+msgstr "BMP file"
+
+#: .\apps\evidence\consts.py:44
+msgid "Archivo WEBP"
+msgstr "WEBP file"
+
+#: .\apps\evidence\consts.py:45
+msgid "Archivo ZIP"
+msgstr "ZIP file"
+
+#: .\apps\evidence\consts.py:46
+msgid "Archivo RAR"
+msgstr "RAR file"
+
+#: .\apps\evidence\consts.py:47
+msgid "Archivo 7Z"
+msgstr "7Z file"
+
+#: .\apps\evidence\consts.py:48
+msgid "Archivo misceláneo"
+msgstr "Miscellaneous file"
+
+#: .\apps\evidence\consts.py:52
+msgid "Evidencia en texto"
+msgstr "Text evidence"
+
+#: .\apps\evidence\consts.py:53
+msgid "Evidencia en CSV"
+msgstr "CSV evidence"
+
+#: .\apps\evidence\consts.py:54
+msgid "Evidencia en LOG"
+msgstr "LOG evidence"
+
+#: .\apps\evidence\consts.py:55
+msgid "Evidencia en PDF"
+msgstr "PDF evidence"
+
+#: .\apps\evidence\consts.py:56
+msgid "Evidencia en DOC"
+msgstr "DOC evidence"
+
+#: .\apps\evidence\consts.py:57
+msgid "Evidencia en DOCX"
+msgstr "DOCX evidence"
+
+#: .\apps\evidence\consts.py:58
+msgid "Evidencia en ODT"
+msgstr "ODT evidence"
+
+#: .\apps\evidence\consts.py:59
+msgid "Evidencia en XLS"
+msgstr "XLS evidence"
+
+#: .\apps\evidence\consts.py:60
+msgid "Evidencia en XLSX"
+msgstr "XLSX evidence"
+
+#: .\apps\evidence\consts.py:61
+msgid "Evidencia en ODS"
+msgstr "ODS evidence"
+
+#: .\apps\evidence\consts.py:62
+msgid "Evidencia en PPT"
+msgstr "PPT evidence"
+
+#: .\apps\evidence\consts.py:63
+msgid "Evidencia en PPTX"
+msgstr "PPTX evidence"
+
+#: .\apps\evidence\consts.py:64
+msgid "Evidencia en ODP"
+msgstr "ODP evidence"
+
+#: .\apps\evidence\consts.py:65
+msgid "Evidencia en JPG"
+msgstr "JPG evidence"
+
+#: .\apps\evidence\consts.py:66
+msgid "Evidencia en JPEG"
+msgstr "JPEG evidence"
+
+#: .\apps\evidence\consts.py:67
+msgid "Evidencia en PNG"
+msgstr "PNG evidence"
+
+#: .\apps\evidence\consts.py:68
+msgid "Evidencia en GIF"
+msgstr "GIF evidence"
+
+#: .\apps\evidence\consts.py:69
+msgid "Evidencia en BMP"
+msgstr "BMP evidence"
+
+#: .\apps\evidence\consts.py:70
+msgid "Evidencia en WEBP"
+msgstr "WEBP evidence"
+
+#: .\apps\evidence\consts.py:71
+msgid "Archivo comprimido ZIP"
+msgstr "ZIP file"
+
+#: .\apps\evidence\consts.py:72
+msgid "Archivo comprimido RAR"
+msgstr "RAR file"
+
+#: .\apps\evidence\consts.py:73
+msgid "Archivo comprimido 7Z"
+msgstr "7Z file"
+
+#: .\apps\facturas\consts.py:9
+msgid "factura"
+msgstr "invoice"
+
+#: .\apps\facturas\consts.py:34
+msgid "Crear factura"
+msgstr "Create invoice"
+
+#: .\apps\facturas\consts.py:35
+msgid "Editar factura"
+msgstr "Edit invoice"
+
+#: .\apps\facturas\consts.py:36 .\apps\facturas\consts.py:54
+msgid "Detalles de factura"
+msgstr "Invoice details"
+
+#: .\apps\facturas\consts.py:42
+msgid "No puedes agregar dos veces el mismo producto."
+msgstr "You cannot add the same product twice"
+
+#: .\apps\facturas\consts.py:51
+msgid "Factura"
+msgstr "Invoice"
+
+#: .\apps\facturas\consts.py:53
+msgid "Detalle de factura"
+msgstr "Invoice detail"
+
+#: .\apps\facturas\consts.py:57
+msgid "Código de factura"
+msgstr "Invoice code"
+
+#: .\apps\facturas\consts.py:59
+msgid "Cliente"
+msgstr "Client"
+
+#: .\apps\facturas\consts.py:60 .\apps\sales\consts.py:18
+#: .\apps\sales\consts.py:66 .\apps\sales\models.py:14
+#: .\apps\sales\templates\sales\index.html:40
+msgid "Total"
+msgstr "Total"
+
+#: .\apps\facturas\consts.py:64 .\apps\facturas\consts.py:79
+msgid "Precio unitario"
+msgstr "Unit price"
+
+#: .\apps\facturas\consts.py:65
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#: .\apps\facturas\consts.py:66
+msgid "Código de detalle"
+msgstr "Detail code"
+
+#: .\apps\facturas\consts.py:69
+msgid "Código factura"
+msgstr "Invoice code"
+
+#: .\apps\facturas\consts.py:75
+#, python-brace-format
+msgid "Factura {code}"
+msgstr "Invoice {code}"
+
+#: .\apps\facturas\consts.py:76
+#, python-brace-format
+msgid "Detalle {code}"
+msgstr "Invoice detail {code}"
+
+#: .\apps\genres\consts.py:45 .\apps\students\consts.py:35
+#, python-brace-format
+msgid "Detalles del {module_verbose}"
+msgstr "{module_verbose} details"
+
+#: .\apps\genres\consts.py:47
+#, python-brace-format
+msgid "{module_verbose} deshabilitados"
+msgstr "{module_verbose} disabled"
+
+#: .\apps\genres\consts.py:60 .\apps\genres\consts.py:64
+#: .\apps\students\consts.py:46 .\apps\students\consts.py:50
+#, python-brace-format
+msgid "Crear un nuevo {module_verbose}"
+msgstr "Create a new {module_verbose}"
+
+#: .\apps\genres\consts.py:69
+msgid "Este campo solo puede contener letras y espacios."
+msgstr "This field can only contain letters and spaces."
+
+#: .\apps\genres\templates\genres\components\table\action_buttons\delete_toggle.html:2
+#: .\apps\genres\templates\genres\components\table\etiquetas_tables\tr_tables.html:6
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:55
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:102
+#: .\templates\components\table\action_buttons\delete_toggle.html:10
+#: .\templates\enable.html:8 .\templates\enable.html:20
+msgid "Habilitar"
+msgstr "Enable"
+
+#: .\apps\groups\consts.py:12 .\apps\groups\consts.py:40
+#: .\apps\groups\consts.py:41 .\apps\groups\filters.py:8
+#: .\apps\groups\models.py:24 .\apps\users\consts.py:110
+msgid "Grupo"
+msgstr "Group"
+
+#: .\apps\groups\consts.py:19
+msgid "Crear grupo"
+msgstr "Create group"
+
+#: .\apps\groups\consts.py:20
+msgid "Editar grupo"
+msgstr "Edit group"
+
+#: .\apps\groups\consts.py:21
+msgid "Eliminar grupo"
+msgstr "Delete group"
+
+#: .\apps\groups\consts.py:44
+msgid "Ya existe un grupo con esta clave."
+msgstr "A group with this key already exists."
+
+#: .\apps\groups\consts.py:45
+msgid "Ingrese un grupo válido. Solo se aceptan letras y números."
+msgstr "Enter a valid group. Only letters and numbers are allowed."
+
+#: .\apps\groups\templates\groups\create.html:38
+msgid "Permisos disponibles"
+msgstr "Available permissions"
+
+#: .\apps\groups\templates\groups\create.html:43
+#: .\apps\groups\templates\groups\create.html:96
+msgid "Buscar..."
+msgstr "Search..."
+
+#: .\apps\groups\templates\groups\create.html:54
+msgid "Disponibles"
+msgstr "Available"
+
+#: .\apps\groups\templates\groups\create.html:73
+#: .\apps\song_reviews\templates\song_reviews\components\index\page_header.html:10
+#: .\templates\components\buttons\btn_create.html:11
+#: .\templates\components\index\page_header.html:3
+msgid "Agregar"
+msgstr "Add"
+
+#: .\apps\groups\templates\groups\create.html:81
+msgid "Quitar"
+msgstr "Remove"
+
+#: .\apps\groups\templates\groups\create.html:90
+msgid "Permisos actuales"
+msgstr "Current permissions"
+
+#: .\apps\groups\templates\groups\create.html:106
+msgid "Actuales"
+msgstr "Current"
+
+#: .\apps\history\templates\history\generic_index.html:6
+msgid "Índice de registro de actividades"
+msgstr "Activity log index"
+
+#: .\apps\history\templates\history\generic_index.html:16
+msgid "Visor del registro de actividades"
+msgstr "Activity log viewer"
+
+#: .\apps\history\templates\history\generic_logs.html:4
+msgid "Historico de"
+msgstr "History of"
+
+#: .\apps\history\templates\history\generic_logs.html:18
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:23
+#: .\apps\movie_inventory\templates\movie_inventory\edit.html:19
+#: .\apps\movies\templates\movies\create.html:20
+#: .\apps\movies\templates\movies\edit.html:20
+#: .\templates\components\buttons\btn_volver.html:13
+msgid "Volver"
+msgstr "Back"
+
+#: .\apps\history\templates\history\generic_logs.html:36
+msgid "Tipo de acción"
+msgstr "Action type"
+
+#: .\apps\history\templates\history\generic_logs.html:39
+msgid "Cambio realizado por"
+msgstr "Changed by"
+
+#: .\apps\history\templates\history\generic_logs.html:40
+msgid "Acción"
+msgstr "Action"
+
+#: .\apps\history\templates\history\generic_logs.html:48
+#: .\apps\history\templates\history\generic_show.html:58
+#: .\apps\history\templates\history\inventories.html:66
+#: .\apps\history\templates\history\modals\generic_show.html:5
+#: .\apps\history\templates\history\purchases.html:66
+#: .\apps\history\templates\history\users.html:66
+msgid "Creado"
+msgstr "Created"
+
+#: .\apps\history\templates\history\generic_logs.html:50
+#: .\apps\history\templates\history\generic_show.html:60
+#: .\apps\history\templates\history\inventories.html:68
+#: .\apps\history\templates\history\modals\generic_show.html:6
+#: .\apps\history\templates\history\purchases.html:68
+#: .\apps\history\templates\history\users.html:68
+msgid "Modificado"
+msgstr "Modified"
+
+#: .\apps\history\templates\history\generic_logs.html:52
+#: .\apps\history\templates\history\generic_show.html:62
+#: .\apps\history\templates\history\inventories.html:70
+#: .\apps\history\templates\history\modals\generic_show.html:7
+#: .\apps\history\templates\history\purchases.html:70
+#: .\apps\history\templates\history\users.html:70
+msgid "Eliminado"
+msgstr "Deleted"
+
+#: .\apps\history\templates\history\generic_logs.html:61
+#: .\apps\history\templates\history\purchases.html:60
+#: .\apps\history\templates\history\purchases.html:77
+msgid "N/A"
+msgstr "N/A"
+
+#: .\apps\history\templates\history\generic_logs.html:92
+#: .\apps\history\templates\history\inventories.html:109
+#: .\apps\history\templates\history\modals\generic_show.html:8
+#: .\apps\history\templates\history\purchases.html:110
+#: .\apps\history\templates\history\users.html:109
+msgid "Recuperar punto en el tiempo"
+msgstr "Point-in-time restore"
+
+#: .\apps\history\templates\history\generic_logs.html:99
+#: .\apps\history\templates\history\inventories.html:116
+#: .\apps\history\templates\history\modals\generic_show.html:9
+#: .\apps\history\templates\history\purchases.html:117
+#: .\apps\history\templates\history\users.html:116
+msgid "Esta es una acción destructiva."
+msgstr "This is a destructive action."
+
+#: .\apps\history\templates\history\generic_logs.html:102
+#: .\apps\history\templates\history\inventories.html:119
+#: .\apps\history\templates\history\modals\generic_show.html:10
+#: .\apps\history\templates\history\purchases.html:120
+#: .\apps\history\templates\history\users.html:119
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:101
+#: .\apps\movie_inventory\templates\movie_inventory\edit.html:54
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:116
+#: .\apps\movies\templates\movies\create.html:53
+#: .\apps\movies\templates\movies\edit.html:55
+#: .\apps\users\templates\users\form.html:45
+#: .\templates\components\buttons\btn_cancelar.html:10
+#: .\templates\delete.html:22 .\templates\enable.html:19
+msgid "Cancelar"
+msgstr "Cancel"
+
+#: .\apps\history\templates\history\generic_logs.html:103
+#: .\apps\history\templates\history\inventories.html:120
+#: .\apps\history\templates\history\modals\generic_show.html:11
+#: .\apps\history\templates\history\purchases.html:121
+#: .\apps\history\templates\history\users.html:120
+msgid "Revertir"
+msgstr "Revert"
+
+#: .\apps\history\templates\history\inventories.html:7
+msgid "Bitácora de inventario"
+msgstr "Inventory log"
+
+#: .\apps\history\templates\history\inventories.html:19
+msgid "Bitácora de historial de inventario"
+msgstr "Inventory history log"
+
+#: .\apps\history\templates\history\inventories.html:22
+#: .\apps\history\templates\history\purchases.html:22
+#: .\apps\history\templates\history\users.html:22
+msgid "Borrar filtros"
+msgstr "Clear filters"
+
+#: .\apps\history\templates\history\inventories.html:47
+#: .\apps\history\templates\history\purchases.html:47
+#: .\apps\history\templates\history\users.html:47
+msgid "Tipo"
+msgstr "Type"
+
+#: .\apps\history\templates\history\inventories.html:48
+#: .\apps\history\templates\history\purchases.html:48
+#: .\apps\history\templates\history\users.html:48
+msgid "Motivo"
+msgstr "Reason"
+
+#: .\apps\history\templates\history\inventories.html:49
+#: .\apps\history\templates\history\purchases.html:49
+#: .\apps\history\templates\history\users.html:49
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:43
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:58
+#: .\apps\movies\templates\movies\index.html:48
+#: .\apps\sales\templates\sales\index.html:41 .\templates\base.html:90
+#: .\templates\components\table\etiquetas_tables\th_tables.html:14
+msgid "Acciones"
+msgstr "Actions"
+
+#: .\apps\history\templates\history\inventories.html:85
+#: .\apps\history\templates\history\purchases.html:85
+#: .\apps\history\templates\history\users.html:85
+msgid "Ver detalle"
+msgstr "View details"
+
+#: .\apps\history\templates\history\inventories.html:94
+#: .\apps\history\templates\history\purchases.html:94
+#: .\apps\history\templates\history\users.html:94
+msgid "Revertir cambio"
+msgstr "Revert change"
+
+#: .\apps\history\templates\history\inventories.html:146
+#: .\apps\history\templates\history\purchases.html:147
+#: .\apps\history\templates\history\users.html:146
+#, python-format
+msgid "Página %(page_obj.number)s de %(page_obj.paginator.num_pages)s"
+msgstr "Page %(page_obj.number)s of %(page_obj.paginator.num_pages)s"
+
+#: .\apps\history\templates\history\modals\generic_show.html:3
+#: .\apps\song_reviews\templates\song_reviews\modal_index.html:3
+#: .\templates\delete.html:12
+msgid "Cerrar"
+msgstr "Close"
+
+#: .\apps\history\templates\history\modals\generic_show.html:4
+msgid "Aceptar"
+msgstr "Accept"
+
+#: .\apps\history\templates\history\purchases.html:7
+msgid "Bitácora de compras"
+msgstr "Purchases log"
+
+#: .\apps\history\templates\history\purchases.html:19
+msgid "Bitácora de historial de compras"
+msgstr "Purchases history log"
+
+#: .\apps\history\templates\history\purchases.html:46
+msgid "ID de compra"
+msgstr "Purchase ID"
+
+#: .\apps\history\templates\history\users.html:7
+msgid "Bitácora de usuarios"
+msgstr "Users log"
+
+#: .\apps\history\templates\history\users.html:19
+msgid "Bitácora de historial de usuarios"
+msgstr "Users history log"
+
+#: .\apps\jobs\consts.py:15
+msgid "Crear trabajo"
+msgstr "Create job"
+
+#: .\apps\jobs\consts.py:16
+msgid "Editar trabajo"
+msgstr "Edit job"
+
+#: .\apps\jobs\consts.py:17
+msgid "Detalles del trabajo"
+msgstr "Job details"
+
+#: .\apps\jobs\consts.py:21
+msgid "Trabajo"
+msgstr "Job"
+
+#: .\apps\jobs\consts.py:26
+msgid "Compañía"
+msgstr "Company"
+
+#: .\apps\jobs\consts.py:28
+msgid "Tipo de trabajo"
+msgstr "Job type"
+
+#: .\apps\jobs\consts.py:29
+msgid "Salario mínimo"
+msgstr "Minimum salary"
+
+#: .\apps\jobs\consts.py:30
+msgid "Salario máximo"
+msgstr "Maximum salary"
+
+#: .\apps\jobs\consts.py:31
+msgid "Es remoto"
+msgstr "Is remote"
+
+#: .\apps\jobs\consts.py:32
+msgid "Está activo"
+msgstr "Is active"
+
+#: .\apps\jobs\consts.py:63
+msgid "Tiempo completo"
+msgstr "Full-time"
+
+#: .\apps\jobs\consts.py:64
+msgid "Medio tiempo"
+msgstr "Part-time"
+
+#: .\apps\jobs\consts.py:65
+msgid "Contrato"
+msgstr "Contract"
+
+#: .\apps\jobs\consts.py:77
+msgid "El salario mínimo no puede ser mayor que el máximo."
+msgstr "The minimum salary cannot be greater than the maximum."
+
+#: .\apps\jobs\consts.py:78
+msgid "Los trabajos remotos deben tener ubicación 'Remoto'."
+msgstr "Remote jobs must have location 'Remote'."
+
+#: .\apps\jobs\consts.py:79
+msgid "La compañía 'Acme' no puede publicar trabajos inactivos."
+msgstr "The company 'Acme' cannot post inactive jobs."
+
+#: .\apps\jobs\consts.py:80
+msgid "El título debe tener al menos 5 caracteres y contener un espacio."
+msgstr "The title must be at least 5 characters long and contain a space."
+
+#: .\apps\jobs\consts.py:81
+msgid "Esta compañía no está permitida."
+msgstr "This company is not allowed."
+
+#: .\apps\movie_inventory\consts.py:18 .\apps\movie_inventory\consts.py:70
+#: .\apps\movie_inventory\consts.py:98
+msgid "Productor"
+msgstr "Producer"
+
+#: .\apps\movie_inventory\consts.py:42
+msgid "Añadir inventario de película"
+msgstr "Add movie inventory"
+
+#: .\apps\movie_inventory\consts.py:43
+msgid "Editar inventario de película"
+msgstr "Edit movie inventory"
+
+#: .\apps\movie_inventory\consts.py:44
+msgid "Detalles del inventario de la película"
+msgstr "Movie inventory details"
+
+#: .\apps\movie_inventory\consts.py:45
+msgid "Inventario de películas deshabilitadas"
+msgstr "Disabled movie inventories"
+
+#: .\apps\movie_inventory\consts.py:48 .\apps\movie_inventory\consts.py:69
+#: .\apps\movie_inventory\consts.py:97 .\apps\movies\consts.py:53
+#: .\apps\movies\consts.py:65 .\apps\sales\consts.py:56
+#: .\apps\sales\consts.py:58
+msgid "Película"
+msgstr "Movie"
+
+#: .\apps\movie_inventory\consts.py:61
+msgid "Ya existe un inventario para esta película."
+msgstr "An inventory already exists for that movie."
+
+#: .\apps\movie_inventory\consts.py:62
+msgid "Inventario habilitado correctamente."
+msgstr "Inventory enabled successfully!"
+
+#: .\apps\movie_inventory\consts.py:65
+msgid "Inventario de película"
+msgstr "Movie inventory"
+
+#: .\apps\movie_inventory\consts.py:66
+msgid "Inventarios de películas"
+msgstr "Movie inventories"
+
+#: .\apps\movie_inventory\consts.py:73 .\apps\movie_inventory\consts.py:101
+#: .\apps\users\consts.py:116 .\apps\users\consts.py:117
+#: .\apps\users\consts.py:124 .\apps\users\consts.py:125
+#: .\templates\registration\login.html:66
+msgid "Contraseña"
+msgstr "Password"
+
+#: .\apps\movie_inventory\consts.py:74 .\apps\movie_inventory\consts.py:102
+msgid "Fecha de registro"
+msgstr "Registration date"
+
+#: .\apps\movie_inventory\consts.py:75 .\apps\movie_inventory\consts.py:103
+msgid "Fecha de modificación"
+msgstr "Modification date"
+
+#: .\apps\movie_inventory\consts.py:77 .\apps\movie_inventory\consts.py:105
+msgid "Archivo de facturación"
+msgstr "Billing file"
+
+#: .\apps\movie_inventory\consts.py:78 .\apps\movie_inventory\consts.py:106
+msgid "Portada de la película"
+msgstr "Movie cover"
+
+#: .\apps\movie_inventory\consts.py:79 .\apps\movie_inventory\consts.py:112
+msgid "Justificación"
+msgstr "Justification"
+
+#: .\apps\movie_inventory\consts.py:83
+msgid ""
+"La contraseña debe contener al menos un caracter especial, un número, una "
+"letra mayúscula, una letra minúscula y tener al menos 10 caracteres de "
+"longitud."
+msgstr ""
+"The password must contain at least one special character, one number, one "
+"uppercase letter, one lowercase letter, and be at least 10 characters long."
+
+#: .\apps\movie_inventory\consts.py:87
+msgid ""
+"Debe proporcionar una fecha de registro antes de establecer una fecha de "
+"modificación."
+msgstr ""
+"You must provide a registration date before setting a modification date.You "
+"must provide a registration date before setting a modification date."
+
+#: .\apps\movie_inventory\consts.py:89
+msgid "La fecha de modificación no puede ser menor a la fecha de registro."
+msgstr "The modification date cannot be earlier than the registration date."
+
+#: .\apps\movie_inventory\consts.py:90
+msgid "El número de teléfono debe tener 10 dígitos."
+msgstr "The phone number must have 10 digits."
+
+#: .\apps\movie_inventory\consts.py:92
+msgid "El archivo de facturación debe ser un archivo pdf o zip."
+msgstr "The billing file must be a pdf or zip file."
+
+#: .\apps\movie_inventory\consts.py:94
+msgid "La portada de la película debe ser un archivo png o jpg."
+msgstr "The movie cover must be a png or jpg file."
+
+#: .\apps\movie_inventory\consts.py:100
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:42
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:57
+msgid "Correo"
+msgstr "Email"
+
+#: .\apps\movie_inventory\consts.py:107 .\apps\movie_inventory\consts.py:110
+msgid "CURP"
+msgstr "CURP"
+
+#: .\apps\movie_inventory\consts.py:108 .\apps\movie_inventory\consts.py:111
+msgid "RFC"
+msgstr "RFC"
+
+#: .\apps\movie_inventory\consts.py:109
+#, python-brace-format
+msgid "{year} - {title}"
+msgstr "{year} - {title}"
+
+#: .\apps\movie_inventory\consts.py:113
+msgid "Agregar justificación..."
+msgstr "Add justification..."
+
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:40
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:55
+#: .\apps\sales\templates\sales\detail.html:26
+#: .\apps\simple_report\consts.py:48 .\apps\simple_report\consts.py:54
+msgid "Titulo"
+msgstr "Title"
+
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:86
+msgid "Habilitar estatus del expediente"
+msgstr "Enable record status"
+
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:94
+msgid "Si habilitas este estatus del expediente, volverá a ser accesible."
+msgstr "If you enable this record status, it will become accessible again."
+
+#: .\apps\movie_inventory\templates\movie_inventory\disabled_index.html:96
+#: .\apps\movie_inventory\templates\movie_inventory\edit.html:28
+#: .\apps\movies\templates\movies\create.html:29
+#: .\apps\movies\templates\movies\edit.html:29
+msgid ""
+"Los que tengan el * son datos que se tienen que rellenar obligatoriamente"
+msgstr "Fields marked with * are required"
+
+#: .\apps\movie_inventory\templates\movie_inventory\edit.html:49
+#: .\apps\movies\templates\movies\create.html:50
+#: .\apps\movies\templates\movies\edit.html:50
+#: .\apps\users\templates\users\profile.html:93
+#: .\templates\components\buttons\btn_guardar.html:4
+msgid "Guardar"
+msgstr "Save"
+
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:32
+#: .\templates\components\index\page_header.html:2
+msgid "Deshabilitados"
+msgstr "Disabled"
+
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:38
+#: .\apps\movies\templates\movies\index.html:27
+msgid "Agregar película"
+msgstr "Add movie"
+
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:106
+msgid "Deshabilitar inventario de pelicula"
+msgstr "Disable movie inventory"
+
+#: .\apps\movie_inventory\templates\movie_inventory\index.html:113
+msgid ""
+"Si deshabilitas este inventario de pelicula podras habilitarlo desde el "
+"índice de deshabilitados."
+msgstr ""
+"If you disable this movie inventory, you can re-enable it from the disabled "
+"index."
+
+#: .\apps\movies\consts.py:18
+msgid "Total de ventas"
+msgstr "Total sales"
+
+#: .\apps\movies\consts.py:22 .\apps\movies\consts.py:63
+#: .\apps\movies\consts.py:73
+msgid "Sinopsis"
+msgstr "Synopsis"
+
+#: .\apps\movies\consts.py:36
+msgid "Crear película"
+msgstr "Create movie"
+
+#: .\apps\movies\consts.py:37
+msgid "Editar película"
+msgstr "Edit movie"
+
+#: .\apps\movies\consts.py:38
+msgid "Detalles de la película"
+msgstr "Movie details"
+
+#: .\apps\movies\consts.py:55
+msgid "Venta de película"
+msgstr "Movie Sale"
+
+#: .\apps\movies\consts.py:56
+msgid "Ventas de películas"
+msgstr "Movie Sales"
+
+#: .\apps\movies\consts.py:64 .\apps\sales\models.py:23
+msgid "Venta"
+msgstr "Sale"
+
+#: .\apps\movies\consts.py:74
+msgid "Título de la película"
+msgstr "Movie title"
+
+#: .\apps\movies\consts.py:77
+msgid "Sinopsis de la película"
+msgstr "Movie synopsis"
+
+#: .\apps\movies\templates\movies\create.html:7
+msgid "Alta de Producto en Inventario"
+msgstr "Product Registration in Inventory"
+
+#: .\apps\movies\templates\movies\create.html:26
+#: .\apps\movies\templates\movies\edit.html:26
+msgid "Añadir producto"
+msgstr "Add product"
+
+#: .\apps\movies\templates\movies\edit.html:7
+msgid "Edición de Producto en Inventario"
+msgstr "Edit Product in Inventory"
+
+#: .\apps\movies\templates\movies\index.html:6
+msgid "Índice de películas"
+msgstr "Movies index"
+
+#: .\apps\movies\templates\movies\index.html:45
+msgid "Argumento"
+msgstr "Synopsis"
+
+#: .\apps\movies\templates\movies\index.html:47
+msgid "Número de ventas"
+msgstr "Number of sales"
+
+#: .\apps\music_genres\consts.py:28
+msgid "Crear género musical"
+msgstr "Create music genre"
+
+#: .\apps\music_genres\consts.py:29
+msgid "Editar género musical"
+msgstr "Edit music genre"
+
+#: .\apps\music_genres\consts.py:41
+msgid "Género musical"
+msgstr "Music genre"
+
+#: .\apps\music_tags\consts.py:18 .\apps\music_tags\consts.py:23
+#: .\apps\music_tags\consts.py:45 .\apps\music_tags\consts.py:48
+#: .\apps\music_tags\consts.py:49 .\apps\music_tags\consts.py:53
+msgid "Etiqueta"
+msgstr "Tag"
+
+#: .\apps\music_tags\consts.py:28
+msgid "Crear etiqueta musical"
+msgstr "Create music tag"
+
+#: .\apps\music_tags\consts.py:29
+msgid "Editar etiqueta musical"
+msgstr "Edit music tag"
+
+#: .\apps\music_tags\consts.py:41
+msgid "Etiqueta musical"
+msgstr "Music tag"
+
+#: .\apps\music_themes\consts.py:28
+msgid "Crear tema musical"
+msgstr "Create music theme"
+
+#: .\apps\music_themes\consts.py:29
+msgid "Editar tema musical"
+msgstr "Edit music theme"
+
+#: .\apps\music_themes\consts.py:41
+msgid "Tema musical"
+msgstr "Music theme"
+
+#: .\apps\notification\consts.py:23
+msgid "Urgente"
+msgstr "Urgent"
+
+#: .\apps\notification\consts.py:26
+msgid "Error"
+msgstr "Error"
+
+#: .\apps\notification\consts.py:27
+msgid "Predeterminado"
+msgstr "Default"
+
+#: .\apps\notification\models.py:12
+msgid "Leído"
+msgstr "Read"
+
+#: .\apps\notification\models.py:13
+msgid "Tipo de notificación"
+msgstr "Notification type"
+
+#: .\apps\notification\models.py:17
+msgid "Notificación"
+msgstr "Notification"
+
+#: .\apps\notification\models.py:18
+#: .\apps\notification\templates\notification\notification.html:16
+msgid "Notificaciones"
+msgstr "Notifications"
+
+#: .\apps\notification\templates\notification\notification.html:22
+msgid "No hay notificaciones"
+msgstr "No notifications"
+
+#: .\apps\notification\templates\notification\notification.html:29
+msgid "Cargar más notificaciones"
+msgstr "Load more notifications"
+
+#: .\apps\notification\templates\notification\notification.html:35
+msgid "Marcar todas como leídas"
+msgstr "Mark all as read"
+
+#: .\apps\oauth2\consts.py:3
+msgid "El usuario ha denegado el acceso a la aplicacion"
+msgstr "The user has denied access to the application"
+
+#: .\apps\oauth2\consts.py:4
+msgid "Ha ocurrido un error."
+msgstr "An error has occurred."
+
+#: .\apps\oauth2\consts.py:5
+msgid "Sesion cerrada correctamente."
+msgstr "Session closed successfully."
+
+#: .\apps\positions\consts.py:15 .\apps\positions\filters.py:10
+msgid "Jefe de departamento"
+msgstr "Department head"
+
+#: .\apps\positions\consts.py:20
+msgid "Editar puesto"
+msgstr "Edit position"
+
+#: .\apps\positions\consts.py:21
+msgid "Asignar grupos"
+msgstr "Assign groups"
+
+#: .\apps\positions\consts.py:32
+msgid "El puesto ya existe dentro del departamento."
+msgstr "The position already exists within the department."
+
+#: .\apps\positions\consts.py:36 .\apps\positions\consts.py:37
+#: .\apps\positions\filters.py:9
+msgid "Nombre del puesto"
+msgstr "Position name"
+
+#: .\apps\positions\consts.py:39 .\apps\users\consts.py:153
+msgid "Seleccionar"
+msgstr "Select"
+
+#: .\apps\positions\models.py:48
+msgid "Puesto Departamento"
+msgstr "Department Position"
+
+#: .\apps\positions\models.py:49
+msgid "Puestos Departamentos"
+msgstr "Department Positions"
+
+#: .\apps\positions\models.py:55
+msgid "Sí"
+msgstr "Yes"
+
+#: .\apps\positions\models.py:55 .\templates\components\detail\data_grid.html:4
+msgid "No"
+msgstr "No"
+
+#: .\apps\positions\models.py:71
+msgid "Grupo de puesto"
+msgstr "Position group"
+
+#: .\apps\positions\models.py:72
+msgid "Grupos de puesto"
+msgstr "Position groups"
+
+#: .\apps\productos\consts.py:14 .\apps\productos\consts.py:23
+#: .\apps\productos\consts.py:28 .\apps\tipo_productos\forms.py:9
+#: .\apps\tipo_productos\models.py:8
+msgid "Tipo de producto"
+msgstr "Product type"
+
+#: .\apps\productos\consts.py:47
+msgid "Crear producto"
+msgstr "Create product"
+
+#: .\apps\productos\consts.py:48
+msgid "Editar producto"
+msgstr "Edit product"
+
+#: .\apps\productos\consts.py:49
+msgid "Detalles del producto"
+msgstr "Product details"
+
+#: .\apps\reservations\consts.py:23
+msgid "Crear reservación"
+msgstr "Create reservation"
+
+#: .\apps\reservations\consts.py:24
+msgid "Editar reservación"
+msgstr "Edit reservation"
+
+#: .\apps\reservations\consts.py:25
+msgid "Detalles de la reservación"
+msgstr "Reservation details"
+
+#: .\apps\reservations\consts.py:26
+msgid "Reservaciones deshabilitadas"
+msgstr "Disabled reservations"
+
+#: .\apps\reservations\consts.py:32
+msgid "Reservador"
+msgstr "Reserver"
+
+#: .\apps\reservations\consts.py:33
+msgid "Fecha de inicio de cancelación"
+msgstr "Cancellation start date"
+
+#: .\apps\reservations\consts.py:34
+msgid "Fecha de fin de cancelación"
+msgstr "Cancellation end date"
+
+#: .\apps\reservations\consts.py:35
+msgid "Tiempo de cancelación"
+msgstr "Cancellation time"
+
+#: .\apps\reservations\consts.py:36
+msgid "Fecha y hora de llegada"
+msgstr "Arrival date and time"
+
+#: .\apps\reservations\consts.py:37
+msgid "Fechas de reservación"
+msgstr "Reservation dates"
+
+#: .\apps\reservations\consts.py:38
+msgid "Rango"
+msgstr "Range"
+
+#: .\apps\reservations\consts.py:39
+msgid "Cancelación inicio"
+msgstr "Cancellation start"
+
+#: .\apps\reservations\consts.py:40
+msgid "Cancelación fin"
+msgstr "Cancellation end"
+
+#: .\apps\reservations\consts.py:41
+msgid "Cargo extra"
+msgstr "Extra charge"
+
+#: .\apps\reservations\consts.py:42
+msgid "Puntos de promoción"
+msgstr "Promotion points"
+
+#: .\apps\reservations\consts.py:43
+msgid "Tipo de reservación"
+msgstr "Reservation type"
+
+#: .\apps\reservations\consts.py:44
+msgid "Tiempo límite de cancelación"
+msgstr "Cancellation deadline"
+
+#: .\apps\reservations\consts.py:47
+msgid "Estándar"
+msgstr "Standard"
+
+#: .\apps\reservations\consts.py:48
+msgid "Sin anticipación"
+msgstr "No anticipation"
+
+#: .\apps\reservations\consts.py:51
+msgid "Nombre del reservador"
+msgstr "Reserver name"
+
+#: .\apps\reservations\consts.py:54
+msgid ""
+"La fecha de inicio de cancelación no puede ser posterior a la fecha de fin."
+msgstr ""
+"The cancellation start date cannot be later than the cancellation end date."
+
+#: .\apps\reservations\consts.py:134
+msgid "Reservación"
+msgstr "Reservation"
+
+#: .\apps\reservations\consts.py:142
+msgid "Inicio de cancelación"
+msgstr "Cancellation start"
+
+#: .\apps\reservations\consts.py:143
+msgid "Fin de cancelación"
+msgstr "Cancellation end"
+
+#: .\apps\sales\consts.py:17 .\apps\sales\models.py:13
+#: .\apps\sales\templates\sales\index.html:39
+msgid "Encargado"
+msgstr "Person in charge"
+
+#: .\apps\sales\consts.py:36
+msgid "Crear venta"
+msgstr "Create sale"
+
+#: .\apps\sales\consts.py:37
+msgid "Detalle de la venta"
+msgstr "Sale details"
+
+#: .\apps\sales\consts.py:54 .\apps\sales\consts.py:55
+#: .\apps\sales\consts.py:64 .\apps\sales\templates\sales\index.html:37
+msgid "Asunto"
+msgstr "Subject"
+
+#: .\apps\sales\consts.py:70
+msgid "No puedes agregar dos veces la misma película"
+msgstr "You cannot add the same movie twice"
+
+#: .\apps\sales\consts.py:71
+msgid "Debe agregar al menos una película"
+msgstr "You must add at least one movie."
+
+#: .\apps\sales\templates\sales\index.html:4
+msgid "Índice de ventas"
+msgstr "Sales index"
+
+#: .\apps\sales\templates\sales\index.html:22
+msgid "Agregar venta"
+msgstr "Add sale"
+
+#: .\apps\sales\templates\sales\index.html:88
+msgid "venta"
+msgstr "sale"
+
+#: .\apps\simple_report\consts.py:32 .\apps\simple_report\consts.py:52
+msgid "Archivos"
+msgstr "Files"
+
+#: .\apps\simple_report\consts.py:44
+msgid "Reporte simple"
+msgstr "Simple report"
+
+#: .\apps\simple_report\consts.py:46
+msgid "Archivo de reporte"
+msgstr "Report file"
+
+#: .\apps\simple_report\consts.py:47
+msgid "Archivos de reporte"
+msgstr "Report files"
+
+#: .\apps\simple_report\consts.py:50
+msgid "Reporte"
+msgstr "Report"
+
+#: .\apps\simple_report\consts.py:51
+msgid "Archivo"
+msgstr "File"
+
+#: .\apps\simple_report\consts.py:53
+msgid "Seleccionar archivos"
+msgstr "Select files"
+
+#: .\apps\song_reviews\consts.py:7
+msgid "Reseña de canción"
+msgstr "Song Review"
+
+#: .\apps\song_reviews\consts.py:11 .\apps\students\consts.py:63
+msgid "Calificación"
+msgstr "Score"
+
+#: .\apps\song_reviews\consts.py:12 .\apps\song_reviews\consts.py:59
+msgid "Reseña"
+msgstr "Review"
+
+#: .\apps\song_reviews\consts.py:13
+msgid "álbumes"
+msgstr "albums"
+
+#: .\apps\song_reviews\consts.py:14
+msgid "canciones"
+msgstr "songs"
+
+#: .\apps\song_reviews\consts.py:50
+msgid "Crear reseña de canción"
+msgstr "Create song review"
+
+#: .\apps\song_reviews\consts.py:51
+msgid "Editar reseña"
+msgstr "Edit review"
+
+#: .\apps\song_reviews\consts.py:52
+msgid "Detalles de reseña de canción"
+msgstr "Song review details"
+
+#: .\apps\song_reviews\consts.py:62
+msgid "Descargar calificaciones"
+msgstr "Download scores"
+
+#: .\apps\song_reviews\consts.py:68
+#, python-format
+msgid "Canción %(song)s reseñada exitosamente."
+msgstr "Song %(song)s reviewed successfully."
+
+#: .\apps\song_reviews\consts.py:69
+msgid "Nueva reseña creada."
+msgstr "New review created."
+
+#: .\apps\song_reviews\consts.py:70
+#, python-format
+msgid "Reseña de %(song)s editada exitosamente."
+msgstr "Song review of %(song)s edited successfully."
+
+#: .\apps\song_reviews\consts.py:71
+msgid "Reseña editada."
+msgstr "Review edited."
+
+#: .\apps\song_reviews\consts.py:89
+msgid "Escribe tu reseña aquí"
+msgstr "Write your review here"
+
+#: .\apps\song_reviews\templates\song_reviews\components\index\page_header.html:8
+msgid "Indice del modal"
+msgstr "Modal index"
+
+#: .\apps\students\consts.py:8
+msgid "Estudiante"
+msgstr "Student"
+
+#: .\apps\students\consts.py:56 .\apps\users\consts.py:128
+msgid "Apellido"
+msgstr "Last name"
+
+#: .\apps\students\consts.py:59 .\apps\users\consts.py:95
+msgid "Dirección"
+msgstr "Address"
+
+#: .\apps\students\consts.py:60 .\apps\users\consts.py:87
+msgid "Imagen"
+msgstr "Image"
+
+#: .\apps\students\consts.py:61
+msgid "Cursos"
+msgstr "Courses"
+
+#: .\apps\students\consts.py:62
+msgid "Curso"
+msgstr "Course"
+
+#: .\apps\students\consts.py:75
+msgid "Curso de estudiante"
+msgstr "Student course"
+
+#: .\apps\students\consts.py:76
+msgid "Cursos de estudiantes"
+msgstr "Student courses"
+
+#: .\apps\tipo_productos\consts.py:23
+msgid "Crear tipo producto"
+msgstr "Create product type"
+
+#: .\apps\tipo_productos\consts.py:24
+msgid "Editar tipo producto"
+msgstr "Edit product type"
+
+#: .\apps\tipo_productos\consts.py:25
+msgid "Detalles del tipo producto"
+msgstr "Product type details"
+
+#: .\apps\tipo_productos\consts.py:32 .\apps\tipo_productos\filters.py:8
+msgid "Tipo producto"
+msgstr "Product type"
+
+#: .\apps\tipo_productos\forms.py:8
+msgid "Nombre tipo producto"
+msgstr "Product type name"
+
+#: .\apps\users\consts.py:5
+msgid ""
+"Sube una imagen con extensión válida: jpg, jpeg, png, svg. El archivo que "
+"cargó no era una imagen o estaba corrupta"
+msgstr ""
+"Upload an image with a valid extension: jpg, jpeg, png, svg. The file you "
+"uploaded was not an image or was corrupted"
+
+#: .\apps\users\consts.py:9
+#, python-format
+msgid ""
+"La extensión de archivo \"%(extension)s\" no está permitida. Las extensiones "
+"permitidas son: %(allowed_extensions)s."
+msgstr ""
+"The file extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+
+#: .\apps\users\consts.py:12
+msgid "Ingrese un correo electrónico válido"
+msgstr "Enter a valid email address"
+
+#: .\apps\users\consts.py:13
+msgid "Debe completar ambos campos de contraseña"
+msgstr "Both password fields are required"
+
+#: .\apps\users\consts.py:14 .\templates\registration\register.html:127
+#: .\templates\registration\register.html:141
+msgid "Las contraseñas no coinciden"
+msgstr "Passwords do not match"
+
+#: .\apps\users\consts.py:15 .\templates\registration\register.html:135
+#: .\templates\registration\register.html:147
+msgid "La contraseña debe tener al menos 8 caracteres"
+msgstr "Password must be at least 8 characters long"
+
+#: .\apps\users\consts.py:16
+#, python-brace-format
+msgid ""
+"La contraseña debe contener al menos un carácter especial (!@#$%^&*(),.?\":"
+"{}|<>)"
+msgstr ""
+"Password must contain at least one special character (!@#$%^&*(),.?\":{}|<>)"
+
+#: .\apps\users\consts.py:17
+msgid "Este nombre de usuario ya está en uso"
+msgstr "This username is already in use"
+
+#: .\apps\users\consts.py:18
+msgid "Este correo electrónico ya está registrado"
+msgstr "This email is already registered"
+
+#: .\apps\users\consts.py:19
+msgid "Ya existe un usuario con este correo"
+msgstr "A user with this email already exists"
+
+#: .\apps\users\consts.py:20
+msgid "Código postal inválido"
+msgstr "Invalid postal code"
+
+#: .\apps\users\consts.py:21
+msgid "Municipio inválido"
+msgstr "Invalid municipality"
+
+#: .\apps\users\consts.py:36 .\apps\users\consts.py:43
+#: .\apps\users\consts.py:123
+msgid "Nombre de usuario"
+msgstr "Username"
+
+#: .\apps\users\consts.py:57 .\apps\users\consts.py:67
+#: .\apps\users_module\consts.py:6 .\apps\users_module\consts.py:21
+#: .\templates\components\navbar\navbar_left.html:5
+msgid "Usuarios"
+msgstr "Users"
+
+#: .\apps\users\consts.py:58
+msgid "Agregar usuario"
+msgstr "Add user"
+
+#: .\apps\users\consts.py:59
+msgid "Editar usuario"
+msgstr "Edit user"
+
+#: .\apps\users\consts.py:60
+msgid "Grupos del usuario"
+msgstr "User's groups"
+
+#: .\apps\users\consts.py:68
+msgid "Responsiva"
+msgstr "Acknowledgment"
+
+#: .\apps\users\consts.py:69
+msgid "Responsivas"
+msgstr "Acknowledgments"
+
+#: .\apps\users\consts.py:70 .\apps\users\consts.py:94
+#: .\apps\users\consts.py:101
+msgid "País"
+msgstr "Country"
+
+#: .\apps\users\consts.py:71
+msgid "Países"
+msgstr "Countries"
+
+#: .\apps\users\consts.py:72 .\apps\users\consts.py:93
+#: .\apps\users\consts.py:103 .\apps\users\consts.py:140
+msgid "Estado"
+msgstr "State"
+
+#: .\apps\users\consts.py:73
+msgid "Estados"
+msgstr "States"
+
+#: .\apps\users\consts.py:74 .\apps\users\consts.py:97
+msgid "Domicilio"
+msgstr "Address"
+
+#: .\apps\users\consts.py:75
+msgid "Domicilios"
+msgstr "Addresses"
+
+#: .\apps\users\consts.py:76 .\apps\users\consts.py:104
+#: .\apps\users\consts.py:141
+msgid "Municipio"
+msgstr "Municipality"
+
+#: .\apps\users\consts.py:77
+msgid "Municipios"
+msgstr "Municipalities"
+
+#: .\apps\users\consts.py:78 .\apps\users\consts.py:106
+msgid "Código postal"
+msgstr "Zip code"
+
+#: .\apps\users\consts.py:79
+msgid "Códigos postales"
+msgstr "Zip codes"
+
+#: .\apps\users\consts.py:80
+msgid "Grupo de usuario"
+msgstr "User group"
+
+#: .\apps\users\consts.py:81
+msgid "Grupos de usuario"
+msgstr "User groups"
+
+#: .\apps\users\consts.py:85 .\apps\users\consts.py:132
+msgid "Apellido paterno"
+msgstr "Paternal last name"
+
+#: .\apps\users\consts.py:86 .\apps\users\consts.py:133
+msgid "Apellido materno"
+msgstr "Maternal last name"
+
+#: .\apps\users\consts.py:90
+msgid "Teléfono del trabajo"
+msgstr "Work phone"
+
+#: .\apps\users\consts.py:91 .\apps\users\consts.py:135
+msgid "Celular"
+msgstr "Mobile phone"
+
+#: .\apps\users\consts.py:92
+msgid "Ciudad"
+msgstr "City"
+
+#: .\apps\users\consts.py:96
+msgid "Modo oscuro"
+msgstr "Dark mode"
+
+#: .\apps\users\consts.py:100
+msgid "Archivo de responsiva"
+msgstr "Acknowledgment file"
+
+#: .\apps\users\consts.py:102
+msgid "Clave"
+msgstr "Key"
+
+#: .\apps\users\consts.py:105 .\apps\users\consts.py:142
+#: .\apps\users\consts.py:147
+msgid "Colonia"
+msgstr "Neighborhood"
+
+#: .\apps\users\consts.py:107 .\apps\users\consts.py:144
+#: .\apps\users\consts.py:148
+msgid "Calle"
+msgstr "Street"
+
+#: .\apps\users\consts.py:108 .\apps\users\consts.py:145
+#: .\apps\users\consts.py:149
+msgid "Número exterior"
+msgstr "Street number"
+
+#: .\apps\users\consts.py:109 .\apps\users\consts.py:146
+#: .\apps\users\consts.py:150
+msgid "Número interior"
+msgstr "Interior number"
+
+#: .\apps\users\consts.py:113
+msgid "<b>Correo electrónico</b>"
+msgstr "<b>Email</b>"
+
+#: .\apps\users\consts.py:114
+msgid "<b>Contraseña</b>"
+msgstr "<b>Password</b>"
+
+#: .\apps\users\consts.py:115
+msgid "<b>Confirmar contraseña</b>"
+msgstr "<b>Confirm password</b>"
+
+#: .\apps\users\consts.py:118 .\apps\users\consts.py:119
+#: .\apps\users\consts.py:126
+msgid "Confirmar contraseña"
+msgstr "Confirm password"
+
+#: .\apps\users\consts.py:130
+msgid "Tiene domicilio"
+msgstr "Has address"
+
+#: .\apps\users\consts.py:131
+msgid "Nombres"
+msgstr "First names"
+
+#: .\apps\users\consts.py:136
+msgid "Teléfono de trabajo"
+msgstr "Work phone"
+
+#: .\apps\users\consts.py:143
+msgid "Código Postal"
+msgstr "Postal Code"
+
+#: .\apps\users\templates\users\components\card.html:23
+#: .\apps\users\templates\users\form.html:17
+msgid "Agregar domicilio"
+msgstr "Add address"
+
+#: .\apps\users\templates\users\form.html:16
+msgid "Eliminar domicilio"
+msgstr "Delete address"
+
+#: .\apps\users\templates\users\form.html:40
+msgid "Si continúas, eliminarás el domicilio del usuario."
+msgstr "If you continue, you will delete the user's address."
+
+#: .\apps\users\templates\users\profile.html:4
+#: .\apps\users\templates\users\profile.html:24
+#: .\templates\components\navbar\navbar_top.html:30
+msgid "Perfil"
+msgstr "Profile"
+
+#: .\apps\users\templates\users\profile.html:30
+msgid "Opciones de usuario"
+msgstr "User options"
+
+#: .\apps\users\templates\users\profile.html:45
+msgid "Imagen Removida"
+msgstr "Image Removed"
+
+#: .\apps\users\templates\users\profile.html:48
+msgid "Sin Imagen"
+msgstr "No Image"
+
+#: .\apps\users\templates\users\profile.html:55
+msgid "Cambiar"
+msgstr "Change"
+
+#: .\apps\users\templates\users\profile.html:60
+msgid "Limpiar"
+msgstr "Clear"
+
+#: .\apps\users_module\consts.py:10
+msgid "Ver módulo de usuarios"
+msgstr "View user's module"
+
+#: .\apps\users_module\consts.py:13 .\apps\users_module\consts.py:14
+msgid "Módulo de usuarios"
+msgstr "User module"
+
+#: .\apps\users_module\consts.py:19
+msgid "Grupos de permisos"
+msgstr "Permission groups"
+
+#: .\apps\vehicle_brands\const.py:24
+msgid "Crear Marca de vehículo"
+msgstr "Create vehicle brand"
+
+#: .\apps\vehicle_brands\const.py:25
+msgid "Editar Marca de vehículo"
+msgstr "Edit vehicle brand"
+
+#: .\apps\vehicle_brands\const.py:26
+msgid "Detalle de Marca de vehículo"
+msgstr "Vehicle brand details"
+
+#: .\apps\vehicle_brands\const.py:33 .\apps\vehicles\const.py:34
+#: .\apps\vehicles\const.py:43 .\apps\vehicles\const.py:58
+#: .\apps\vehicles\models.py:31
+msgid "Marca"
+msgstr "Brand"
+
+#: .\apps\vehicle_brands\models.py:15
+msgid "Marca de vehículo"
+msgstr "Vehicle brand"
+
+#: .\apps\vehicle_types\consts.py:24
+msgid "Crear tipo de vehículo"
+msgstr "Create vehicle type"
+
+#: .\apps\vehicle_types\consts.py:25
+msgid "Editar tipo de vehículo"
+msgstr "Edit vehicle type"
+
+#: .\apps\vehicle_types\consts.py:26
+msgid "Detalle de tipo de vehículo"
+msgstr "Vehicle type details"
+
+#: .\apps\vehicle_types\consts.py:33 .\apps\vehicle_types\consts.py:36
+#: .\apps\vehicle_types\consts.py:37 .\apps\vehicle_types\consts.py:38
+#: .\apps\vehicle_types\models.py:17 .\apps\vehicles\const.py:35
+#: .\apps\vehicles\const.py:44 .\apps\vehicles\const.py:59
+#: .\apps\vehicles\models.py:37
+msgid "Tipo de vehículo"
+msgstr "Vehicle type"
+
+#: .\apps\vehicles\const.py:24
+msgid "Crear vehículo"
+msgstr "Create vehicle"
+
+#: .\apps\vehicles\const.py:25
+msgid "Editar vehículo"
+msgstr "Edit vehicle"
+
+#: .\apps\vehicles\const.py:26
+msgid "Detalle del vehículo"
+msgstr "Vehicle details"
+
+#: .\apps\vehicles\const.py:33 .\apps\vehicles\const.py:42
+#: .\apps\vehicles\const.py:57
+msgid "Nombre del vehículo"
+msgstr "Vehicle name"
+
+#: .\apps\vehicles\const.py:36 .\apps\vehicles\const.py:45
+#: .\apps\vehicles\const.py:60 .\apps\vehicles\models.py:18
+msgid "Placa"
+msgstr "License plate"
+
+#: .\apps\vehicles\const.py:38 .\apps\vehicles\const.py:62
+#: .\apps\vehicles\models.py:15
+msgid "Modelo"
+msgstr "Model"
+
+#: .\apps\vehicles\const.py:55
+msgid "Ingrese un año válido"
+msgstr "Enter a valid year"
+
+#: .\apps\vehicles\const.py:66
+msgid "Ingrese el nombre del vehículo"
+msgstr "Enter vehicle name"
+
+#: .\apps\vehicles\const.py:67
+msgid "Seleccione la marca"
+msgstr "Select brand"
+
+#: .\apps\vehicles\const.py:68
+msgid "Seleccione el tipo de vehículo"
+msgstr "Select vehicle type"
+
+#: .\apps\vehicles\const.py:69
+msgid "Ingrese la placa"
+msgstr "Enter license plate"
+
+#: .\apps\vehicles\const.py:70
+msgid "Ingrese el año"
+msgstr "Enter year"
+
+#: .\apps\vehicles\const.py:71
+msgid "Ingrese el modelo"
+msgstr "Enter model"
+
+#: .\apps\vehicles\models.py:21
+msgid "Placa inválida."
+msgstr "Invalid license plate"
+
+#: .\apps\vehicles\models.py:44
+msgid "Vehículo"
+msgstr "Vehicle"
+
+#: .\apps\videos\consts.py:20
+msgid "Editar video"
+msgstr "Edit video"
+
+#: .\apps\videos\consts.py:21
+msgid "Detalle de video"
+msgstr "Video detail"
+
+#: .\apps\videos\consts.py:39
+msgid "URL"
+msgstr "URL"
+
+#: .\djangoproject\settings.py:226
+msgid "Español (México)"
+msgstr "Spanish (Mexico)"
+
+#: .\djangoproject\settings.py:227
+msgid "Inglés"
+msgstr "English"
+
+#: .\templates\403.html:9 .\utils\consts.py:3
+msgid "No tiene permisos para acceder a este módulo."
+msgstr "You do not have permission to access this module"
+
+#: .\templates\403.html:13
+msgid "Usted no cuenta con los permisos para visualizar los módulos."
+msgstr "You do not have permission to view these modules."
+
+#: .\templates\403.html:15
+msgid "Si cree que esto es un error, contacte al administrador del sistema."
+msgstr ""
+"If you believe this is an error, please contact your system administrator."
+
+#: .\templates\403.html:17 .\templates\404.html:12
+msgid "Volver al inicio"
+msgstr "Back to home"
+
+#: .\templates\404.html:7
+msgid "404 - No encontrado"
+msgstr "404 - Not found"
+
+#: .\templates\404.html:10
+msgid "404 - Página no encontrada"
+msgstr "404 - Page not found"
+
+#: .\templates\404.html:11
+msgid "Lo sentimos, el recurso que buscas no existe."
+msgstr "Sorry, the resource you're looking for doesn't exist."
+
+#: .\templates\base.html:55
+msgid "Procesando..."
+msgstr "Processing..."
+
+#: .\templates\base.html:91
+msgid "Actions"
+msgstr "Actions"
+
+#: .\templates\base.html:108
+msgid "No hay datos disponibles"
+msgstr "No data available"
+
+#: .\templates\components\buttons\btn_detail.html:9
+msgid "Detalle"
+msgstr "Detail"
+
+#: .\templates\components\detail\data_grid.html:3
+msgid "Si"
+msgstr "Yes"
+
+#: .\templates\components\detail\data_grid.html:5
+#: .\templates\components\table\etiquetas_tables\tr_tables.html:6
+msgid "--"
+msgstr "--"
+
+#: .\templates\components\detail\file_render.html:26
+msgid "Descargar archivo"
+msgstr "Download file"
+
+#: .\templates\components\navbar\logout_section.html:14
+msgid "Cerrar sesión"
+msgstr "Log out"
+
+#: .\templates\components\navbar\navbar_top.html:34
+msgid "Historial de cambios"
+msgstr "Change history"
+
+#: .\templates\components\table\etiquetas_tables\th_tables.html:10
+msgid "Habilitado"
+msgstr "Enabled"
+
+#: .\templates\components\table\etiquetas_tables\tr_tables.html:5
+msgid "No aplica"
+msgstr "Not applicable"
+
+#: .\templates\delete.html:16
+msgid ""
+"Si deshabilitas este elemento, podría estar relacionado con otro elemento, "
+"lo que podría afectar su funcionamiento."
+msgstr ""
+"If you disable this item, it might be related to another item, which could "
+"affect its operation."
+
+#: .\templates\enable.html:16
+msgid ""
+"Al habilitar este elemento, podría estar vinculado a otro, lo que podría "
+"influir en su comportamiento."
+msgstr ""
+"When enabling this item, it may be linked to another one, which could affect "
+"its behavior."
+
+#: .\templates\filter-htmx.html:44 .\templates\filter.html:35
+msgid "Filtrar"
+msgstr "Filter"
+
+#: .\templates\filter-htmx.html:53 .\templates\filter.html:45
+msgid "Borrar filtro"
+msgstr "Clear filter"
+
+#: .\templates\pagination-htmx.html:14
+msgid "Primera"
+msgstr "First"
+
+#: .\templates\pagination-htmx.html:26 .\templates\pagination.html:10
+#: .\templates\pagination.html:17
+msgid "Anterior"
+msgstr "Previous"
+
+#: .\templates\pagination-htmx.html:32 .\templates\pagination.html:23
+msgid "Página"
+msgstr "Page"
+
+#: .\templates\pagination-htmx.html:32 .\templates\pagination.html:23
+msgid "de"
+msgstr "out of"
+
+#: .\templates\pagination-htmx.html:43 .\templates\pagination.html:29
+#: .\templates\pagination.html:36
+msgid "Siguiente"
+msgstr "Next"
+
+#: .\templates\pagination-htmx.html:55
+msgid "Última"
+msgstr "Last"
+
+#: .\templates\registration\forgot-password.html:12
+#: .\templates\registration\forgot-password.html:62
+msgid "Recuperar contraseña"
+msgstr "Recover password"
+
+#: .\templates\registration\forgot-password.html:43
+#: .\templates\registration\register.html:74
+msgid "¿Olvidaste tu contraseña?"
+msgstr "Forgot your password?"
+
+#: .\templates\registration\forgot-password.html:52
+msgid "Ingresa tu correo electrónico"
+msgstr "Enter your email address"
+
+#: .\templates\registration\forgot-password.html:58
+#: .\templates\registration\register.html:62
+#: .\templates\registration\register.html:63
+msgid "Mensaje de error"
+msgstr "Error message"
+
+#: .\templates\registration\forgot-password.html:68
+#: .\templates\registration\login.html:15
+#: .\templates\registration\login.html:73
+msgid "Iniciar sesión"
+msgstr "Log in"
+
+#: .\templates\registration\forgot-password.html:72
+#: .\templates\registration\register.html:41
+msgid "¡Crea una cuenta!"
+msgstr "Create an account!"
+
+#: .\templates\registration\forgot-password.html:106
+#: .\templates\registration\register.html:157
+msgid "Correo electrónico inválido"
+msgstr "Invalid email address"
+
+#: .\templates\registration\login.html:47
+msgid "¡Bienvenido de vuelta!"
+msgstr "Welcome back!"
+
+#: .\templates\registration\login.html:53
+msgid ""
+"Nombre de usuario y/o contraseña no coinciden. Por favor intente nuevamente."
+msgstr "Username and/or password do not match. Please try again."
+
+#: .\templates\registration\login.html:59
+msgid "Ingrese el nombre de usuario"
+msgstr "Enter username"
+
+#: .\templates\registration\register.html:12
+msgid "Registrar usuario"
+msgstr "Register user"
+
+#: .\templates\registration\register.html:68
+msgid "Registrar cuenta"
+msgstr "Register account"
+
+#: .\templates\registration\register.html:78
+msgid "¿Ya tienes una cuenta? Inicia sesión"
+msgstr "Already have an account? Log in"
+
+#: .\templates\sweetalert.html:10
+msgid "¡Error!"
+msgstr "Error!"
+
+#: .\templates\sweetalert.html:13
+msgid "¡Éxito!"
+msgstr "Success!"
+
+#: .\templates\sweetalert.html:16
+msgid "¡Advertencia!"
+msgstr "Warning!"
+
+#: .\templates\sweetalert.html:27
+msgid "Continuar"
+msgstr "Continue"
+
+#~ msgid "Mostrar"
+#~ msgstr "Show"
+
+#~ msgid "Error al actualizar."
+#~ msgstr "Error updating."
+
+#~ msgid "Actualizar"
+#~ msgstr "Edit"
+
+#~ msgid "Detalles de la factura"
+#~ msgstr "Invoice details"
+
+#~ msgid "Precio Unitario"
+#~ msgstr "Unit price"
+
+#~ msgid "Reseñas de Canciones"
+#~ msgstr "Song Reviews"
+
+#~ msgid "Pelicula"
+#~ msgstr "Movie"
+
+#~ msgid "Géneros Deshabilitados"
+#~ msgstr "Disabled genres"

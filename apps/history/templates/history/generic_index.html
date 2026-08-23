@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load custom_tags %}
+{% load i18n %}
+{% load static %}
+{% block title %}
+    {% trans "Índice de registro de actividades" %}
+{% endblock title %}
+{% block css %}
+{% endblock css %}
+{% block content %}
+    <!-- Start: IndexParent -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="fs-3 mb-4 fw-bold text-title">{% trans "Visor del registro de actividades" %}</h1>
+            </div>
+            {% for model in models %}
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-3">
+                    {% with model_name=model|get_name_model %}
+                        {% with human_name=model_name|replace_model_name %}
+                            <a href="{% url 'history:generic-log-model' model_name model|get_app_name %}"
+                               class="catalogo_link card_link">
+                                <div id="card_center"
+                                     class="card configuracion_pt_cards wrap-text h-100"
+                                     tabindex="0">
+                                    <div class="card-body d-flex align-items-center justify-content-center py-4">
+                                        <h2 class="fs-4 text-center card-title m-0 py-1 anone">{{ human_name }}</h2>
+                                    </div>
+                                </div>
+                            </a>
+                        {% endwith %}
+                    {% endwith %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

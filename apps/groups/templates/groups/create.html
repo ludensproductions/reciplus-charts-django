@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'assets/css/groups/groups.css' %}" />
+{% endblock %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="container-fluid px-0 px-sm-0 px-md-4">
+        {% include "components/buttons/btn_volver.html" with back_url=return_url %}
+        <div class="row {% if form.fields|length == 1 %}{% endif %}">
+            {% include "components/comun/title.html" with title=title %}
+            <div class="col-12">
+                <div class="card mb-4 border_top border_radius">
+                    <div class="card-header bg-white m-2">
+                        <p class="my-1 fw-bold text-title">{% trans "Los campos marcados con (*) son de carácter obligatorio." %}</p>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" enctype="multipart/form-data" id="form_id">
+                            {% csrf_token %}
+                            <div>
+                                <div class="row">
+                                    <div class="col-12 mb-3">
+                                        <div class="form-group">
+                                            {% comment %} |format_field {% endcomment %}
+                                            <strong>{{ form.display_name|as_crispy_field }}</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <section id="permission-section" class="row">
+                                    <article class="col-xl-5 col-lg-5 col-md-12 col-sm-12 mt-4"
+                                             id="all-permission">
+                                        <header class="StackedListHeader">
+                                            <h4 class="text-center fs-5">{% trans "Permisos disponibles" %}</h4>
+                                        </header>
+                                        <div class="card">
+                                            <div class="d-flex flex-wrap m-4">
+                                                <input type="text"
+                                                       placeholder="{% trans "Buscar..." %}"
+                                                       class="form-control no-validate flex-grow-1 pl-2"
+                                                       id="search-permissions" />
+                                            </div>
+                                            <ul class="StackedList StackedList--hasScroll remove-bullets mx-4 p-0"
+                                                tabindex="0"
+                                                style="overflow-y: scroll;
+                                                       height: 500px">
+                                                {% for permission in permissions %}
+                                                    <li class="StackedListItem draggable-item"
+                                                        tabindex="1"
+                                                        title="{% trans "Disponibles" %}">
+                                                        <div class="StackedListContent">
+                                                            <p class="text-center p-0 my-2 prevent-select"
+                                                               data-permid="{{ permission.id }}"
+                                                               id="id_add_option">
+                                                                {{ permission.codename }} - {{ permission }}
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </article>
+                                    <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 mt-4">
+                                        <div class="d-flex justify-content-center flex-column h-100 px-4">
+                                            <div class="mx-auto">
+                                                <button class="btn btn_guardar flex-wrap"
+                                                        type="button"
+                                                        id="move-to-current"
+                                                        title="{% trans "Agregar" %}">
+                                                    <i class="fas fa-arrow-right"></i>
+                                                </button>
+                                            </div>
+                                            <div class="mx-auto">
+                                                <button class="btn btn_guardar flex-wrap mt-2"
+                                                        type="button"
+                                                        id="move-to-all"
+                                                        title="{% trans "Quitar" %}">
+                                                    <i class="fas fa-arrow-left"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <article class="col-xl-5 col-lg-5 col-md-12 col-sm-12 mt-4"
+                                             id="current-permission">
+                                        <header class="StackedListHeader">
+                                            <h4 class="text-center fs-5">{% trans "Permisos actuales" %}</h4>
+                                        </header>
+                                        <div class="card">
+                                            <div class="d-flex flex-wrap m-4">
+                                                <input type="text"
+                                                       class="form-control no-validate flex-grow-1 pl-2"
+                                                       placeholder="{% trans "Buscar..." %}"
+                                                       id="search-current-permissions" />
+                                            </div>
+                                            <ul class="StackedList StackedList--hasScroll remove-bullets mx-4 p-0"
+                                                tabindex="0"
+                                                style="overflow-y: scroll;
+                                                       height: 500px">
+                                                {% for permission in current_permissions %}
+                                                    <li class="StackedListItem draggable-item"
+                                                        tabindex="1"
+                                                        title="{% trans "Actuales" %}">
+                                                        <div class="StackedListContent">
+                                                            <p class="text-center p-0 my-2 prevent-select"
+                                                               data-permid="{{ permission.id }}"
+                                                               id="id_remove_option">
+                                                                {{ permission.codename }} - {{ permission }}
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </section>
+                            </div>
+                            {% include "components/buttons/btn_group.html" with generic_url=return_url %}
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script type="module"
+            src="{% static 'assets/js/groups/groups_draggable.js' %}"></script>
+    <script src="{% static 'assets/js/groups/groups_ui.js' %}"></script>
+{% endblock %}

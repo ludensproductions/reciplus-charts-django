@@ -1,0 +1,19 @@
+{% load static %}
+
+{% comment %}
+<!--
+Attributes
+    redirect: Url to which the image will redirect to.
+    url_img: Url if the img.
+-->
+{% endcomment %}
+<a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand mx-1 mb-4 p-2 p-lg-3" href="{% url redirect %}">
+    <div class="sidebar-brand-icon">
+        <div class="row">
+            <div>
+                <img class="img-fluid" src="{% static url_img %}" >
+            </div>
+        </div>
+
+    </div>
+</a>

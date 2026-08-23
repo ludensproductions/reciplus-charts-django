@@ -1,0 +1,34 @@
+{% load i18n %}
+{% load static %}
+{% trans "Cerrar" as close_label %}
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title primary-color-text fs-5 fw-bold">{{ title }}</h4>
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="{{ close_label }}"></button>
+    </div>
+    <div class="modal-body">
+        <!-- Start: Ludens - 1 Index Table with Search & Sort Filters -->
+        <div class="container-fluid padding-padre">
+            {% include "filter-htmx.html" %}
+            <div class="card rounded-3" id="TableSorterCard">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            {% include "components/table/data_table.html" with fields=fields items=items delete_url=delete_url detail_url=detail_url edit_url=edit_url is_disabled_view=is_disabled_view can_disable=can_disable permissions=permissions extra_actions=extra_actions %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pagination -->
+        {% include 'pagination-htmx.html' %}
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-light btn_guinda"
+                type="button"
+                data-bs-dismiss="modal">{{ close_label }}</button>
+    </div>
+</div>

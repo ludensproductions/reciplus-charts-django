@@ -1,0 +1,3 @@
+# Este archivo no debe ser modificado, las dependencias de este proyecto va en 'requirements.project.txt'
+-r https://raw.githubusercontent.com/ludensproductions/requirements-common/refs/heads/main/django/requirements.base.5.2-2.0.txt
+-r requirements.project.txt

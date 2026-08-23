@@ -1,0 +1,12 @@
+{% load i18n %}
+{% load utils %}
+{% load static %}
+<!-- c-data-table.html -->
+<table class="table table-striped table tablesorter" id="ipi-table">
+    <thead class="thead-dark">
+        {% include "components/table/etiquetas_tables/th_tables.html" with fields=fields can_disable=can_disable %}
+    </thead>
+    <tbody class="text-center">
+        {% include "genres/components/table/etiquetas_tables/tr_tables.html" with items=items delete_url=delete_url fields=fields detail_url=detail_url edit_url=edit_url can_disable=can_disable permissions=permissions confirm_deletion=confirm_deletion %}
+    </tbody>
+</table>

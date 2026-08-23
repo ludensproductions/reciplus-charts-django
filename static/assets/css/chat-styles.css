@@ -1,0 +1,13 @@
+/* Fixed-height chat card */
+.chat-container {
+    height: 70vh;              /* choose a sensible limit */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Scrollable messages area */
+.messages-container {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}

@@ -1,0 +1,30 @@
+{% load static %}
+{% load i18n %}
+{% trans "Tablero" as title_dashboard %}
+{% trans "Catálogos" as title_catalogs %}
+{% trans "Usuarios" as title_users %}
+<nav id="nav_left"
+     class="navbar menu-color navbar-dark align-items-start sidebar sidebar-dark accordion p-0">
+    <div class="container-fluid d-flex flex-column p-0">
+        <!-- Page logo -->
+        {% with SITE_THEME|default:'axxon' as current_theme %}
+            {% with 'assets/img/logos/logo_'|add:current_theme|add:'.png' as logo_path %}
+                {% include "components/navbar/navbar_left_img.html" with redirect='dashboard:index' url_img=logo_path %}
+            {% endwith %}
+        {% endwith %}
+        <hr class="sidebar-divider my-0">
+        <!-- Sidebar Options -->
+        <ul class="navbar-nav text-light menu-color" id="accordionSidebar">
+            <!-- Start project sections -->
+            {% include "components/navbar/seccion_left.html" with seccion_url='dashboard:index' appname='dashboard' icon='far fas fa-tachometer-alt' title=title_dashboard %}
+            {% if perms.catalogos.view_catalogos %}
+                {% include "components/navbar/seccion_left.html" with seccion_url='catalogos:index' appname='catalogos' icon='fas fa-dice'  title=title_catalogs %}
+            {% endif %}
+            {% if perms.users_module.view_users_module %}
+                {% include "components/navbar/seccion_left.html" with seccion_url='users_module:index' appname='users_module' icon='fas fa-user'  title=title_users %}
+            {% endif %}
+            <!-- End project sections -->
+        </ul>
+        {% include "components/navbar/navbar_left_hidden.html" %}
+    </div>
+</nav>

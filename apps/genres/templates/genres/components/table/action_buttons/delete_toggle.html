@@ -1,0 +1,20 @@
+{% load i18n %}
+{% trans "Habilitar" as enable_label %}
+{% trans "Deshabilitar" as disable_label %}
+<div class="form-check form-switch d-flex justify-content-center">
+    <input class="form-check-input toggle-switch"
+           type="checkbox"
+           role="switch"
+           data-url="{% url delete_url item.pk %}"
+           data-action="{% if item.deleted %}enable{% else %}disable{% endif %}"
+           {% if confirm_deletion %} data-bs-toggle="modal" {% if item.deleted %} data-bs-target="#enable-modal" onclick="enable('{% url delete_url item.pk %}')" {% else %} data-bs-target="#delete-modal" onclick="destroy('{% url delete_url item.pk %}')" {% endif %}
+           {% else %}
+           hx-post="{% url delete_url item.pk %}"
+           hx-trigger="change"
+           hx-swap="none"
+           hx-vals='{"action": "{% if item.deleted %}enable{% else %}disable{% endif %}"}'
+           hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+           {% endif %}
+           title="{% if item.deleted %}{{ enable_label }}{% else %}{{ disable_label }}{% endif %}"
+           {% if not item.deleted %}checked{% endif %}>
+</div>

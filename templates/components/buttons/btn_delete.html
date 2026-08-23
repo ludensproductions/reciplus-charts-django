@@ -1,0 +1,14 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes
+    id: Identifier of the item to be deleted
+-->
+{% endcomment %}
+<a class="btn btnMaterial btn-flat accent" role="button" title="{% trans "Eliminar" %}"
+    data-bs-toggle="modal"
+    data-bs-target="#delete-modal"
+    onclick="destroy({{ id }})"
+    >
+    <i class="fas fa-trash btnNoBorders"></i>
+</a>

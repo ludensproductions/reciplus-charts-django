@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% load paginator %}
+{% load i18n %}
+{% block title %}
+    {% trans 'Historico de' %} {{ model_name }}
+{% endblock title %}
+{% block css %}
+{% endblock css %}
+{% block content %}
+    <div class="container-fluid px-0 px-sm-0 px-md-4">
+        <div class="row">
+            <div class="col-md-12 my-4 font_volver">
+                <a class="anone" href="{% url 'history:generic-log' %}">
+                    <i class="fa fa-long-arrow-left"></i>
+                    <span>&nbsp; {% translate "Volver" %}</span>
+                </a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6">
+                <h1 class="fs-3 mb-4 fw-bold text-title">{{ model_name }}</h1>
+            </div>
+        </div>
+        {% include 'filter.html' %}
+        <div class="card card_rounded" id="TableSorterCard">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped tablesorter" id="ipi-table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-center filter-false sorter-false col-2">{% translate "Tipo de acción" %}</th>
+                                    <th class="text-center">{% translate "Nombre de visualización" %}</th>
+                                    <th class="text-center">{% translate "Fecha" %}</th>
+                                    <th class="text-center">{% translate "Cambio realizado por" %}</th>
+                                    <th class="text-center filter-false sorter-false col-2">{% translate "Acción" %}</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                {% for log in logs %}
+                                    <tr>
+                                        <td>
+                                            {% if log.history_type == '+' %}
+                                                <i title="{% translate 'Creado' %}"
+                                                   class="fas fa-plus-circle fs-5 text-success"></i>
+                                            {% elif log.history_type == '~' %}
+                                                <i title="{% translate 'Modificado' %}"
+                                                   class="fas fa-pen-square fs-5 text-primary"></i>
+                                            {% elif log.history_type == '-' %}
+                                                <i title="{% translate 'Eliminado' %}"
+                                                   class="fas fa-minus-circle fs-5 text-danger"></i>
+                                            {% endif %}
+                                        </td>
+                                        <td>{{ log|safe_history_instance }}</td>
+                                        <td>{{ log.history_date }}</td>
+                                        <td>
+                                            {% if log.history_user %}
+                                                {{ log.history_user }}
+                                            {% else %}
+                                                N/A
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <button class="btn btnMaterial btn-flat primary semicircle"
+                                                    title="Ver pedimentos"
+                                                    type="button"
+                                                    hx-target="#dialogModal"
+                                                    hx-swap="innerHTML"
+                                                    hx-get="{% url 'history:generic-detail' model app log.history_id %}">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End: TableSorter -->
+        {% include 'pagination.html' %}
+        <form id="recoverForm" method="post">
+            {% csrf_token %}
+            <div class="modal fade" role="dialog" tabindex="-1" id="recover-modal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="fs-5 modal-title">{% translate "Recuperar punto en el tiempo" %}</h2>
+                            <button type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p class="fs-6 text-dark">{% translate "Esta es una acción destructiva." %}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-light" type="button" data-bs-dismiss="modal">{% translate "Cancelar" %}</button>
+                            <button class="btn btn-danger" type="button" onclick="formSubmit()">{% translate "Revertir" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="showModal" class="modal fade" role="dialog" tabindex="-1">
+            <div id="dialogModal"
+                 class="modal-dialog modal-xl modal-dialog-scrollable"
+                 role="document"
+                 hx-target="this"></div>
+        </div>
+    </div>
+{% endblock content %}
+{% block js %}
+    <script type="module" src="{% static 'assets/js/showModal.js' %}"></script>
+{% endblock js %}

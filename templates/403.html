@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block content %}
+    <div id="content">
+        <div class="d-flex justify-content-center header_margin">
+            <div class="card shadow col-12 col-md-8 col-lg-6">
+                <div class="card-header py-3 header_perm text-center">
+                    <p class="text-light m-0 fw-bold">{% trans "No tiene permisos para acceder a este módulo." %}</p>
+                </div>
+                <div class="card-body text-center">
+                    <p>
+                        {% trans "Usted no cuenta con los permisos para visualizar los módulos." %}
+                        <br>
+                        {% trans "Si cree que esto es un error, contacte al administrador del sistema." %}
+                    </p>
+                    <a href="/" class="btn btn-secondary mt-3">{% trans "Volver al inicio" %}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

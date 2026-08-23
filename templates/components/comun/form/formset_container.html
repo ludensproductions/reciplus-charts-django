@@ -1,0 +1,15 @@
+{% comment %}
+<!--
+Attributes
+    formset_prefix: Prefix for the formset.
+    title: Name to be used on the section.
+-->
+{% endcomment %}
+<div class="row mb-2">
+    <div class="col-8">
+        <h2 id="{{ formset_prefix }}-title" class="fs-5 text-title fw-bold mb-3">{{ title }}</h2>
+    </div>
+    <div class="col-4 py-1 d-flex d-lg-flex d-xl-flex d-xxl-flex justify-content-end">
+        {% include "components/buttons/btn_formset_add.html" with type='button' formset_prefix=formset_prefix icon='fa fa-plus text-white' data_in=True %}
+    </div>
+</div>

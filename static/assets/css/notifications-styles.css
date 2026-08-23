@@ -1,0 +1,199 @@
+/* Base notification item - now dynamic and responsive using CSS custom properties */
+
+.notification-link-dropdown {
+    height: auto !important;
+}
+
+.notification-item {
+    padding: var(--notification-padding, 0.75rem 1rem);
+    border-bottom: var(--notification-border, 1px solid #dee2e6);
+    transition: var(--notification-transition, background-color 0.2s);
+    background-color: var(--notification-bg, transparent);
+    border-radius: var(--notification-radius, 0);
+    margin: var(--notification-margin, 0);
+    cursor: pointer;
+    font-size: var(--notification-font-size, 0.875rem);
+    width: auto !important;
+    min-height: 5.524rem !important;
+}
+
+.notification-item:hover {
+    background-color: var(--notification-hover-bg, #f8f9fa);
+    /* color: FFFFFF; */
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+/* Responsive base styles */
+@media (max-width: 575.98px) {
+    .notification-item {
+        --notification-padding: 0.5rem 0.75rem;
+        --notification-font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .notification-item {
+        --notification-padding: 0.75rem 1rem;
+        --notification-font-size: 0.875rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .notification-item {
+        --notification-padding: 0.875rem 1.125rem;
+        --notification-font-size: 0.9rem;
+    }
+}
+
+/* Dynamic variants using CSS classes - now responsive */
+.notification-item.compact {
+    --notification-padding: 0.5rem 0.75rem;
+    --notification-font-size: 0.8rem;
+}
+
+.notification-item.spacious {
+    --notification-padding: 1.25rem 1.5rem;
+    --notification-font-size: 1rem;
+}
+
+/* Responsive spacious adjustments */
+@media (max-width: 575.98px) {
+    .notification-item.spacious {
+        --notification-padding: 1rem 1.25rem;
+        --notification-font-size: 0.9rem;
+    }
+}
+
+.notification-item.rounded {
+    --notification-radius: 0.5rem;
+    --notification-margin: 0.25rem 0.5rem;
+    --notification-border: 1px solid #e9ecef;
+}
+
+/* Responsive rounded adjustments */
+@media (max-width: 575.98px) {
+    .notification-item.rounded {
+        --notification-radius: 0.375rem;
+        --notification-margin: 0.125rem 0.25rem;
+    }
+}
+
+.notification-item.urgent {
+    --notification-bg: #fff3cd;
+    --notification-hover-bg: #fff0c0;
+    border-left: 0.25rem solid #ffc107;
+}
+
+.notification-item.success {
+    --notification-bg: #d1e7dd;
+    /* --notification-hover-bg: #1cc88a; */
+    --notification-hover-bg: #d1e7dd;
+    border-left: 0.25rem solid #198754;
+}
+
+.notification-item.alert {
+    --notification-bg: #f8d7da;
+    --notification-hover-bg: #f8d7da;
+    border-left: 0.25rem solid #dc3545;
+}
+
+.notification-item.info {
+    --notification-bg: #cff4fc;
+    --notification-hover-bg: #aff2ff;
+    border-left: 0.25rem solid #0dcaf0;
+}
+
+.notification-item.default {
+    --notification-hover-bg: #eaecf4;
+    border-left: 0.25rem solid #858796;
+}
+
+.notification-item.read {
+    --notification-bg: #f8f9fa;
+    opacity: 0.7;
+}
+
+.notification-item.unread {
+    --notification-bg: #ffffff;
+    font-weight: 600;
+}
+
+/* Animation classes */
+.notification-item.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.notification-item.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+/* Container styles - fully responsive */
+.notification-container {
+    width: auto !important;
+}
+
+.notifications-list-height {
+    max-height: 40vh !important;
+}
+
+.notification-dropdown-menu {
+    min-width: min(350px, 90vw);
+    max-width: min(600px, 95vw);
+}
+
+/* Responsive dropdown adjustments */
+@media (max-width: 575.98px) {
+    .notification-dropdown-menu {
+        display: none !important;
+    }
+
+    .notifications-list-height {
+        max-height: min(300px, 60vh);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .notification-dropdown-menu {
+        min-width: min(320px, 90vw);
+        max-width: 95vw;
+    }
+}
+
+/* Badge responsive positioning */
+.badge-counter {
+    position: absolute;
+    top: -0.125rem;
+    right: -0.375rem;
+    min-width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive badge adjustments */
+@media (max-width: 575.98px) {
+    .badge-counter {
+        top: -0.0625rem;
+        right: -0.25rem;
+        min-width: 1rem;
+        height: 1rem;
+        font-size: 0.6875rem;
+    }
+}

@@ -1,0 +1,34 @@
+{% load utils %}
+{% load i18n %}
+{% load custom_tags %}
+
+
+{% for manager_name, child_entitie_data in child_entities.items %}
+    <div class="row mb-3">
+        <div class="col-12 mb-3">
+            <h2 class="fs-5 fw-bold primary-color-text">{{ child_entitie_data.table_title.capitalize }}</h2> <!-- Nombre de la tabla -->
+        </div>
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped tablesorter table-bordered" title="{{ manager_name }}">
+                    <thead class="thead-dark">
+                        <tr>
+                            {% for field in child_entitie_data.labels %}
+                                <th class="text-center">{{ field }}</th> <!-- Nombre de los campos -->
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        {% for row in child_entitie_data.data %}
+                            <tr>
+                                {% for field in child_entitie_data.fields %}
+                                <td title="{{ manager_name }}-{{ forloop.parentloop.counter0 }}-{{ field }}">{{ row|get_item:field | default:"--" }}</td> <!-- Valor del campo -->
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endfor %}

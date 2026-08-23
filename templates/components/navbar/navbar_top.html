@@ -1,0 +1,44 @@
+{% load static %}
+{% load i18n %}
+<!-- Top Navbar -->
+<nav class="navbar nav-background navbar-light navbar-expand mb-4 shadow topbar static-top">
+    <div class="container-fluid">
+        <button class="btn btn-link d-md-none rounded-circle me-3 color_amarillo"
+                id="sidebarToggleTop"
+                type="button">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="navbar-nav flex-nowrap ms-auto">
+            {% include 'notification/notification.html' %}
+            <div class="d-none d-sm-block topbar-divider"></div>
+            <li class="nav-item dropdown no-arrow">
+                <div class="nav-item dropdown no-arrow">
+                    <a class="dropdown-toggle nav-link"
+                       aria-expanded="false"
+                       data-bs-toggle="dropdown"
+                       id="user-menu-toggle"
+                       href="#">
+                        <span class="d-none d-lg-inline me-2 text-light fw-bold small"
+                              id="username">{{ request.user.username }}</span>
+                        <img class="border rounded-circle img-profile"
+                             src="{% if request.user.image.url is not None %} {{ request.user.image.url }} {% else %} /media/profiles/generic/blank-profile-pic.png{% endif %}">
+                    </a>
+                    <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in">
+                        {% if request.user.is_authenticated %}
+                            <a class="dropdown-item"
+                               href="{% if request.user.id is not None %}{% url 'profile' %}{% endif %}">
+                                <i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>
+                                &nbsp;{% trans "Perfil" %}
+                            </a>
+                        {% endif %}
+                        {% if perms.admin.view_logentry %}
+                            {% translate "Historial de cambios" as history_label %}
+                            {% include "components/navbar/menu_section.html" with section_url='history:generic-log' icon='fas fa-list fa-sm fa-fw' section_name=history_label %}
+                        {% endif %}
+                        {% include "components/navbar/logout_section.html" with loguout='logout' %}
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

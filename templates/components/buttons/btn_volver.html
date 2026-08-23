@@ -1,0 +1,16 @@
+{% load i18n %}
+
+{% comment %}
+<!--
+Attributes
+    back_url: Url to which the button will send you when you click on it
+-->
+{% endcomment %}
+<div class="row">
+    <div class="col-md-12 my-4 font_volver">
+        <a class="anone" href="{% url back_url %}">
+            <i class="fa fa-long-arrow-left"></i>
+            <span>&nbsp; {% trans "Volver" %}</span>
+        </a>
+    </div>
+</div>

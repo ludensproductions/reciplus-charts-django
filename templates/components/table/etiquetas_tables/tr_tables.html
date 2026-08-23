@@ -1,0 +1,97 @@
+{% load utils %}
+{% load i18n %}
+{% trans "Ver" as show_label %}
+{% trans "Editar" as update_label %}
+{% trans "No aplica" as not_applicable_label %}
+{% trans "--" as empty_date_label %}
+{% for item in items %}
+    <tr>
+        {% for field in fields %}
+            {# Per-field attributes: icon, classes, max_length/max-length, title #}
+            {% with attrs=field_attributes|dict_get:field.name val=item|getattr:field.name %}
+                {% with icon=attrs|dict_get:"icon" max_len=attrs|dict_get_or:"max_length|max-length" extra_classes=attrs|dict_get_or:"classes|td_classes|td-class" title_attr=attrs|dict_get:"title" fmt_data=attrs|get_format %}
+                    {% with fmt=fmt_data.0 sep=fmt_data.1 %}
+                        <td {% if extra_classes %}class="{{ extra_classes }}"{% endif %}
+                            {% if title_attr %}title="{{ title_attr }}"{% endif %}
+                            {% if max_len %}data-truncate-length="{{ max_len }}"{% endif %}>
+                            {% if 'BooleanField' in field|get_field_type %}
+                                {% if item|getattr:field.name %}
+                                    <i class="fas fa-check text-success fs-3"></i>
+                                {% else %}
+                                    <i class="fas fa-times text-danger fs-3"></i>
+                                {% endif %}
+                            {% elif field|get_field_type == 'DateField' or field|get_field_type == 'DateTimeField' and fmt %}
+                                {% if val %}
+                                    {{ val|date:fmt }}
+                                {% else %}
+                                    {{ empty_date_label }}
+                                {% endif %}
+                            {% elif field|get_field_type == 'DateRangeField' or field|get_field_type == 'DateTimeRangeField' and fmt %}
+                                {% if val %}
+                                    {{ val.lower|date:fmt }}
+                                    {{ sep }}
+                                    {{ val.upper|date:fmt }}
+                                {% else %}
+                                    {{ empty_date_label }}
+                                {% endif %}
+                            {% else %}
+                                {% with s=val|stringformat:"s" %}
+                                    {% if max_len %}
+                                        {% if s %}
+                                            {% if icon %}<i class="{{ icon }}"></i>{% endif %}
+                                            {{ s|truncate_value:max_len }}
+                                        {% else %}
+                                            {{ not_applicable_label }}
+                                        {% endif %}
+                                    {% else %}
+                                        {% if s %}
+                                            {% if icon %}<i class="{{ icon }}"></i>{% endif %}
+                                            {{ s }}
+                                        {% else %}
+                                            {{ not_applicable_label }}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endwith %}
+                            {% endif %}
+                        </td>
+                    {% endwith %}
+                {% endwith %}
+            {% endwith %}
+        {% endfor %}
+        {% if can_disable %}
+            <td>
+                {% if delete_url != None and permissions.delete %}
+                    {% include "components/table/action_buttons/delete_toggle.html" with delete_url=delete_url  item=item %}
+                {% endif %}
+            </td>
+        {% endif %}
+        <td>
+            <div class="d-flex justify-content-center">
+                {% if is_disabled_view == False %}
+                    {% if detail_url %}
+                        {% if detail_url != None and permissions.view %}
+                            {% include "components/table/action_buttons/icon_button.html" with color_action='primary' translate=show_label action_url=detail_url pk=item.pk icon='fas fa-eye' %}
+                        {% endif %}
+                    {% endif %}
+                    {% if not item.deleted %}
+                        {% if edit_url != None and permissions.change %}
+                            {% include "components/table/action_buttons/icon_button.html" with color_action='success' translate=update_label action_url=edit_url pk=item.pk icon='fas fa-pen' %}
+                        {% endif %}
+                    {% endif %}
+                {% endif %}
+                {% if can_disable == False and permissions.delete %}
+                    {% with action=item.deleted|yesno:"Habilitar,Deshabilitar" %}
+                        {% include "components/table/action_buttons/delete.html" with translate=action pk=item %}
+                    {% endwith %}
+                {% endif %}
+                {% for action in extra_actions %}
+                    {% with validation_method=action.validation %}
+                        {% if not validation_method or item|call_if_true:validation_method %}
+                            {% include "components/table/action_buttons/icon_button_extra_action.html" with color_action=action.color tooltip=action.tooltip action_url=action.url params=action.params icon=action.icon item=item %}
+                        {% endif %}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        </td>
+    </tr>
+{% endfor %}

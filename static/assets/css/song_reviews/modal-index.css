@@ -1,0 +1,10 @@
+.modal-body table {
+    table-layout: fixed; /* columnas del mismo ancho */
+    width: 100%;
+}
+
+.modal-body table th,
+.modal-body table td {
+    white-space: normal; /* permite que el texto haga wrap */
+    word-wrap: break-word; /* rompe palabras largas si es necesario */
+}

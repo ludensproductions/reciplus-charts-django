@@ -1,0 +1,106 @@
+.text-title {
+  color: #691C32 !important;
+}
+
+.color_verde {
+  color: #10312b !important;
+}
+
+.color_amarillo {
+  color: #c9a977 !important;
+}
+
+.bg_guinda {
+  background-color: #691C32 !important;
+}
+
+.bg_verde {
+  background-color: #10312B !important;
+}
+
+.border_top {
+  border-top-color: #691C32 !important;
+  border-top-width: medium !important;
+}
+
+.btn-primary {
+  border-color: #691c32 !important;
+  background-color: #691c32 !important;
+  border-radius: 18px !important;
+  font-size: 15px;
+  color: white !important;
+  box-shadow: none !important;
+}
+
+.btn-primary_eliminar {
+  border-color: #691c32 !important;
+  background-color: #691c32 !important;
+  font-size: 15px;
+  color: white !important;
+}
+
+.btn-secondary {
+  border-color: #10312b !important;
+  font-size: 15px;
+  background-color: #10312b !important;
+  border-radius: 18px !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+.btn-primary_margin {
+  margin-right: 10px;
+}
+
+.btn_mostaza {
+  border-color: #c9a977 !important;
+  font-size: 15px;
+  background-color: #c9a977!important;
+  border-radius: 18px !important;
+  color: #ffffff !important;
+  box-shadow:  none !important;
+}
+
+.border_radius {
+  border-radius: 5px !important;
+}
+
+.btn-sm-guinda {
+  background-color: #691c32 !important;
+  border-radius: 12px !important;
+  color: white !important;
+  border-color: rgba(255,255,255,0.3);
+}
+
+.border_table {
+  border-radius: 15px !Important;
+}
+
+.modal_verde {
+  border-color: #10312b !important;
+  font-size: 15px;
+  background-color: #10312b !important;
+  border-radius: 4px !important;
+  color: #ffffff !important;
+}
+
+.modal_guinda {
+  border-color: #691c32 !important;
+  font-size: 15px;
+  background-color: #691c32 !important;
+  border-radius: 4px !important;
+  color: #ffffff !important;
+}
+
+.btn_rounded {
+  border-radius: 18px !important;
+}
+
+.card_rounded {
+  border-radius: 10px !important;
+}
+
+.card_header_rounded {
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}

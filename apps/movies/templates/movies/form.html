@@ -1,0 +1,30 @@
+{% extends "generic/form.html" %}
+{% load static %}
+{% load static i18n %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container-fluid px-0 px-sm-0 px-md-4">
+        {% include "components/buttons/btn_volver.html" with back_url=return_url %}
+        <div class="row {% if form.fields|length == 1 %}small_form{% endif %}">
+            {% include "components/comun/title.html" with title=title %}
+            <div class="col-12">
+                <div class="card mb-4 border_top border_radius">
+                    {% if "detail" not in request.resolver_match.url_name %}
+                        <div class="card-header bg-white m-2">
+                            <p class="my-1 fw-bold text-title">{% trans "Los campos marcados con (*) son de carácter obligatorio." %}</p>
+                        </div>
+                        <div class="card-body">
+                            <form method="post"
+                                  enctype="multipart/form-data"
+                                  {% if form_id %} id="{{ form_id }}" {% else %} id="form-fixed-id" {% endif %}>
+                                {% csrf_token %}
+                                {% crispy form %}
+                                {% include "components/buttons/btn_group.html" with return_url=return_url %}
+                            </form>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

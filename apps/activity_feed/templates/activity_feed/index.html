@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load utils %}
+{% load i18n %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block css %}
+    <link href="{% static 'assets/css/activity-feed-styles.css' %}"
+          rel="stylesheet" />
+{% endblock %}
+{% block content %}
+    <!-- Start: Ludens - 1 Index Table with Search & Sort Filters -->
+    <div class="d-flex justify-content-end mb-3">
+        <a id="emit-activity-btn"
+           class="btn btn-primary btn_movil_view_size margin_bottom_btn"
+           role="button"
+           title="Emit activity"
+           data-api-url="{{ EMIT_ACTIVITY_URL }}">
+            <i class="{{ icon }}"></i>&nbsp; {{ title_button }}
+        </a>
+    </div>
+    <div class="container-fluid padding-padre">
+        <div id="activity-feed"
+             class="list-group activity-feed-scroll"
+             hx-ext="sse"
+             sse-connect="/events/activity-feed"
+             sse-swap="activity"
+             hx-swap="afterbegin"></div>
+        <br />
+    </div>
+{% endblock content %}
+{% block js %}
+    <script src="{% static 'assets/js/activity_feed/activity_feed.js' %}"></script>
+{% endblock js %}

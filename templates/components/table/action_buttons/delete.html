@@ -1,0 +1,22 @@
+{% load i18n %}
+{% if delete_url %}
+    <span data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans translate %}">
+        <a class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover"
+            role="button"
+            data-bs-toggle="modal"
+            {% if item.deleted %}
+                data-bs-target="#enable-modal"
+                onclick="enable('{% url delete_url item.pk %}')"
+            {% else %}
+                data-bs-target="#delete-modal"
+                onclick="destroy('{% url delete_url item.pk %}')"
+            {% endif %}
+            href="#">
+            {% if not item.deleted %}
+                <i class="fas fa-trash"></i>
+            {% else %}
+                <i class="fas fa-undo"></i>
+            {% endif %}
+        </a>
+    </span>
+{% endif %}

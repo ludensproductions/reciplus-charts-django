@@ -1,0 +1,11 @@
+[
+    "inventarios",
+    "inventarios/componentes",
+    "inventarios/componentes/create",
+    "inventarios/componentes/edit/1",
+    "inventarios/componentes/detail/1",
+    "configuracion_pt",
+    "configuracion_pt/bahia",
+    "configuracion_pt/bahia/create",
+    "configuracion_pt/bahia/edit/1"
+]

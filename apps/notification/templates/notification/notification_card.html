@@ -1,0 +1,15 @@
+<div class="notification-item unread {{ notification.notification_type }}"
+     id="notification-{{ notification.id }}"
+     data-type="{{ notification.notification_type }}">
+    <div class="d-flex align-items-start"
+         onclick="readNotification({{ notification.id }})">
+        <div class="flex-shrink-0 me-3">
+            <i class="fas {{ notification_styles.icon }} {{ notification_styles.css_class }}"></i>
+        </div>
+        <div class="flex-grow-1">
+            <div class="fw-semibold">{{ notification.title }}</div>
+            <div class="text-muted small">{{ notification.content }}</div>
+            <div class="text-muted small">{{ notification.created_at }}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+/* PDF-friendly tweaks */
+body {
+    font-size: 14px;
+}
+
+.album-card {
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    page-break-inside: avoid;
+}
+
+.album-cover {
+    background-color: #f8f9fa;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #adb5bd;
+    font-size: 3rem;
+}
+
+.album-meta i {
+    width: 18px;
+}

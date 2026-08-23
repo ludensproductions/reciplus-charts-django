@@ -1,0 +1,8 @@
+{% load i18n %}
+<!--  -->
+<a class="btn btnMaterial btn-flat {{color_action}} semicircle"
+    role="button"
+    data-bs-toggle="tooltip" data-bs-placement="bottom" title="{% trans translate %}"
+    href="{% url action_url pk %}">
+    <i class="{{ icon }}"></i>
+</a>

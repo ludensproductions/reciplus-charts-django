@@ -1,0 +1,17 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes:
+    formset_prefix: Prefix for the formset. Required.
+    id: (Optional) Custom ID for the button. Defaults to "plus_button".
+    icon: (Optional) Custom icon classes. Defaults to "fa fa-plus text-white".
+    data_in: (Optional) If True, adds data-template attribute to both button and icon. Defaults to False.
+-->
+{% endcomment %}
+<button class="btn btn-round btn-add"
+        {% if data_in %}data-template="{{ formset_prefix }}_formset_template"{% endif %}
+        type="button"
+        id="{% if formset_prefix %}{{ formset_prefix }}{% else %}plus_button{% endif %}">
+    <i class="{{ icon|default:'fa fa-plus text-white' }}"
+       {% if data_in %}data-template="{{ formset_prefix }}_formset_template"{% endif %}></i>
+</button>

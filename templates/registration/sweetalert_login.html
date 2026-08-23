@@ -1,0 +1,26 @@
+{% if messages %}
+    {% for message in messages %}
+    <script>
+        (function() {
+            var titles = {
+                'error': '¡Error!',
+                'success': '¡Éxito!',
+                'warning': '¡Advertencia!',
+                'info': 'Información'
+            };
+            var tag = '{{ message.tags }}';
+            var loginPrimary = getComputedStyle(document.body).getPropertyValue('--login-primary').trim();
+
+            Swal.fire({
+                title: titles[tag] || '',
+                html: '<span data-fieldname="message">{{ message|safe }}</span>',
+                icon: tag,
+                confirmButtonText: 'Continuar',
+                confirmButtonColor: loginPrimary,
+                scrollbarPadding: false,
+                heightAuto: false,
+            });
+        })();
+    </script>
+    {% endfor %}
+{% endif %}

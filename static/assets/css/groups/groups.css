@@ -1,0 +1,9 @@
+.item-selected {
+    border: 1px solid #818a9b;
+    color: black;
+}
+
+.draggable-item:hover {
+    cursor: pointer;
+    border: 1px solid #818a9b;
+}

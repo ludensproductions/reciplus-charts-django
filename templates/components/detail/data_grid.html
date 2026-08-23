@@ -1,0 +1,75 @@
+{% load utils %}
+{% load i18n %}
+{% trans "Si" as yes_label %}
+{% trans "No" as no_label %}
+{% trans "--" as empty_label %}
+<div class="row">
+    {% for field in fields %}
+        {% field_can_render object field as can_render_info %}
+        {% with can_render=can_render_info.0 ext=can_render_info.1 value=object|getattr:field.name field_type=field|get_field_type %}
+            {% with attrs=field_attributes|dict_get:field.name %}
+                {% with icon=attrs|dict_get:"icon" max_len=attrs|dict_get_or:"max_length|max-length" fmt_data=attrs|get_format %}
+                    {% with fmt=fmt_data.0 sep=fmt_data.1 %}
+                        {% get_classes attrs "classes" can_render as classes %}
+                        <div class="{{ classes }}"
+                             {% if max_len %}data-truncate-length="{{ max_len }}"{% endif %}>
+                            <div class="datagrid-title fw-bold">
+                                {% if icon %}<i class="{{ icon }}"></i>{% endif %}
+                                {{ field.verbose_name.capitalize }}
+                            </div>
+                            {% with title_attr=attrs|dict_get:"title" %}
+                                <div class="datagrid-content" title="{{ title_attr|default:field.name }}">
+                                    {% if field_type == 'BooleanField' %}
+                                        {% if value %}
+                                            <i class="fas fa-check text-success"></i> {{ yes_label }}
+                                        {% else %}
+                                            <i class="fas fa-times text-danger"></i> {{ no_label }}
+                                        {% endif %}
+                                    {% elif field_type == 'FileField' %}
+                                        {% include "components/detail/file_render.html" with fileobj=value ext=ext %}
+                                    {% elif field_type == 'ImageField' %}
+                                        {% if value %}
+                                            <img class="img-fluid mx-auto d-block"
+                                                 src="{{ value.url }}"
+                                                 alt="{{ value.name }}">
+                                        {% else %}
+                                            {{ empty_label }}
+                                        {% endif %}
+                                    {% elif field_type == 'DateField' and fmt or field_type == 'DateTimeField' and fmt %}
+                                        {% if value %}
+                                            {{ value|date:fmt }}
+                                        {% else %}
+                                            {{ empty_label }}
+                                        {% endif %}
+                                    {% elif field_type == 'DateRangeField' and fmt or field_type == 'DateTimeRangeField' and fmt %}
+                                        {% if value %}
+                                            {{ value.lower|date:fmt }}
+                                            {{ sep }}
+                                            {{ value.upper|date:fmt }}
+                                        {% else %}
+                                            {{ empty_label }}
+                                        {% endif %}
+                                    {% else %}
+                                        {% get_m2m_value value as value %}
+                                        {% if max_len %}
+                                            {% if value %}
+                                                {{ value|truncate_value:max_len }}
+                                            {% else %}
+                                                {{ empty_label }}
+                                            {% endif %}
+                                        {% else %}
+                                            {{ value|default_if_none:empty_label }}
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            {% endwith %}
+                        </div>
+                    {% endwith %}
+                {% endwith %}
+            {% endwith %}
+        {% endwith %}
+    {% endfor %}
+    {% if child_entities %}
+        {% include "components/table/table_child_entities.html" with child_entities=child_entities %}
+    {% endif %}
+</div>

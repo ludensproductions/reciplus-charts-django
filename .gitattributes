@@ -1,0 +1,26 @@
+# .gitattributes snippet to force users to use same line endings for project.
+#
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+* text=auto eol=lf
+
+# These files are text and should be normalized (Convert crlf => lf)
+*.php text working-tree-encoding=utf-8 charset=utf-8
+*.css text working-tree-encoding=utf-8 charset=utf-8
+*.js text working-tree-encoding=utf-8 charset=utf-8
+*.json text working-tree-encoding=utf-8 charset=utf-8
+*.html text working-tree-encoding=utf-8 charset=utf-8
+*.xml text working-tree-encoding=utf-8 charset=utf-8
+*.txt text working-tree-encoding=utf-8 charset=utf-8
+*.py text working-tree-encoding=utf-8 charset=utf-8
+*.sql text working-tree-encoding=utf-8 charset=utf-8
+*.db text working-tree-encoding=utf-8 charset=utf-8
+*.sh text working-tree-encoding=utf-8 charset=utf-8
+.htaccess text working-tree-encoding=utf-8 charset=utf-8
+
+# Binary files that should not be modified
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.pdf binary

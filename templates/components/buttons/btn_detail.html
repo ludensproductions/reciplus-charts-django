@@ -1,0 +1,11 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes
+    detail_url: Url to which the button will send you when you click on it
+-->
+{% endcomment %}
+<a class="btn btnMaterial btn-flat primary semicircle" role="button"
+    href="{'% url detail_url %'}" title="{% translate 'Detalle' %}">
+    <i class="fas fa-eye"></i>
+</a>

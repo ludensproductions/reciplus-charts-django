@@ -1,0 +1,53 @@
+<!-- Standalone development fixture for manually testing formsets.js. -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Formset JS</title>
+        <link rel="stylesheet" href="../css/formset-demo.css" />
+    </head>
+    <body>
+        <form id="form_id">
+            <input type="hidden" id="id_test-TOTAL_FORMS" value="0" />
+            <input type="hidden" id="id_test-INITIAL_FORMS" value="0" />
+            <button type="button" data-template="test_formset_template">+ Agregar Chompy</button>
+            <div id="list_test"></div>
+            <br />
+            <input type="hidden" id="id_test_2-TOTAL_FORMS" value="0" />
+            <input type="hidden" id="id_test_2-INITIAL_FORMS" value="0" />
+            <button type="button" data-template="test_formset_template_2">+ Agregar Chompy2</button>
+            <div id="list_test_2"></div>
+        </form>
+        <template id="test_formset_template" data-container_target="list_test">
+            <div id="id_formset-div-0" name="formset-div-0">
+                <button type="button" class="delete-formset">Delete</button>
+                <input type="text" value="Objeto" name="objeto-0" id="id_objeto-0" />
+                <input type="number" value="1" name="number-0" id="id_number-0" />
+                <textarea name="textarea-0" id="id_textarea-0"></textarea>
+                <select name="select-0" id="id_select-0">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <input type="text" hidden="true" id="id_hidden-0" name="hidden-0" />
+            </div>
+        </template>
+        <template id="test_formset_template_2" data-container_target="list_test_2">
+            <div id="id_formset2-div-0" name="formset2-div-0">
+                <button type="button" class="delete-formset">Delete</button>
+                <textarea name="textarea-0" id="id_textarea2-0"></textarea>
+            </div>
+        </template>
+        <script id="formset-config" type="application/json">
+            {
+                "formId": "form_id",
+                "formsets": [
+                    {"prefix": "test", "oneToNFormsets": false},
+                    {"prefix": "test_2", "oneToNFormsets": false}
+                ]
+            }
+        </script>
+        <script type="module" src="formsets.js"></script>
+    </body>
+</html>

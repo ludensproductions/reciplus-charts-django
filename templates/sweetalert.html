@@ -1,0 +1,29 @@
+{% load i18n %}
+{% comment %} <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> {% endcomment %}
+{% if messages %}
+    {% for message in messages %}
+        <script>
+        let title = "";
+        if ("{{message.tags}}" === 'error') {
+            title = "{% trans '¡Error!' %}";
+        }
+        if ('{{message.tags}}' === 'success') {
+            title = "{% trans '¡Éxito!' %}";
+        }
+        if ("{{message.tags}}" === 'warning') {
+            title = "{% trans '¡Advertencia!' %}";
+        }
+        if ("{{message.tags}}" === 'info') {
+            title = "{% trans 'Información' %}";
+        }
+
+        Swal.fire({
+            title: title,
+            html: `<span data-fieldname="message">{{ message|safe }}</span>`,
+            icon: '{{message.tags}}',
+            confirmButtonText: "{% trans 'Continuar' %}",
+            confirmButtonColor: '#53ab3a',
+        });
+        </script>
+    {% endfor %}
+{% endif %}

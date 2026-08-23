@@ -1,0 +1,12 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes
+    add_url: Url to which the button will send you when you click on it
+-->
+{% endcomment %}
+
+<a class="btn btn-primary btn_movil_view_size margin_bottom_btn" role="button"
+    href="{'% url add_url %'}">
+    <i class="{{ icon }}"></i>&nbsp;{% trans "Agregar" %} {{ subtitle }}
+</a>

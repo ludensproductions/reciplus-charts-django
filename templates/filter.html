@@ -1,0 +1,53 @@
+{% load i18n %}
+<div id="TableSorterCard" class="card card_rounded mb-4">
+    <div class="card-body py-3 card-border-color card_rounded">
+        <!-- Filter form -->
+        <form class="search-form w-100" method="get" id="filters">
+            <div class="row">
+                <div class="col-md-12 bg-white" style="text-align: left;">
+                    <div class="row">
+                        {% if filter.body_template %}
+                            {% include filter.body_template %}
+                        {% else %}
+                            {% for filter_name in filter.form %}
+                                {% if not filter_name.is_hidden %}
+                                    {% if filter.form.fields|length|divisibleby:"5" %}
+                                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 my-3">
+                                        {% elif filter.form.fields|length|divisibleby:"4" %}
+                                            <div class="col-12 col-sm-6 col-lg-3 my-3">
+                                            {% elif filter.form.fields|length|divisibleby:"3" %}
+                                                <div class="col-12 col-sm-6 col-lg-4 my-3">
+                                                {% elif filter.form.fields|length|divisibleby:"2" %}
+                                                    <div class="col-12 col-sm-6 my-3">
+                                                    {% else %}
+                                                        <div class="col-12 col-sm-12 col-md-6 col-lg-4 my-3">
+                                                        {% endif %}
+                                                        <label class="form-label input-color fw-bold"
+                                                               for="{{ filter_name.id_for_label }}">
+                                                            {{ filter_name.label }}
+                                                        </label>
+                                                        <div class="input-group" id="div_id_{{ filter_name.name }}">{{ filter_name }}</div>
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                        <div id="filter actions" class="text-end m-0 p-2">
+                                            <button class="btn dark btn-sm reset btn_filtrar" type="submit">{% trans "Filtrar" %}</button>
+                                            <a href="{{ request.path }}"
+                                               class="btn btn-sm reset btn_borrar_filtros"
+                                               type="button">
+                                                {% comment %}
+                                                    filter.form.fields includes hidden fields (like "id"), so length counts extra.
+                                                    The -1 subtracts that hidden field to count only visible filters.
+                                                {% endcomment %}
+                                                {% with total=filter.form.fields|length|add:"-1" %}
+                                                    {% trans "Borrar filtro" %}{{ total|pluralize:",s" }}
+                                                {% endwith %}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>

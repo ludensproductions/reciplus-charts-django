@@ -1,0 +1,29 @@
+{% load utils %}
+{% load i18n %}
+
+{% if ext == ".pdf" %}
+    <object
+        type="application/pdf"
+        data="{{ fileobj.url }}"
+        width="100%"
+        height="600">
+        <a href="{{ fileobj.url }}" target="_blank" rel="noopener" download>
+            {{ fileobj.name }}
+        </a>
+    </object>
+{% elif ext == ".docx" or ext == ".doc" %}
+    {% absolute_url fileobj.url as fileobj_url %}
+    <object
+        data="https://docs.google.com/gview?url={{ fileobj_url }}&embedded=true"
+        width="100%"
+        height="600"
+        frameborder="0">
+        <a href="{{ fileobj.url }}" target="_blank" rel="noopener" download>
+            {{ fileobj.name }}
+        </a>
+    </object>
+{% else %}
+    <a href="{{ fileobj.url }}" target="_blank" rel="noopener" download title="{% trans 'Descargar archivo' %}">
+        {{ fileobj.name }}
+    </a>
+{% endif %}

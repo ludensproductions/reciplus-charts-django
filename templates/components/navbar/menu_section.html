@@ -1,0 +1,13 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes
+    section_url: Url section.
+    icon: css icon class.
+    section_name: Name to be used on the section.
+-->
+{% endcomment %}
+<a class="dropdown-item" href="{% url section_url %}">
+    <i class="{{ icon }} me-2 text-gray-400"></i>
+    &nbsp;{% trans section_name %}
+</a>

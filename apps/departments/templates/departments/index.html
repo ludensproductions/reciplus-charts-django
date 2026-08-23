@@ -1,0 +1,96 @@
+{% extends 'generic/index.html' %}
+{% load i18n %}
+{% load utils %}
+{% load static %}
+{% block content %}
+    <!-- Start: Ludens - 1 Index Table with Search & Sort Filters -->
+    <div class="container-fluid padding-padre">
+        {% if return_url %}
+            {% include "components/buttons/btn_volver.html" with back_url=return_url %}
+        {% endif %}
+        {% if create_url is not None and disable_url and not None %}
+            {% include "components/index/page_header.html" with title=title create_url=create_url disable_url=disable_url permissions=permissions %}
+        {% elif disable_url is not None %}
+            {% include "components/index/page_header.html" with title=title disable_url=disable_url permissions=permissions %}
+        {% elif create_url is not None %}
+            {% include "components/index/page_header.html" with title=title create_url=create_url permissions=permissions %}
+        {% else %}
+            {% include "components/index/page_header.html" with title=title %}
+        {% endif %}
+        {% include "filter.html" %}
+        <div class="card rounded-3" id="TableSorterCard">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped table tablesorter" id="ipi-table">
+                            <thead class="thead-dark">
+                                {% include "components/table/etiquetas_tables/th_tables.html" with fields=fields can_disable=can_disable %}
+                            </thead>
+                            <tbody class="text-center">
+                                {% for item in items %}
+                                    <tr>
+                                        {% for field in fields %}
+                                            <td>
+                                                {% if 'BooleanField' in field|get_field_type %}
+                                                    {% if item|getattr:field.name %}
+                                                        <i class="ti ti-check text-success fs-3"></i>
+                                                    {% else %}
+                                                        <i class="ti ti-letter-x text-danger fs-3"></i>
+                                                    {% endif %}
+                                                {% else %}
+                                                    {% translate "N/D" as not_available_label %}
+                                                    {{ item|getattr:field.name|default:not_available_label }}
+                                                {% endif %}
+                                            </td>
+                                        {% endfor %}
+                                        {% if can_disable %}
+                                            <td>
+                                                {% if delete_url != None and permissions.delete %}
+                                                    {% include "components/table/action_buttons/delete_toggle.html" with delete_url=delete_url  item=item %}
+                                                {% endif %}
+                                            </td>
+                                        {% endif %}
+                                        <td>
+                                            <div class="d-flex justify-content-center">
+                                                {% if is_disabled_view == False %}
+                                                    {% if not item.deleted %}
+                                                        {% if groups_url != None and permissions.change %}
+                                                            {% translate "Agregar grupos" as add_groups_label %}
+                                                            {% include "components/table/action_buttons/icon_button.html" with color_action='secondary' translate=add_groups_label action_url=groups_url pk=item.pk icon='fas fa-users' %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if detail_url %}
+                                                        {% if detail_url != None and permissions.view %}
+                                                            {% translate "Ver" as view_label %}
+                                                            {% include "components/table/action_buttons/icon_button.html" with color_action='primary' translate=view_label action_url=detail_url pk=item.pk icon='fas fa-eye' %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                    {% if not item.deleted %}
+                                                        {% if edit_url != None and permissions.change %}
+                                                            {% translate "Editar" as update_label %}
+                                                            {% include "components/table/action_buttons/icon_button.html" with color_action='success' translate=update_label action_url=edit_url pk=item.pk icon='fas fa-pen' %}
+                                                        {% endif %}
+                                                    {% endif %}
+                                                {% endif %}
+                                                {% if can_disable == False and permissions.delete %}
+                                                    {% translate "Eliminar" as delete_label %}
+                                                    {% include "components/table/action_buttons/delete.html" with translate=delete_label pk=item %}
+                                                {% endif %}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'pagination.html' %}
+    <!-- Delete modal -->
+    {% include 'delete.html' %}
+    {% if can_disable or is_disabled_view %}
+        {% include 'enable.html' %}
+    {% endif %}
+{% endblock content %}

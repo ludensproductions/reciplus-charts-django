@@ -1,0 +1,10 @@
+/* Limits the activity feed height and enables scrolling */
+.activity-feed-scroll {
+    max-height: 60vh; /* adjust as needed */
+    overflow-y: auto;
+}
+
+/* Optional: improves scroll behavior on mobile */
+.activity-feed-scroll {
+    -webkit-overflow-scrolling: touch;
+}

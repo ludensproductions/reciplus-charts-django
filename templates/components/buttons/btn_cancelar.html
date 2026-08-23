@@ -1,0 +1,11 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes
+    return_url: Url to which the button will send you when you click on it
+-->
+{% endcomment %}
+<a class="btn btn-secondary btn_movil_view_size mb-1 d-sm-inline-block me-1" role="button" id="cancelButton" href="{'% url return_url %'}">
+    <i class="fas fa-arrow-left"></i>
+    &nbsp;{% trans "Cancelar" %}
+</a>

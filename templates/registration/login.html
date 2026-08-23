@@ -1,0 +1,119 @@
+{% load static i18n external_static %}
+{% comment %} {% load custom_tags %} {% endcomment %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <!-- Favicon and title -->
+        <link rel="icon"
+              type="image/x-icon"
+              href="/static/assets/img/logoheader.svg" />
+        <title>Login</title>
+        <link rel="stylesheet"
+              href="{% external_static_url 'https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i' %}">
+        <link rel="stylesheet"
+              href="{% external_static_url 'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css' %}">
+        <link rel="stylesheet"
+              href="{% external_static_url 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet"
+              href="{% static 'assets/css/sb-admin-theme.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/styles.min.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/theme.css' %}">
+        <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
+    </head>
+    {% load crispy_forms_tags %}
+    <body class="theme-{{ SITE_THEME|default:'axxon' }} login-body">
+        <div class="container login-container">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-9 col-xl-9 col-xxl-7">
+                    <div class="card shadow-lg o-hidden border-0 my-5 login-card">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="p-5">
+                                        <div class="container d-flex justify-content-center align-items-center mb-4">
+                                            <div class="login-logo-wrapper">
+                                                {% with SITE_THEME|default:'axxon' as current_theme %}
+                                                    {% with 'assets/img/logos/logo_'|add:current_theme|add:'.png' as logo_path %}
+                                                        <img class="img-fluid login-logo-image"
+                                                             src="{% static logo_path %}"
+                                                             alt="Logo {{ current_theme }}">
+                                                    {% endwith %}
+                                                {% endwith %}
+                                            </div>
+                                        </div>
+                                        <div class="container d-flex d-lg-flex d-xl-flex justify-content-center align-items-center justify-content-lg-center align-items-lg-center justify-content-xl-center">
+                                            <hr class="login-divider">
+                                        </div>
+                                        <div class="text-center">
+                                            <h4 class="text-dark mb-4">{% trans "¡Bienvenido de vuelta!" %}</h4>
+                                        </div>
+                                        <br>
+                                        {% if messages %}
+                                            {% for message in messages %}<div class="alert alert-danger text-center">{{ message }}</div>{% endfor %}
+                                        {% endif %}
+                                        <!-- Start: Login Form -->
+                                        <form class="user" method="POST" action="{% url 'login' %}">
+                                            {% csrf_token %}
+                                            {% if form.errors %}
+                                                <p class="text-danger">{% trans "Nombre de usuario y/o contraseña no coinciden. Por favor intente nuevamente." %}</p>
+                                            {% endif %}
+                                            <div class="mb-3">
+                                                <input class="form-control form-control-user input-login"
+                                                       type="text"
+                                                       id="email"
+                                                       placeholder="Ingrese el nombre de usuario"
+                                                       name="username"
+                                                       required="">
+                                            </div>
+                                            <div class="mb-3">
+                                                <input class="form-control form-control-user input-login"
+                                                       type="password"
+                                                       placeholder="Contraseña"
+                                                       name="password"
+                                                       required="">
+                                            </div>
+                                            <input type="hidden" name="next" value="{{ request.GET.next }}" />
+                                            <button class="btn d-block btn-user w-100 text_type_color mb-3 login-submit-btn"
+                                                    id="submitBtn"
+                                                    type="submit">Iniciar sesión</button>
+                                            <hr class="login-hr">
+                                        </form>
+                                        <!-- End: Login Form -->
+                                        <!-- Start: Microsoft Login -->
+                                        <a href="{% url 'microsoft:login' %}"
+                                           class="btn d-block btn-user w-100 mb-3 login-microsoft-btn">
+                                            <img src="{% static 'assets/img/icons/microsoft_logo.svg' %}"
+                                                 alt="Microsoft"
+                                                 width="21"
+                                                 height="21"
+                                                 class="me-2 login-microsoft-icon">
+                                            {% trans "Iniciar sesión con Microsoft" %}
+                                        </a>
+                                        <!-- End: Microsoft Login -->
+                                        <!-- Start: Discord Login -->
+                                        <a href="{% url 'discord:login' %}"
+                                           class="btn d-block btn-user w-100 mb-3 login-discord-btn">
+                                            <i class="fab fa-discord me-2"></i>
+                                            {% trans "Iniciar sesión con Discord" %}
+                                        </a>
+                                        <!-- End: Discord Login -->
+                                        <!-- Start: Forgot Password -->
+                                        <div class="text-center">
+                                            <a class="small" href="{% url 'forgot-password' %}">{% trans "¿Olvidaste tu contraseña?" %}</a>
+                                        </div>
+                                        <!-- End: Forgot Password -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{% external_static_url 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% external_static_url 'https://cdn.jsdelivr.net/npm/sweetalert2@11' %}"></script>
+    </body>
+</html>

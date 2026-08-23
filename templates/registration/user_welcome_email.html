@@ -1,0 +1,60 @@
+{% load i18n %}<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin:0;padding:0;background-color:#eef3f9;font-family:'Nunito',Arial,sans-serif;color:#17324d;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:linear-gradient(180deg,#0d4c8f 0%,#eef3f9 240px);padding:40px 16px;">
+        <tr>
+            <td align="center">
+                <table role="presentation" width="640" cellspacing="0" cellpadding="0" style="max-width:640px;background-color:#ffffff;border-radius:20px;overflow:hidden;box-shadow:0 20px 45px rgba(13,76,143,0.16);">
+                    <tr>
+                        <td style="padding:32px 36px 20px;background:linear-gradient(135deg,#0d4c8f 0%,#2f87ff 100%);">
+                            <div style="display:inline-block;padding:8px 14px;border-radius:999px;background-color:rgba(255,255,255,0.16);color:#ffffff;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">Issirmax</div>
+                            <h1 style="margin:18px 0 8px;color:#ffffff;font-size:28px;line-height:1.2;">{% trans "Bienvenido a Issirmax" %}</h1>
+                            <p style="margin:0;color:rgba(255,255,255,0.88);font-size:15px;line-height:1.6;">{% trans "Se ha creado una cuenta para ti con las siguientes credenciales de acceso." %}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:32px 36px 20px;">
+                            <p style="margin:0 0 24px;font-size:16px;line-height:1.6;color:#35516f;">{% trans "Hola" %}{% if user.first_name %}, {{ user.first_name }}{% endif %}.</p>
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:separate;border-spacing:0 12px;">
+                                <tr>
+                                    <td style="padding:18px 20px;border:1px solid #d8e6f7;border-radius:14px;background-color:#f8fbff;">
+                                        <p style="margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6a85a3;">{% trans "Usuario" %}</p>
+                                        <p style="margin:0;font-size:18px;font-weight:700;color:#17324d;word-break:break-word;">{{ username }}</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:18px 20px;border:1px solid #d8e6f7;border-radius:14px;background-color:#f8fbff;">
+                                        <p style="margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6a85a3;">{% trans "Contraseña" %}</p>
+                                        <p style="margin:0;font-size:18px;font-weight:700;color:#17324d;word-break:break-word;">{{ temporary_password }}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table role="presentation" cellspacing="0" cellpadding="0" style="margin:28px 0 20px;">
+                                <tr>
+                                    <td style="border-radius:12px;background-color:#19c2d1;box-shadow:0 10px 24px rgba(25,194,209,0.28);">
+                                        <a href="{{ protocol }}://{{ domain }}{% url 'login' %}"
+                                           style="display:inline-block;padding:14px 24px;color:#ffffff;text-decoration:none;font-size:15px;font-weight:700;">
+                                            {% trans "Ir al inicio de sesión" %}
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <p style="margin:0 0 10px;font-size:14px;line-height:1.6;color:#5a718c;">{% trans "Por seguridad, te recomendamos cambiar tu contraseña después de iniciar sesión." %}</p>
+                            <p style="margin:0;font-size:13px;line-height:1.6;color:#7a8ea6;">{% trans "Si no reconoces este acceso, comunícate con el administrador del sistema." %}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:20px 36px 28px;background-color:#f8fbff;border-top:1px solid #e3edf8;text-align:center;">
+                            <p style="margin:0;font-size:12px;color:#8da0b5;">&copy; {{ site_name }}</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

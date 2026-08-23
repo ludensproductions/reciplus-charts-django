@@ -1,0 +1,39 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes
+    type: Defines the button type. Examples include 'submit', 'button', 'reset'.
+    id: A unique identifier for the button.
+    name: The name of the button.
+    title: Tooltip text for the button.
+    data_in: Boolean used for the "add" button in the formset.
+    formset_prefix: Prefix for the formset.
+    forloop_counter: (Please clarify the meaning of "forlopp counter" for accurate translation.)
+    class: CSS class for the button, including basic classes (e.g., btn) and dynamic ones.
+    icon: Icon displayed next to the title on the button.
+    title_button: Text that will appear on the button.
+
+Note:
+    If you want to make the buttons responsive without altering their
+    actual characteristics, please add the corresponding classes in the
+    CSS file using the width property.
+    -->
+{% endcomment %}
+<button
+    type="{{type}}"
+    {% if id %} id="{{ id }}" {% endif %}
+    {% if name %} name="{{ name }}" {% endif %}
+    {% if title %} title="{{ title }}" {% endif %}
+    {% if data_in %} data-template="{{ formset_prefix }}_formset_template" {% endif %}
+    {% if formset_prefix and forloop_counter != None %} data-formset="{{ formset_prefix }}_formset_row-{{ forloop_counter }}" {% endif %}
+    class="btn {{ class }}">
+
+    <i
+        {% if icon %} class="{{ icon }}" {% endif %}
+        {% if data_in %} data-template="{{ formset_prefix }}_formset_template" {% endif %}
+    ></i> {% if title_button %}
+            {% if icon %} &nbsp;{% endif %}
+            {% trans title_button %}
+        {% endif%}
+
+</button>

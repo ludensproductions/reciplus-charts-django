@@ -1,0 +1,119 @@
+.login-body {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    background-color: var(--login-bg) !important;
+    overflow: hidden !important;
+    height: 100vh !important;
+    padding-right: 0 !important;
+}
+
+.login-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.login-card {
+    background-color: var(--login-card-bg);
+    color: var(--login-card-text);
+}
+
+.login-card .text-dark {
+    color: var(--login-card-text) !important;
+}
+
+.login-card a.small {
+    color: var(--login-primary);
+}
+
+.login-logo-wrapper {
+    width: 100%;
+    min-height: var(--login-logo-area-height, 110px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-logo-image {
+    display: block;
+    width: auto;
+    max-width: min(100%, var(--login-logo-max-width, 320px));
+    max-height: var(--login-logo-max-height, 120px);
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+@media (max-width: 576px) {
+    .login-logo-image {
+        max-width: 92%;
+    }
+}
+
+.login-divider {
+    border-radius: 20px;
+    border: 2px solid var(--login-input-border);
+    width: 75%;
+}
+
+.input-login {
+    --input-color: var(--login-text);
+    background-color: var(--login-input-bg);
+    border-color: var(--login-input-border);
+    color: var(--login-text);
+}
+
+form.user .form-control.form-control-user.input-login {
+    --input-color: var(--login-text);
+    background-color: var(--login-input-bg);
+    border-color: var(--login-input-border);
+    color: var(--login-text);
+}
+
+form.user .form-control.form-control-user.input-login:focus {
+    --input-color: #4d4d4d;
+    background-color: #ffffff;
+    color: #4d4d4d;
+    border-color: var(--login-primary);
+}
+
+form.user .form-control.form-control-user.input-login::placeholder {
+    color: var(--login-placeholder);
+}
+
+form.user .form-control.form-control-user.input-login:focus::placeholder {
+    color: #858796;
+}
+
+form.user .login-submit-btn.btn-user {
+    background-color: var(--login-primary);
+    color: white;
+    font-size: 16px;
+}
+
+.login-hr {
+    border-color: var(--login-input-border);
+}
+
+.login-microsoft-btn {
+    background-color: #2f2f2f;
+    color: white;
+    border: 1px solid #8c8c8c;
+}
+
+.login-microsoft-icon {
+    vertical-align: text-bottom;
+}
+
+.login-discord-btn {
+    background-color: #5865F2;
+    color: white;
+}

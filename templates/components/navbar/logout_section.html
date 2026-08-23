@@ -1,0 +1,16 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes
+    loguout: Logout url .
+-->
+{% endcomment %}
+<div class="dropdown-divider"></div>
+
+<form action="{% url loguout %}" class="d-inline" method="post">
+    {% csrf_token %}
+    <button class="dropdown-item" type="submit">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>
+        &nbsp;{% trans "Cerrar sesión" %}
+    </button>
+</form>

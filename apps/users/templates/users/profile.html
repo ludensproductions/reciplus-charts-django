@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+    {% trans "Perfil" %}
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'assets/css/profile.css' %}">
+{% endblock %}
+{% block content %}
+    {% load crispy_forms_tags %}
+    <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+            <div class="container-fluid">
+                <h1 class="text_type_color mb-4">{% trans "Perfil" %}</h1>
+                <div class="card shadow mb-3">
+                    <div class="card-header py-3">
+                        <p class="text_type_color m-0 fw-bold">{% trans "Opciones de usuario" %}</p>
+                    </div>
+                    <div class="card-body">
+                        <!-- Start: Form -->
+                        <form method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row" style="margin-bottom: 25px;text-align: left;">
+                                <div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2"
+                                     style="display: inline;
+                                            text-align: center;
+                                            margin-bottom: 25px">
+                                    <!-- Image Display -->
+                                    {% if form.image.value != '' %}
+                                        <img id="img-preview"
+                                             class="mb-3 mt-4 img-fluid"
+                                             src="/media/{{ form.image.value }}"
+                                             style="display: inline;
+                                                    max-height: 110px;
+                                                    clip-path: circle(55px at 50% 50%)"
+                                             draggable="false">
+                                        <p id="noImageText" style="display:none">
+                                            <br>
+                                            <br>
+                                            {% trans "Imagen Removida" %}
+                                        </p>
+                                    {% else %}
+                                        <img id="img-preview"
+                                             class="mb-3 mt-4 img-fluid"
+                                             src="/media/{{ form.image.value }}"
+                                             style="display: none;
+                                                    max-height: 110px;
+                                                    clip-path: circle(55px at 50% 50%)"
+                                             draggable="false">
+                                        <p id="noImageText">
+                                            <br>
+                                            <br>
+                                            {% trans "Sin Imagen" %}
+                                            <br>
+                                        </p>
+                                    {% endif %}
+                                    <!-- We are hiding this image inputs with a position absolute style that
+                                    renders them outside the screen -->
+                                    {{ form.image|as_crispy_field }}
+                                    <br>
+                                    {% translate "Cambiar" as cambiar_label %}
+                                    {% include "components/buttons/btn_generic.html" with type='button' id='photoBtn' class='btn-sm mt-1 btn-primary' title_button=cambiar_label %}
+                                    {% if form.image.value != '' %}
+                                        <!-- The clear button will only render when we have a Profile Image -->
+                                        {% translate "Limpiar" as limpiar_label %}
+                                        {% include "components/buttons/btn_generic.html" with type='button' id='clearImage' class='btn-sm mt-1 btn-disabled' title_button=limpiar_label %}
+                                    {% endif %}
+                                </div>
+                                <div class="col-sm-8 col-md-8 col-lg-9 col-xl-10 col-xxl-10 align-self-center">
+                                    <div class="row">
+                                        <div class="col-xl-12 col-lg-12 text-start">{{ form.email|as_crispy_field }}</div>
+                                        <div class="col-xl-6 col-lg-12 text-start">
+                                            <div class="mb-3">{{ form.password|as_crispy_field }}</div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-12 text-start">
+                                            <div class="mb-3">{{ form.password2|as_crispy_field }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Start: Error Messages -->
+                                <div class="col" id="errorMessagesDiv">
+                                    <p id="emailErrorMsg" class="text-danger" style="display:none;"></p>
+                                    <p id="passwordErrorMsg" class="text-danger" style="display:none;"></p>
+                                </div>
+                                <div class="col-md-12" style="text-align: right;margin-top: 5px;">
+                                    {% translate "Guardar" as save_label %}
+                                    {% include "components/buttons/btn_generic.html" with type='submit' id='submitBtn' class='btn-sm mt-1 btn-primary btn_guardar_size' icon='fas fa-save' title_button=save_label %}
+                                </div>
+                            </div>
+                        </form>
+                        <!-- End: Form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="{% static 'assets/js/profile.js' %}"></script>
+{% endblock %}

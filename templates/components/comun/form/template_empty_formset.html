@@ -1,0 +1,35 @@
+
+{% load crispy_forms_tags %}
+{% load static %}
+{% load i18n %}
+{% load custom_tags %}
+
+{% comment %}
+<!--
+Attributes
+    formset: Is a set of forms managed collectively in Django.
+-->
+{% endcomment %}
+
+<template id="{{formset.prefix}}_formset_template" data-container_target="list_{{formset.prefix}}">
+    <tr id="{{formset.prefix}}_formset_div-0">
+        {% for field in formset.empty_form %}
+
+        {% if field.is_hidden %}
+            {{ field }}
+        {% elif field.field|get_class == "BooleanField" %}
+            <td >
+                {% include "components/inputs/switch.html" with field=field show_label=False %}
+            </td>
+        {% else %}
+            <td>
+                {{ field|as_crispy_field }}
+            </td>
+        {% endif %}
+
+        {% endfor %}
+        <td class="text-center">
+            {% include "components/buttons/btn_formset_deshabilitar.html" with formset_prefix=formset.prefix forloop_counter=forloop.counter0 title=custom_button_title %}
+        </td>
+    </tr>
+</template>

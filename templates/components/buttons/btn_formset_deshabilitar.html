@@ -1,0 +1,14 @@
+{% load i18n %}
+{% comment %}
+<!--
+Attributes
+    formset_prefix: Prefix for the formset.
+    forloop_counter: (Please clarify the meaning of "forloop counter" for accurate translation.)
+    title: (Optional) Custom title for the button tooltip.
+-->
+{% endcomment %}
+<button class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover delete-formset" type="button"
+    data-formset="{{ formset_prefix }}_formset_row-{{ forloop_counter }}"
+    {% if title %}title="{{ title }}"{% endif %}>
+    <i class="fa-solid fa-link-slash fs-5"></i>
+</button>

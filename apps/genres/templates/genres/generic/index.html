@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load utils %}
+{% load i18n %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block css %}
+{% endblock css %}
+{% block content %}
+    <!-- Start: Ludens - 1 Index Table with Search & Sort Filters -->
+    <div class="container-fluid padding-padre">
+        {% if return_url %}
+            {% include "components/buttons/btn_volver.html" with back_url=return_url %}
+        {% endif %}
+        {% if create_url is not None and disable_url and not None %}
+            {% include "components/index/page_header.html" with title=title create_url=create_url disable_url=disable_url permissions=permissions general_extra_actions=general_extra_actions %}
+        {% elif disable_url is not None %}
+            {% include "components/index/page_header.html" with title=title disable_url=disable_url permissions=permissions general_extra_actions=general_extra_actions %}
+        {% elif create_url is not None %}
+            {% include "components/index/page_header.html" with title=title create_url=create_url permissions=permissions general_extra_actions=general_extra_actions %}
+        {% else %}
+            {% include "components/index/page_header.html" with title=title general_extra_actions=general_extra_actions %}
+        {% endif %}
+        {% include "filter.html" %}
+        <div class="card rounded-3" id="TableSorterCard">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive">
+                        {% include "components/table/data_table.html" with fields=fields items=items delete_url=delete_url detail_url=detail_url edit_url=edit_url is_disabled_view=is_disabled_view can_disable=can_disable permissions=permissions extra_actions=extra_actions %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End: TableSorter -->
+    </div>
+    <!-- End: Ludens - 1 Index Table with Search & Sort Filters -->
+    <!-- Pagination -->
+    {% include 'pagination.html' %}
+    <!-- Delete modal -->
+    {% comment %} To modify the text in model, change the "subtitle" variable in IndexView {% endcomment %}
+    {% if confirm_deletion %}
+        {% include 'delete.html' %}
+        {% if can_disable or is_disabled_view %}
+            {% include 'enable.html' %}
+        {% endif %}
+    {% endif %}
+{% endblock content %}
+{% block js %}
+    <!-- Table's core JavaScript -->
+    <script>
+        document.addEventListener('htmx:configRequest', function(event) {
+            event.target.disabled = true;
+        });
+
+        document.addEventListener('htmx:afterRequest', function(event) {
+            const response = event.detail.xhr.responseText;
+            if (response === "ERROR") {
+                event.target.checked = !event.target.checked;
+            }
+            location.reload();
+        });
+    </script>
+{% endblock js %}

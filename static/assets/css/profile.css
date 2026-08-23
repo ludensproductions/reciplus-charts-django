@@ -1,0 +1,10 @@
+.input-group-text {
+    display: none;
+}
+
+#id_image,
+.form-control.d-flex.h-auto {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}

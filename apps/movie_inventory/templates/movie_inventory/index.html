@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Índice de Inventario de Peliculas
+{% endblock title %}
+{% block css %}
+{% endblock css %}
+{% block content %}
+    <!-- Start: Ludens - 1 Index Table with Search & Sort Filters -->
+    <div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6">
+                    <h1 class="text-dark mb-4">{{ title }}</h1>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 text-end mb-4">
+                    <a class="btn btn-primary"
+                       role="button"
+                       href="{% url 'movie_inventory:disabled_index' %}">
+                        <i class="fa fa-plus"></i> &nbsp;Deshabilitados
+                    </a>
+                    <a class="btn btn-primary"
+                       role="button"
+                       href="{% url 'movie_inventory:create' %}">
+                        <i class="fa fa-plus"></i> &nbsp;Agregar película
+                    </a>
+                </div>
+            </div>
+            {% include 'filter.html' %}
+            <div class="card" id="TableSorterCard">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-striped table tablesorter" id="ipi-table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th class="text-center">Titulo</th>
+                                        <th class="text-center">Cantidad</th>
+                                        <th class="text-center">Correo</th>
+                                        <th class="text-center filter-false sorter-false">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                    {% for movie in movie_inventories %}
+                                        <tr>
+                                            <td>{{ movie.movie }}</td>
+                                            <td>{{ movie.quantity }}</td>
+                                            <td>{{ movie.email }}</td>
+                                            <td class="text-center align-middle">
+                                                <a class="btn btnMaterial btn-flat success semicircle"
+                                                   role="button"
+                                                   title="Editar"
+                                                   href="{% url 'movie_inventory:edit' movie.id %}">
+                                                    <i class="fas fa-pen"></i>
+                                                </a>
+                                                <a class="btn btnMaterial btn-flat accent btnNoBorders checkboxHover"
+                                                   role="button"
+                                                   title="Eliminar"
+                                                   data-bs-toggle="modal"
+                                                   onclick="destroy('{% url 'movie_inventory:delete' movie.id %}')"
+                                                   href="#"
+                                                   data-bs-target="#delete-modal"
+                                                   id="btn-delete-movie-inventory">
+                                                    <i class="fas fa-trash btnNoBorders"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End: TableSorter -->
+        </div>
+    </div>
+    <!-- End: Ludens - 1 Index Table with Search & Sort Filters -->
+    <!-- Pagination -->
+    {% include 'pagination.html' %}
+    <!-- Delete modal -->
+    <form id="deleteForm" method="post">
+        {% csrf_token %}
+        <div class="modal fade" role="dialog" tabindex="-1" id="delete-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5 primary-color-text fw-bold">Deshabilitar inventario de pelicula</h2>
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="fs-6 text-dark">
+                            Si deshabilitas este inventario de pelicula podras habilitarlo desde el índice de deshabilitados.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-light btn_rounded"
+                                type="button"
+                                data-bs-dismiss="modal">Cancelar</button>
+                        <button class="btn btn-danger btn_guardar"
+                                type="button"
+                                onclick="formSubmit()">Deshabilitar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <a class="border rounded d-inline scroll-to-top" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+{% endblock content %}
+{% block js %}
+{% endblock js %}

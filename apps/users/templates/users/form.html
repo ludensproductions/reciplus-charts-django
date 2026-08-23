@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block css %}
+    {# This block can be replaced if another html extends form.html #}
+    {% block custom_css_block %}
+    {% endblock custom_css_block %}
+    {% for css in custom_css_files %}
+        <link rel="stylesheet" href="{% static css %}">
+    {% endfor %}
+{% endblock %}
+{% block content %}
+    {% trans 'Eliminar domicilio' as delete_address_label %}
+    {% trans 'Agregar domicilio' as add_address_label %}
+    <div class="container-fluid px-0 px-sm-0 px-md-4">
+        {% include "components/buttons/btn_volver.html" with back_url=return_url %}
+        <div class="row {% if form.fields|length == 1 %}small_form{% endif %}">
+            {% include "components/comun/title.html" with title=title %}
+            <div class="col-12">
+                {% include "users/components/card.html" with request=request form_id=form_id return_url=return_url %}
+            </div>
+        </div>
+    </div>
+    <form id="confirmForm" method="post">
+        {% csrf_token %}
+        <div class="modal fade" role="dialog" tabindex="-1" id="confirm-modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title fs-5 primary-color-text fw-bold">{{ delete_address_label }}</h4>
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="fs-6 text-dark">{% trans "Si continúas, eliminarás el domicilio del usuario." %}</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary btn_rounded"
+                                type="button"
+                                data-bs-dismiss="modal">{% trans "Cancelar" %}</button>
+                        <button class="btn btn-primary btn_guardar"
+                                type="button"
+                                id="confirm-button-modal">{% trans "Eliminar" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    {{ has_domicilio|json_script:"hasDomicilio" }}
+    {{ form.instance.id|json_script:"primaryKey" }}
+    {{ delete_address_label|json_script:"deleteAddressLabel" }}
+    {{ add_address_label|json_script:"addAddressLabel" }}
+{% endblock %}
+{% block js %}
+    {{ form.media.js }}
+    {% for js_file in custom_js_files %}
+        <script src="{% static js_file %}"></script>
+    {% endfor %}
+    <script type="module" src="{% static 'assets/js/events/users_events.js' %}"></script>
+{% endblock %}

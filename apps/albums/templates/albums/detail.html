@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    {% include "components/buttons/btn_volver.html" with back_url=return_url %}
+    <div class="container-fluid px-0 px-sm-0 px-md-4">
+        <!-- Title Component -->
+        {% include "components/comun/title.html" with title=title %}
+        <div class="card-body">{% include "components/detail/data_grid.html" with fields=fields object=object %}</div>
+        {% if songs %}
+            <div class="row mb-3">
+                <div class="col-12 mb-3">
+                    <h2 class="fs-5 fw-bold primary-color-text">{% trans "Canciones" %}</h2>
+                </div>
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped tablesorter table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-center">{% trans "Título" %}</th>
+                                    <th class="text-center">{% trans "Duración" %}</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                {% for song in songs %}
+                                    <tr>
+                                        <td title="songs-{{ forloop.counter0 }}-title">{{ song.title }}</td>
+                                        <td title="songs-{{ forloop.counter0 }}-duration">{{ song.duration }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% if merchs %}
+            <div class="row mb-3">
+                <div class="col-12 mb-3">
+                    <h2 class="fs-5 fw-bold primary-color-text">{% trans "Mercancía" %}</h2>
+                </div>
+                <div class="col-12">
+                    <div class="table-responsive">
+                        <table class="table table-striped tablesorter table-bordered">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th class="text-center">{% trans "Nombre de la mercancía" %}</th>
+                                    <th class="text-center">{% trans "Precio" %}</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-center">
+                                {% for merch in merchs %}
+                                    <tr>
+                                        <td title="merch-{{ forloop.counter0 }}-merch_name">{{ merch.merch_name }}</td>
+                                        <td title="merch-{{ forloop.counter0 }}-price">{{ merch.price }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock content %}

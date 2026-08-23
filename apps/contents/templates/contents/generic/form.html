@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}
+    {{ title }}
+{% endblock title %}
+{% block css %}
+    {# This block can be replaced if another html extends form.html #}
+    {% block custom_css_block %}
+    {% endblock custom_css_block %}
+    {% for css in custom_css_files %}
+        <link rel="stylesheet" href="{% static css %}">
+    {% endfor %}
+{% endblock %}
+{% block content %}
+    <div class="container-fluid px-0 px-sm-0 px-md-4">
+        {% include "components/buttons/btn_volver.html" with back_url=return_url %}
+        <div class="row {% if form.fields|length == 1 %}small_form{% endif %}">
+            {% include "components/comun/title.html" with title=title %}
+            <div class="col-12">
+                {% include "contents/components/comun/card.html" with request=request form_id=form_id return_url=return_url has_formset=has_formset formsets=formsets %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    {{ form.media.js }}
+    {# This block can be replaced if another html extends form.html #}
+    {% block custom_js_block %}
+    {% endblock custom_js_block %}
+    {% for js_file in custom_js_files %}
+        <script src="{% static js_file %}"></script>
+    {% endfor %}
+{% endblock %}

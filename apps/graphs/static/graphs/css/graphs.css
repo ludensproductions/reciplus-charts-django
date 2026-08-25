@@ -1,5 +1,16 @@
 body { margin: 0; padding: 24px; background: #eef1f5; font-family: Arial, sans-serif; color: #4a5568; }
 .page { max-width: 1000px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: flex-start;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5A9DB5;
+  text-decoration: none;
+}
+.back-link:hover { color: #4d84a3; text-decoration: underline; }
 .card { background: #ffffff; border-radius: 12px; padding: 24px 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); border: 1px solid #e6e9ee; }
 h1 { font-size: 18px; font-weight: 600; margin: 0; color: #4a5568; }
 .chart-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin: 0 0 20px; }

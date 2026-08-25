@@ -1,0 +1,18 @@
+<form id="{{ form_id }}" class="filter-bar">
+  <div class="filter-field">
+    <label for="{{ from_id }}">Desde</label>
+    <input type="date" id="{{ from_id }}">
+  </div>
+  <div class="filter-field">
+    <label for="{{ to_id }}">Hasta</label>
+    <input type="date" id="{{ to_id }}">
+  </div>
+  <div class="filter-field">
+    <label class="filter-field-spacer">&nbsp;</label>
+    <button type="submit">Aplicar</button>
+  </div>
+  <div class="filter-field">
+    <label class="filter-field-spacer">&nbsp;</label>
+    <button type="button" class="btn-secondary" id="{{ clear_id }}">Limpiar</button>
+  </div>
+</form>

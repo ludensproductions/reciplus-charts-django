@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="chart-header">
+    <h1>Ingresos por día</h1>
+  </div>
+  {% include "graphs/partials/_filter_bar.html" with form_id="revenue-by-day-filter-form" from_id="revenue-by-day-date-from" to_id="revenue-by-day-date-to" clear_id="revenue-by-day-clear" %}
+  <div class="chart-wrap small">
+    <canvas id="revenue-by-day-chart"></canvas>
+  </div>
+  <div id="revenue-by-day-msg" class="state-msg" style="display:none;"></div>
+</div>

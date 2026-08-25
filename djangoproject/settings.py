@@ -28,6 +28,13 @@ ENABLE_CLUSTER = os.getenv("ENABLE_CLUSTER")
 mimetypes.add_type("application/javascript", ".js", True)
 SITE_THEME = os.getenv("SITE_THEME", "axxon")
 
+# Sesión compartida con reciplus-djangoninja (SSO real en web: la sesión ya existe
+# cuando se abre /graphs, sin exchange) y validación de los JWT que emite ninja_jwt
+# para el exchange-code nativo — ambos usan SECRET_KEY porque debe ser EXACTAMENTE
+# el mismo valor que en reciplus-djangoninja/.env. El algoritmo (HS256) no es un
+# setting — es constante en apps.graphs.auth_bridge, igual que en NINJA_JWT['ALGORITHM']
+# de reciplus-djangoninja/djangoproject/settings.py (tampoco viene de variable de entorno ahí).
+
 # Application definition
 INSTALLED_APPS = [
     "daphne",
@@ -38,53 +45,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Project apps
-    "apps.catalogos",
-    "apps.albums",
-    "apps.categories",
-    "apps.contents",
-    "apps.articles",
-    "apps.videos",
-    "apps.dashboard",
-    "apps.departments",
-    "apps.evidence",
-    "apps.users",
-    "apps.sales",
-    "apps.movies",
-    "apps.genres",
-    "apps.movie_inventory",
-    "apps.groups",
-    "apps.history",
-    "apps.jobs",
-    "apps.students",
-    "apps.core",
-    "apps.courses",
-    "apps.positions",
-    "apps.teachers",
+    # Project apps — este proyecto solo sirve las gráficas; casi nada del template
+    # se usa. apps.comun se queda por sus utilidades genéricas (forms, filters, PDF, etc).
     "apps.comun.apps.ComunConfig",
-    "apps.music_tags",
-    "apps.music_genres",
-    "apps.music_themes",
-    "apps.notification",
-    "apps.song_reviews",
-    "apps.reservations",
-    "apps.tipo_productos",
-    "apps.productos",
-    "apps.abarrotes",
-    "apps.bodega",
-    "apps.activities",
-    "apps.activity_feed",
-    "apps.chat",
-    "apps.event_planner",
-    "apps.vehicle_brands",
-    "apps.vehicle_types",
-    "apps.vehicles",
-    "apps.simple_report",
-    "apps.facturas",
-    "apps.users_module",
-    "apps.oauth2",
-    "apps.microsoft",
-    "apps.discord",
+    "apps.graphs",
+    # Reciplus shared schema (hsl-7-common, mismo repo que reciplus-djangoninja usa) —
+    # mismos nombres de app que ahí, para que AUTH_USER_MODEL/FKs resuelvan igual.
+    "common.django.user",
+    "common.django.hsl_7",
     # Third Pary Apps
     "rest_framework",
     "crispy_forms",
@@ -123,10 +91,12 @@ if DEVELOPMENT:
     MIDDLEWARE.append("debug_toolbar.middleware.DebugToolbarMiddleware")
 
 AUTHENTICATION_BACKENDS = [
-    "djangoproject.backends.OAuth2Backend",
     "apps.comun.backends.CustomModelBackend",
-    "apps.microsoft.auth.MicrosoftAuthenticationBackend",
-    "apps.discord.auth.DiscordAuthenticationBackend",
+    # Mismo backend que reciplus-djangoninja usa al crear la sesión compartida
+    # (django.contrib.auth.login) — sin esto, AuthenticationMiddleware.get_user()
+    # descarta la sesión aunque decodifique bien, porque el backend guardado no
+    # está en esta lista.
+    "django.contrib.auth.backends.ModelBackend",
 ]
 
 # Django Debug Toolbar Configuration
@@ -160,8 +130,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "apps.notification.context_processors.notifications",
-                "apps.activity_feed.context_processors.activity_feed_constants",
                 "apps.comun.context_processors.site_theme",
             ],
         },
@@ -183,6 +151,20 @@ DATABASES = {
         },
     }
 }
+
+# SQL_* debe apuntar a la MISMA base que reciplus-djangoninja (mismos valores de .env) —
+# no es una base nueva, es la real de la plataforma.
+DATABASE_ROUTERS = ["djangoproject.router_database.DatabaseRouter"]
+
+# CORS: el frontend (reciplus-kotlin) llama al endpoint de intercambio SSO desde otro
+# origen (otro puerto en dev). CORS_ALLOW_CREDENTIALS es obligatorio para que el
+# Set-Cookie de la sesión de intercambio se guarde en el navegador.
+CORS_ALLOWED_ORIGINS = [o.strip() for o in os.getenv("CORS_ALLOWED_ORIGINS", "").split(",") if o.strip()]
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOW_CREDENTIALS = True
+
+SESSION_COOKIE_SAMESITE = "Lax"
+SESSION_COOKIE_SECURE = not DEBUG
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -280,8 +262,9 @@ ENABLE_OAUTH2_LOGIN = os.getenv("ENABLE_OAUTH2_LOGIN", "false").lower() == "true
 LOGIN_URL = "/oauth2/authorize/" if ENABLE_OAUTH2_LOGIN else "/"
 
 LOGIN_REDIRECT_URL = "dashboard:index"
-# Set default user model
-AUTH_USER_MODEL = "users.User"
+# Usuario compartido con reciplus-djangoninja (mismo hsl-7-common) — no es un usuario
+# local del template, es el mismo user.User que ya usa el resto de la plataforma.
+AUTH_USER_MODEL = "user.User"
 
 # Logging for Production purposes
 if os.getenv("LOG_FILE") == "True":
@@ -329,14 +312,7 @@ PASSWORD_RESET_TIMEOUT = 3600  # 1 hour
 # Creating sequences
 create_sequences(SEQUENCES_DICT.keys())
 
-# SSO settings
-DOMAIN = os.getenv("SESSION_COOKIE_DOMAIN")
-if DOMAIN != "localhost":
-    SESSION_ENGINE = os.getenv("SESSION_ENGINE")
-    SESSION_COOKIE_DOMAIN = os.getenv("SESSION_COOKIE_DOMAIN")
-    SESSION_COOKIE_NAME = os.getenv("SESSION_COOKIE_NAME")
-    SESSION_COOKIE_HTTPONLY = False
-    SESSION_COOKIE_AGE = 8 * 60 * 60  # 8 hours
+SESSION_COOKIE_AGE = 8 * 60 * 60  # 8 horas
 
 # Ninja JWT Settings
 NINJA_JWT = {

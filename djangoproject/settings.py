@@ -166,6 +166,12 @@ CORS_ALLOW_CREDENTIALS = True
 SESSION_COOKIE_SAMESITE = "Lax"
 SESSION_COOKIE_SECURE = not DEBUG
 
+# Detrás de Pangolin/Newt (reverse proxy) — sin esto, request.get_host() regresa el
+# bind local (ej. localhost:8001) en vez de reci.plus, y cualquier redirect absoluto
+# (APPEND_SLASH, etc.) manda al usuario al host interno en vez del dominio real.
+USE_X_FORWARDED_HOST = True
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -227,7 +233,10 @@ LOCALE_PATHS = [
 ]
 
 
-STATIC_URL = "static/"
+# Con /graphs/ — Pangolin (reverse proxy) solo reenvía el prefijo /graphs a este
+# proyecto, así que TODO lo que sirva (estáticos, api, admin) debe vivir ahí también,
+# no en la raíz del dominio.
+STATIC_URL = "/graphs/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
@@ -243,7 +252,7 @@ if os.getenv("STATIC_ROOT_PATH"):
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-MEDIA_URL = "/media/"
+MEDIA_URL = "/graphs/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 

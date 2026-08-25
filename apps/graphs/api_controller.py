@@ -11,7 +11,7 @@ from apps.graphs.auth import session_doctor_scope
 from apps.graphs.service import GraphsService
 
 
-@api_controller("/graphs", tags=["Graphs"], auth=None)
+@api_controller("", tags=["Graphs"], auth=None)
 class GraphsController(ControllerBase):
     service = GraphsService()
 

@@ -17,5 +17,5 @@ export function dateRangeQuery(dateFrom, dateTo) {
 }
 
 export function summaryUrl(dateFrom, dateTo) {
-  return `/api/graphs/summary${dateRangeQuery(dateFrom, dateTo)}`;
+  return `/graphs/api/summary${dateRangeQuery(dateFrom, dateTo)}`;
 }

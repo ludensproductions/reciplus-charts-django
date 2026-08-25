@@ -13,8 +13,10 @@ from .api import api
 
 urlpatterns = (
     [
-        path("admin/", admin.site.urls),
-        path("api/", api.urls),
+        # Todo bajo /graphs/ — es el único prefijo que Pangolin reenvía a este
+        # proyecto en producción (ver README, sección Despliegue).
+        path("graphs/admin/", admin.site.urls),
+        path("graphs/api/", api.urls),
         path("graphs/", include("apps.graphs.urls")),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -96,7 +96,7 @@ function renderProfitsAndLosses(data) {
 
 export async function loadProfitsAndLosses(dateFrom, dateTo) {
   try {
-    const data = await fetchJson(`/api/graphs/profits-and-losses${dateRangeQuery(dateFrom, dateTo)}`);
+    const data = await fetchJson(`/graphs/api/profits-and-losses${dateRangeQuery(dateFrom, dateTo)}`);
     renderProfitsAndLosses(data);
   } catch (err) {
     showError("profits-losses-msg", document.getElementById("profits-losses-chart"), err.status);

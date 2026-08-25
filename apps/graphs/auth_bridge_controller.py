@@ -11,7 +11,7 @@ from apps.graphs.auth import bearer_token
 from apps.graphs.auth_bridge import AuthBridgeError, create_exchange_code, resolve_user_from_token
 
 
-@api_controller("/graphs", tags=["Graphs"], auth=None)
+@api_controller("", tags=["Graphs"], auth=None)
 class GraphsAuthBridgeController(ControllerBase):
 
     @http_post("/exchange-code", auth=None)

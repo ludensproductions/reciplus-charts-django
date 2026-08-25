@@ -172,3 +172,33 @@ Once the library is installed, it will be necessary to _**write the version that
     > **Note:** Please do not copy all new libraries. Only the libraries explicitly installed with pip install should be copied; do not include copying the sub-libraries installed by the newly added library.
 - Search for the library at [https://pypi.org/](https://pypi.org/project/) and copy the latest version from there (example: <https://pypi.org/project/django-q/#history>).
 - You can see the output of the terminal at the time it was installed and get the version from there.
+
+## Despliegue — Gráficas / SSO
+
+Este proyecto (`reci.plus/graphs`) comparte sesión Django con `reciplus-djangoninja`
+(`backend.reci.plus`) para que el admin/doctor entre a Gráficas sin volver a
+loguearse en web. Como son **subdominios distintos** del mismo dominio raíz, la
+cookie de sesión necesita dominio explícito — no basta con host-only. En el `.env`
+de producción:
+
+```ini
+# Debe ser EXACTAMENTE el mismo valor en el .env de reciplus-djangoninja
+SECRET_KEY=<mismo-valor-en-ambos>
+
+# Con el punto al inicio — así la cookie viaja entre backend.reci.plus y reci.plus
+RECIPLUS_SESSION_COOKIE_DOMAIN=.reci.plus
+
+# Debe incluir el dominio real donde corre este proyecto
+WEB_URL=https://reci.plus
+```
+
+Sin `RECIPLUS_SESSION_COOKIE_DOMAIN` en prod, el SSO no funciona: el usuario ve
+"No has iniciado sesión. Entra desde la app Reciplus." al entrar a Gráficas aunque
+ya esté logueado en la app.
+
+### Ruteo (Pangolin / reverse proxy)
+
+`/graphs` vive bajo el mismo dominio que el sitio principal (`reci.plus`), no en su
+propio subdominio — el proxy debe rutear el path `/graphs*` al puerto donde corre
+este proyecto (`manage.py runserver 0.0.0.0:<puerto>`), **sin pelar el prefijo**
+`/graphs` (este proyecto ya lo espera incluido en la URL, ver `djangoproject/urls.py`).

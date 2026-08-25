@@ -26,6 +26,10 @@ DEVELOPMENT = os.getenv("DEVELOPMENT") == "True"
 WEB_URLS = [url for url in os.getenv("WEB_URL", "").split(",") if url]
 ALLOWED_HOSTS = [urlparse(url).hostname for url in WEB_URLS]
 CSRF_TRUSTED_ORIGINS = WEB_URLS
+
+# URL del frontend (reciplus-kotlin web) — a dónde manda el botón "Volver" de /graphs.
+# Mismo criterio que reciplus-djangoninja/.env.
+FRONTEND_URL = os.getenv("FRONTEND_URL", "/")
 ENABLE_REDIS = os.getenv("ENABLE_REDIS").lower() == "true"
 ENABLE_CLUSTER = os.getenv("ENABLE_CLUSTER")
 mimetypes.add_type("application/javascript", ".js", True)

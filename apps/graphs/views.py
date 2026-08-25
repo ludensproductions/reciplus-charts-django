@@ -1,4 +1,5 @@
 """Vista de la página de gráficas."""
+from django.conf import settings
 from django.contrib.auth import login as django_login
 from django.http import HttpResponseForbidden
 from django.shortcuts import redirect, render
@@ -20,4 +21,4 @@ def index(request):
     if not has_graphs_access(request.user):
         return HttpResponseForbidden("No has iniciado sesión. Entra desde la app Reciplus.")
 
-    return render(request, "graphs/index.html")
+    return render(request, "graphs/index.html", {"frontend_url": settings.FRONTEND_URL})

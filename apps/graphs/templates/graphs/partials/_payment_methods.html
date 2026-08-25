@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="chart-header">
+    <h1>Cobros por método de pago</h1>
+  </div>
+  {% include "graphs/partials/_filter_bar.html" with form_id="payment-methods-filter-form" from_id="payment-methods-date-from" to_id="payment-methods-date-to" clear_id="payment-methods-clear" %}
+  <div class="chart-wrap small">
+    <canvas id="payment-methods-chart"></canvas>
+  </div>
+  <div id="payment-methods-msg" class="state-msg" style="display:none;"></div>
+</div>

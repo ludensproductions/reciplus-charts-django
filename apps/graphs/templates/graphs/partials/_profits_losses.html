@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="chart-header">
+    <h1>Profits and Losses</h1>
+    {% include "graphs/partials/_filter_bar.html" with form_id="profits-losses-filter-form" from_id="profits-losses-date-from" to_id="profits-losses-date-to" clear_id="profits-losses-clear" %}
+  </div>
+  <div class="chart-wrap">
+    <canvas id="profits-losses-chart"></canvas>
+  </div>
+  <div id="profits-losses-msg" class="state-msg" style="display:none;"></div>
+</div>

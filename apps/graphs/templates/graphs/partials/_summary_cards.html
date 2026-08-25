@@ -1,0 +1,7 @@
+<div class="card">
+  <div class="chart-header">
+    <h1>Resumen</h1>
+    {% include "graphs/partials/_filter_bar.html" with form_id="summary-cards-filter-form" from_id="summary-cards-date-from" to_id="summary-cards-date-to" clear_id="summary-cards-clear" %}
+  </div>
+  <div class="summary-row" id="summary-cards"></div>
+</div>

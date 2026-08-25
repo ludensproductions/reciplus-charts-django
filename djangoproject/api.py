@@ -8,9 +8,9 @@ from ninja_extra.exceptions import ValidationError
 from ninja_jwt.controller import NinjaJWTDefaultController
 
 # Importing API Controllers
-from apps.activity_feed.api.controller import ActivityFeedController
-from apps.albums.api.controller import AlbumController
 from apps.comun.api.exceptions import CustomValueError
+from apps.graphs.api_controller import GraphsController
+from apps.graphs.auth_bridge_controller import GraphsAuthBridgeController
 from apps.comun.consts import (
     ERROR_BAD_REQUEST,
     ERROR_INTERNAL_SERVER,
@@ -20,13 +20,6 @@ from apps.comun.consts import (
 )
 from apps.core.errors.error_codes import ErrorCode
 from apps.core.errors.error_types import ErrorType
-from apps.genres.api.controller import GenreController
-from apps.jobs.api.controller import JobController
-from apps.movies.api.controller import MovieController
-from apps.music_tags.api.controller import MusicTagsController
-from apps.notification.api.controller import NotificationsController
-from apps.oauth2.api.controller import Oauth2APIController
-from apps.students.api.controller import StudentController
 
 # Utils
 from utils.json_logger import get_error_log, log_error, log_warning
@@ -42,15 +35,8 @@ api = NinjaExtraAPI(csrf=False)  # CSRF Protection
 
 api.register_controllers(
     NinjaJWTDefaultController,  # JWT Authentication Endpoints
-    ActivityFeedController,
-    AlbumController,
-    GenreController,
-    JobController,
-    MovieController,
-    MusicTagsController,
-    NotificationsController,
-    Oauth2APIController,
-    StudentController,
+    GraphsController,
+    GraphsAuthBridgeController,
 )
 
 

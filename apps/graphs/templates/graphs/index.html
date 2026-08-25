@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gráficas — Reciplus</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJHWbryGE+Pc7UAxWMUMNMWzWxF4SQo9CgkJIN1kx6djDQZjh3Y8SZ1d+6I+1zze6Z7kHXO7q3UyZAWw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="{% static 'graphs/css/graphs.css' %}">
+</head>
+<body>
+  <div class="page">
+    {% include "graphs/partials/_summary_cards.html" %}
+    {% include "graphs/partials/_profits_losses.html" %}
+
+    <div class="charts-row">
+      {% include "graphs/partials/_payment_methods.html" %}
+      {% include "graphs/partials/_revenue_by_day.html" %}
+    </div>
+  </div>
+
+  <script type="module" src="{% static 'graphs/js/main.js' %}"></script>
+</body>
+</html>

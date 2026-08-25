@@ -10,7 +10,10 @@ from dotenv import load_dotenv
 
 from utils.sequences import SEQUENCES_DICT, create_sequences
 
-load_dotenv(override=True)
+# override=False (default): variables YA definidas en el entorno (ej. inyectadas por
+# docker-compose vía "environment:") ganan sobre el .env. Así el mismo .env real sirve
+# para venv local y para Docker — docker-compose solo sobreescribe SQL_HOST/REDIS_HOST.
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

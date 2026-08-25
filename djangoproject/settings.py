@@ -312,6 +312,11 @@ PASSWORD_RESET_TIMEOUT = 3600  # 1 hour
 # Creating sequences
 create_sequences(SEQUENCES_DICT.keys())
 
+# Dominio de cookie compartido entre subdominios (backend.reci.plus emite la sesión,
+# reci.plus/graphs la lee) — vacío en dev (localhost, host-only ya alcanza).
+_shared_session_cookie_domain = os.getenv("RECIPLUS_SESSION_COOKIE_DOMAIN") or None
+if _shared_session_cookie_domain:
+    SESSION_COOKIE_DOMAIN = _shared_session_cookie_domain
 SESSION_COOKIE_AGE = 8 * 60 * 60  # 8 horas
 
 # Ninja JWT Settings

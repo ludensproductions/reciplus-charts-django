@@ -56,10 +56,13 @@ INSTALLED_APPS = [
     # se usa. apps.comun se queda por sus utilidades genéricas (forms, filters, PDF, etc).
     "apps.comun.apps.ComunConfig",
     "apps.graphs",
-    # Reciplus shared schema (hsl-7-common, mismo repo que reciplus-djangoninja usa) —
-    # mismos nombres de app que ahí, para que AUTH_USER_MODEL/FKs resuelvan igual.
-    "common.django.user",
-    "common.django.hsl_7",
+    # Reciplus shared schema (reciplus-common/django) — "common" es un junction directo a
+    # esa carpeta (no a la raíz del repo, a diferencia de reciplus-djangoninja) y su ruta
+    # ya está en sys.path (ver manage.py/asgi.py/wsgi.py), así que las apps se registran
+    # bare — mismos app_label ("user"/"hsl_7") que en reciplus-djangoninja de cualquier
+    # forma, porque el label por default es el último segmento del dotted path.
+    "user",
+    "hsl_7",
     # Third Pary Apps
     "rest_framework",
     "crispy_forms",

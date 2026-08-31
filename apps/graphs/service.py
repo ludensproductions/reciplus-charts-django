@@ -8,8 +8,8 @@ from django.db.models.functions import TruncDate, TruncMonth
 from django.utils import timezone
 
 from apps.graphs import consts as graphs_consts
-from common.django.hsl_7.models import Appointment, InvoicingSettings, Payment, Refund
-from common.django.shared.choices import AppointmentStatus
+from hsl_7.models import Appointment, InvoicingSettings, Payment, Refund
+from shared.choices import AppointmentStatus
 
 
 class GraphsService:

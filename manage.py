@@ -6,6 +6,10 @@ from pathlib import Path
 
 # Add a directory in which Django will look up for models
 sys.path.append(os.path.join(Path(__file__).resolve().parent, "models"))
+# "common" es un junction a reciplus-common/django — se agrega directo al sys.path (no
+# como paquete "common.X") para que hsl_7/user/shared se importen bare, igual en donde
+# se generan las migraciones (el migrator) y en donde se consumen (aquí).
+sys.path.append(os.path.join(Path(__file__).resolve().parent, "common"))
 
 
 def main():

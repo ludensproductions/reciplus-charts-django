@@ -21,7 +21,7 @@ from django.core.cache import cache
 from jose import JWTError, jwt
 
 from apps.graphs import consts as graphs_consts
-from common.django.user.models import User
+from user.models import User
 
 _EXCHANGE_CODE_CACHE_PREFIX = "graphs:exchange-code:"
 
